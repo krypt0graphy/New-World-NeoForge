@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mattock_crafting_template_piece": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#newworld:mattock_piece"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "newworld:mattock_crafting_template_from_piece_combination"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mattock_crafting_template_piece"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "newworld:mattock_crafting_template_from_piece_combination"
+    ]
+  }
+}

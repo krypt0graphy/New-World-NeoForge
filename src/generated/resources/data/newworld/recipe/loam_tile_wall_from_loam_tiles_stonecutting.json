@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "newworld:loam_tiles"
+  },
+  "result": {
+    "count": 1,
+    "id": "newworld:loam_tile_wall"
+  }
+}

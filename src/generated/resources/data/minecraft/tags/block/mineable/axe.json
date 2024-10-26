@@ -1,0 +1,18 @@
+{
+  "values": [
+    "newworld:fir_planks",
+    "newworld:fir_button",
+    "newworld:fir_door",
+    "newworld:fir_trapdoor",
+    "newworld:fir_fence",
+    "newworld:fir_slab",
+    "newworld:fir_stairs",
+    "newworld:fir_pressure_plate",
+    "newworld:fir_fence_gate",
+    "newworld:fir_sign",
+    "newworld:fir_wall_sign",
+    "newworld:fir_hanging_sign",
+    "newworld:fir_wall_hanging_sign",
+    "#newworld:fir_logs"
+  ]
+}

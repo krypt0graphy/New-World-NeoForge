@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "newworld:block/fir_door_bottom",
+    "top": "newworld:block/fir_door_top"
+  }
+}

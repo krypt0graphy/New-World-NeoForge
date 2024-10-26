@@ -1,0 +1,10 @@
+{
+  "values": {
+    "newworld:fir_leaves": {
+      "chance": 0.3
+    },
+    "newworld:fir_sapling": {
+      "chance": 0.3
+    }
+  }
+}

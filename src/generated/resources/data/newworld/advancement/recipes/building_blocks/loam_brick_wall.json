@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_loam_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "newworld:loam_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "newworld:loam_brick_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_loam_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "newworld:loam_brick_wall"
+    ]
+  }
+}

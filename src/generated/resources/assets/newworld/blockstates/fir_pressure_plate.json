@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "newworld:block/fir_pressure_plate"
+    },
+    "powered=true": {
+      "model": "newworld:block/fir_pressure_plate_down"
+    }
+  }
+}

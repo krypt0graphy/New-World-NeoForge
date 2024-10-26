@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "newworld:block/loam_bricks",
+    "side": "newworld:block/loam_bricks",
+    "top": "newworld:block/loam_bricks"
+  }
+}

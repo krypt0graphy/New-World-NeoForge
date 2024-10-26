@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "newworld:mattock_crafting_template_head"
+    },
+    {
+      "item": "newworld:mattock_crafting_template_shaft"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "newworld:mattock_crafting_template"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "newworld:block/loam_tile_slab"
+    },
+    "type=double": {
+      "model": "newworld:block/loam_tiles"
+    },
+    "type=top": {
+      "model": "newworld:block/loam_tile_slab_top"
+    }
+  }
+}

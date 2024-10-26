@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "newworld:block/loam_brick_slab"
+    },
+    "type=double": {
+      "model": "newworld:block/loam_bricks"
+    },
+    "type=top": {
+      "model": "newworld:block/loam_brick_slab_top"
+    }
+  }
+}

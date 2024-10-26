@@ -1,0 +1,22 @@
+// 1.21	2024-10-26T23:33:19.0275138	Tags for minecraft:item mod id newworld
+252b718ef38f950caa76826167ee6cbcfd13f46f data/minecraft/tags/item/boats.json
+8144d336a9c77bcc2d41704410d5d1f3a2f6bd06 data/minecraft/tags/item/chest_boats.json
+d35647d3c66e9e809d19a89a87109437297eddea data/minecraft/tags/item/enchantable/durability.json
+d35647d3c66e9e809d19a89a87109437297eddea data/minecraft/tags/item/enchantable/vanishing.json
+531531a2cbe2b2b6b19b4a23489c73b358063609 data/minecraft/tags/item/fence_gates.json
+94a1a924b9e4dafdd0919819e6dc2e9dc15d356f data/minecraft/tags/item/hanging_signs.json
+88fb931decfd59ed03ba8759417c2ecbef040a3e data/minecraft/tags/item/leaves.json
+a05ffb0112a755a264958d236d52fe9de224beeb data/minecraft/tags/item/logs_that_burn.json
+9b9b5396efb07a36ba46c309acd3bf809ce4896d data/minecraft/tags/item/planks.json
+9432c56432b8be4a4e24441479371d1cdcd5501d data/minecraft/tags/item/saplings.json
+c24bb40fbf45e52f62b1318a9f3562d3c1f87b72 data/minecraft/tags/item/signs.json
+5a9676378ee4dbf492db7c901071ed8cdadd0fba data/minecraft/tags/item/wooden_buttons.json
+fd3b0b387684bb98d2be5e9a51c2b91ef2db8508 data/minecraft/tags/item/wooden_doors.json
+9cbd98ee10efc15e1590434ac4fc66589b754ba1 data/minecraft/tags/item/wooden_fences.json
+dd771db6ce6e3eee74d99c9a66b103ad3280bcdc data/minecraft/tags/item/wooden_pressure_plates.json
+18c247502a1009e063f940978676924fea90d23c data/minecraft/tags/item/wooden_slabs.json
+99b4564d813a0f419a00c0d1d85f284096915f38 data/minecraft/tags/item/wooden_stairs.json
+78711de9437bab30cd053e87bd069cf305f567bc data/minecraft/tags/item/wooden_trapdoors.json
+4333e5b0d3c082c5e91baec1955d1a9d418dc318 data/newworld/tags/item/ancient_tool_materials.json
+bc5d3c67cb09c847de8823ce9d94cdcd87e304ab data/newworld/tags/item/fir_logs.json
+21d53da183265dd269ec63bbabca688b5cde7ba9 data/newworld/tags/item/mattock_piece.json

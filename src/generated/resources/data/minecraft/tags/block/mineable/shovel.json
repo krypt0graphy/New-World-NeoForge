@@ -1,0 +1,16 @@
+{
+  "values": [
+    "newworld:loam",
+    "newworld:loam_stairs",
+    "newworld:loam_slab",
+    "newworld:loam_wall",
+    "newworld:loam_bricks",
+    "newworld:loam_brick_stairs",
+    "newworld:loam_brick_slab",
+    "newworld:loam_brick_wall",
+    "newworld:loam_tiles",
+    "newworld:loam_tile_stairs",
+    "newworld:loam_tile_slab",
+    "newworld:loam_tile_wall"
+  ]
+}

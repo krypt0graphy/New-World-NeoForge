@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "newworld:block/stripped_fir_log",
+    "side": "newworld:block/stripped_fir_log"
+  }
+}

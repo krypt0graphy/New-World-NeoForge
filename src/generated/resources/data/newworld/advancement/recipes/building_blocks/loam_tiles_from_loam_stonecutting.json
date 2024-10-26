@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_loam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "newworld:loam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "newworld:loam_tiles_from_loam_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_loam"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "newworld:loam_tiles_from_loam_stonecutting"
+    ]
+  }
+}

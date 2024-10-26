@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "newworld:block/fir_slab"
+    },
+    "type=double": {
+      "model": "newworld:block/fir_planks"
+    },
+    "type=top": {
+      "model": "newworld:block/fir_slab_top"
+    }
+  }
+}
