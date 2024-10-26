@@ -92,14 +92,14 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, NWItems.MATTOCK_CRAFTING_TEMPLATE).requires(NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD).requires(NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT).unlockedBy("has_mattock_crafting_template_piece", has(NWItemTags.MATTOCK_PIECES)).save(pRecipeOutput, NWItems.MATTOCK_CRAFTING_TEMPLATE.getRegisteredName() + "_from_piece_combination");
 
-//        SmithingTransformRecipeBuilder
-//                .smithing(Ingredient.of(NWItems.MATTOCK_CRAFTING_TEMPLATE),
-//                        Ingredient.of(Items.STICK),
-//                        Ingredient.of(Items.FLINT),
-//                        RecipeCategory.TOOLS,
-//                        NWItems.ANCIENT_MATTOCK.asItem())
-//                .unlocks("has_mattock_crafting_template", has(NWItems.MATTOCK_CRAFTING_TEMPLATE))
-//                .save(pRecipeOutput, NewWorld.id("ancient_mattock_smithing"));
+        SmithingTransformRecipeBuilder
+                .smithing(Ingredient.of(NWItems.MATTOCK_CRAFTING_TEMPLATE),
+                        Ingredient.of(Items.STICK),
+                        Ingredient.of(Items.FLINT),
+                        RecipeCategory.TOOLS,
+                        NWItems.ANCIENT_MATTOCK.asItem())
+                .unlocks("has_mattock_crafting_template", has(NWItems.MATTOCK_CRAFTING_TEMPLATE))
+                .save(pRecipeOutput, NewWorld.id("ancient_mattock_smithing"));
     }
 
     public void stoneSetRecipes(RecipeOutput pRecipeOutput, ItemLike base, ItemLike stairs, ItemLike slab, ItemLike wall) {
