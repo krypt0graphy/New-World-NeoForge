@@ -1,8 +1,6 @@
 package com.kryptography.newworld.init.data;
 
 import com.kryptography.newworld.init.NWBlocks;
-import com.kryptography.newworld.init.NWItems;
-import com.kryptography.newworld.init.data.tags.NWItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;

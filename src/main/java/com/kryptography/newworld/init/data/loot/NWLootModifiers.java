@@ -1,13 +1,10 @@
 package com.kryptography.newworld.init.data.loot;
 
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
+
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.data.loot.modifiers.AddItemModifier;
 import com.kryptography.newworld.init.data.loot.modifiers.ArchaeologyLootModifier;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;

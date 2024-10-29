@@ -2,7 +2,6 @@ package com.kryptography.newworld.init;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.entity.FirBoatEntity;
-import com.kryptography.newworld.common.entity.FirChestBoatEntity;
 import com.kryptography.newworld.common.items.*;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.registries.DeferredItem;

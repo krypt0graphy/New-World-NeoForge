@@ -6,7 +6,6 @@ import com.kryptography.newworld.init.data.loot.modifiers.AddItemModifier;
 import com.kryptography.newworld.init.data.loot.modifiers.ArchaeologyLootModifier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;

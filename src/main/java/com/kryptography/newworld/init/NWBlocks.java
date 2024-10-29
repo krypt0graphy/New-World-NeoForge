@@ -16,7 +16,6 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.intellij.lang.annotations.Flow;
 
 import java.util.function.Supplier;
 
