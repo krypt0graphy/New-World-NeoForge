@@ -1,0 +1,11 @@
+{
+  "type": "newworld:archaeology_loot",
+  "chance_to_replace": 0.11,
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:archaeology/desert_pyramid"
+    }
+  ],
+  "item": "newworld:mattock_crafting_template_shaft"
+}

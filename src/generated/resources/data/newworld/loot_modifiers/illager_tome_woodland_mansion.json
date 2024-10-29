@@ -1,0 +1,15 @@
+{
+  "type": "newworld:add_item",
+  "conditions": [
+    {
+      "chance": 0.85,
+      "condition": "minecraft:random_chance"
+    },
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/woodland_mansion"
+    }
+  ],
+  "count": 1,
+  "item": "newworld:illager_tome"
+}

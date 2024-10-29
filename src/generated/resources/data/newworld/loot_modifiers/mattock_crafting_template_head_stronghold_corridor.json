@@ -1,0 +1,15 @@
+{
+  "type": "newworld:add_item",
+  "conditions": [
+    {
+      "chance": 0.15,
+      "condition": "minecraft:random_chance"
+    },
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/stronghold_corridor"
+    }
+  ],
+  "count": 1,
+  "item": "newworld:mattock_crafting_template_head"
+}

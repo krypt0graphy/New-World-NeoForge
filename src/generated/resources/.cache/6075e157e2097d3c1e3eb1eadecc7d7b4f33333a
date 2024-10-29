@@ -1,5 +1,6 @@
-// 1.21	2024-10-26T23:33:19.0275138	Tags for minecraft:item mod id newworld
+// 1.21	2024-10-29T11:09:20.7364874	Tags for minecraft:item mod id newworld
 252b718ef38f950caa76826167ee6cbcfd13f46f data/minecraft/tags/item/boats.json
+5c67cddfa694ae8c88954da173bca77aa59da04f data/minecraft/tags/item/bookshelf_books.json
 8144d336a9c77bcc2d41704410d5d1f3a2f6bd06 data/minecraft/tags/item/chest_boats.json
 d35647d3c66e9e809d19a89a87109437297eddea data/minecraft/tags/item/enchantable/durability.json
 d35647d3c66e9e809d19a89a87109437297eddea data/minecraft/tags/item/enchantable/vanishing.json

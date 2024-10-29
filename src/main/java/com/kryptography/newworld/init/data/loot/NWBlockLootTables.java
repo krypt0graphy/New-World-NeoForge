@@ -1,20 +1,18 @@
-package com.kryptography.newworld.init.data;
+package com.kryptography.newworld.init.data.loot;
 
 import com.kryptography.newworld.init.NWBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 import java.util.Set;
 
-public class NWLootTables extends BlockLootSubProvider {
+public class NWBlockLootTables extends BlockLootSubProvider {
 
 
-    public NWLootTables(HolderLookup.Provider provider) {
+    public NWBlockLootTables(HolderLookup.Provider provider) {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), provider);
     }
 

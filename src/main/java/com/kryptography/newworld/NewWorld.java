@@ -6,6 +6,7 @@ import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWEntityTypes;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.data.NWDataMaps;
+import com.kryptography.newworld.init.data.loot.NWLootModifiers;
 import com.kryptography.newworld.init.data.woodset.Woodset;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -32,6 +33,7 @@ public class NewWorld {
         NWItems.ITEMS.register(bus);
         NWBlockEntityTypes.BLOCK_ENTITIES.register(bus);
         NWEntityTypes.ENTITIES.register(bus);
+        NWLootModifiers.LOOT_MODIFIERS.register(bus);
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::addCreative);

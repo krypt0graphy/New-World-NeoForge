@@ -1,0 +1,11 @@
+{
+  "type": "newworld:archaeology_loot",
+  "chance_to_replace": 0.077,
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:archaeology/trail_ruins_rare"
+    }
+  ],
+  "item": "newworld:mattock_crafting_template_shaft"
+}

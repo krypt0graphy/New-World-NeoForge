@@ -1,4 +1,4 @@
-// 1.21	2024-10-26T23:01:01.0538076	Recipes
+// 1.21	2024-10-27T00:32:41.7949305	Recipes
 0dd50cfa737938a3b8177acf05f6874f1ac591c7 data/newworld/advancement/recipes/building_blocks/fir_planks.json
 4d744234a72dcbcfe815c84a3149cc5e9b23e29d data/newworld/advancement/recipes/building_blocks/fir_slab.json
 50c47d159bfcd9e9ac824f9d161bf7f2305b3562 data/newworld/advancement/recipes/building_blocks/fir_stairs.json
@@ -45,9 +45,11 @@ e92eb8eb6013284cfbd3f27e6b2d26619808f2b2 data/newworld/advancement/recipes/redst
 97efa10b5b111ec193f2ce1d4551cfa030f8a068 data/newworld/advancement/recipes/redstone/fir_fence_gate.json
 57e4cc65ac0fb93680e3c3b974ef39fe4093b7df data/newworld/advancement/recipes/redstone/fir_pressure_plate.json
 2d4fc620d0315f395c3f5aa87138d9f2e14cd36d data/newworld/advancement/recipes/redstone/fir_trapdoor.json
+faeb7bd49529de291c320cd1a9d6af6f4ffdffba data/newworld/advancement/recipes/tools/ancient_mattock_smithing.json
 9800eeb79065509b98484dabd5c88001a989ba3f data/newworld/advancement/recipes/tools/mattock_crafting_template_from_piece_combination.json
 ed7710a84f21442afbcb00a014e3b300bcde465c data/newworld/advancement/recipes/transportation/fir_boat.json
 8e18049a6a23626b5db90f4e3dc1fe367bafbc88 data/newworld/advancement/recipes/transportation/fir_chest_boat.json
+c097dcefab6ae474a6316e94eeaa48e7139ee875 data/newworld/recipe/ancient_mattock_smithing.json
 64bd1f32f913df5dd70512304daaaaa5b4b2892d data/newworld/recipe/fir_boat.json
 0377af570c578ffdd76831265b1e7fe5902af60f data/newworld/recipe/fir_button.json
 227917cabb624156274fe9d3d42e7a28f820a207 data/newworld/recipe/fir_chest_boat.json

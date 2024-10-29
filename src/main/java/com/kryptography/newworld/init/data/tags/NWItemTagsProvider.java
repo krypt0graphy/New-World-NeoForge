@@ -33,7 +33,8 @@ public class NWItemTagsProvider extends ItemTagsProvider {
         this.tag(ItemTags.BOATS).add(NWItems.FIR_BOAT.get());
         this.tag(ItemTags.CHEST_BOATS).add(NWItems.FIR_CHEST_BOAT.get());
 
-        //BOOKSHELF BOOKS ILLAGER TOME
+        this.tag(ItemTags.BOOKSHELF_BOOKS).add(NWItems.ILLAGER_TOME.get());
+
         this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(NWItems.ANCIENT_MATTOCK.get());
         this.tag(ItemTags.VANISHING_ENCHANTABLE).add(NWItems.ANCIENT_MATTOCK.get());
 
