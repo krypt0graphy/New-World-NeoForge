@@ -1,6 +1,7 @@
 package com.kryptography.newworld;
 
 import com.kryptography.newworld.client.NWBoatRenderer;
+import com.kryptography.newworld.common.worldgen.NWFeature;
 import com.kryptography.newworld.init.NWBlockEntityTypes;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWEntityTypes;
@@ -34,6 +35,7 @@ public class NewWorld {
         NWBlockEntityTypes.BLOCK_ENTITIES.register(bus);
         NWEntityTypes.ENTITIES.register(bus);
         NWLootModifiers.LOOT_MODIFIERS.register(bus);
+        NWFeature.FEATURES.register(bus);
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::addCreative);

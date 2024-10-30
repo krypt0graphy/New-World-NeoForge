@@ -2,6 +2,7 @@ package com.kryptography.newworld.init;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.blocks.*;
+import com.kryptography.newworld.common.worldgen.tree.FirTreeGrower;
 import com.kryptography.newworld.init.data.woodset.Woodset;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
@@ -48,7 +49,7 @@ public class NWBlocks {
 
     public static final DeferredBlock<LeavesBlock> FIR_LEAVES = register("fir_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().noOcclusion().sound(SoundType.AZALEA_LEAVES).isSuffocating((state, getter, pos) -> false).isViewBlocking((state, getter, pos) -> false).isRedstoneConductor((state, level, pos) -> false)));
 
-    public static final DeferredBlock<SaplingBlock> FIR_SAPLING = register("fir_sapling", () -> new SaplingBlock(TreeGrower.OAK, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).instabreak().sound(SoundType.GRASS).noCollission().randomTicks()));;
+    public static final DeferredBlock<SaplingBlock> FIR_SAPLING = register("fir_sapling", () -> new SaplingBlock(FirTreeGrower.FIR, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).instabreak().sound(SoundType.GRASS).noCollission().randomTicks()));;
     public static final DeferredBlock<FlowerPotBlock> POTTED_FIR_SAPLING = BLOCKS.register("potted_fir_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FIR_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
 
     public static final DeferredBlock<StandingSignBlock> FIR_SIGN = BLOCKS.register("fir_sign", () -> new FirStandingSignBlock(Woodset.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).noOcclusion().noCollission()));

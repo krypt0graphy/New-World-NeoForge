@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:meadow",
+  "features": "newworld:trees_fir_meadow",
+  "step": "vegetal_decoration"
+}

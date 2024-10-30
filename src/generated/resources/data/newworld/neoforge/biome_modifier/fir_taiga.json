@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_taiga",
+  "features": "newworld:trees_fir_scarce",
+  "step": "vegetal_decoration"
+}
