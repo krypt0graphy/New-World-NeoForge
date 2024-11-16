@@ -9,6 +9,8 @@ import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.data.NWDataMaps;
 import com.kryptography.newworld.init.data.loot.NWLootModifiers;
 import com.kryptography.newworld.init.data.woodset.Woodset;
+import com.kryptography.newworld.init.worldgen.NWOverworldRegion;
+import com.kryptography.newworld.init.worldgen.structure.NWStructures;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +24,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import terrablender.api.Regions;
 
 @Mod(NewWorld.MOD_ID)
 
@@ -36,6 +39,7 @@ public class NewWorld {
         NWEntityTypes.ENTITIES.register(bus);
         NWLootModifiers.LOOT_MODIFIERS.register(bus);
         NWFeature.FEATURES.register(bus);
+        //NWStructures.STRUCTURES.register(bus);
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::addCreative);
@@ -45,6 +49,7 @@ public class NewWorld {
         event.enqueueWork(() -> {
             NWDataMaps.register();
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NWBlocks.FIR_SAPLING.getId(), NWBlocks.POTTED_FIR_SAPLING);
+            Regions.register(new NWOverworldRegion(ResourceLocation.fromNamespaceAndPath(MOD_ID, "overworld"), 5));
         });
     }
 

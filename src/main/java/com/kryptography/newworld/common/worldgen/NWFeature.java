@@ -4,6 +4,7 @@ package com.kryptography.newworld.common.worldgen;
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.worldgen.features.FallenLogFeature;
 import com.kryptography.newworld.common.worldgen.features.LoamSnowFeature;
+import com.kryptography.newworld.common.worldgen.structures.BuriedBunkerFeature;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;

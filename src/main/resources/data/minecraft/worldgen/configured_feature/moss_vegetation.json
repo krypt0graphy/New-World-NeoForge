@@ -1,0 +1,46 @@
+{
+	"type": "minecraft:simple_block",
+	"config": {
+		"to_place": {
+			"type": "minecraft:weighted_state_provider",
+			"entries": [
+				{
+					"weight": 1,
+					"data": {
+						"Name": "minecraft:flowering_azalea"
+					}
+				},
+				{
+					"weight": 1,
+					"data": {
+						"Name": "minecraft:dead_bush"
+					}
+				},
+				{
+					"weight": 3,
+					"data": {
+						"Name": "minecraft:azalea"
+					}
+				},
+				{
+					"weight": 25,
+					"data": {
+						"Name": "minecraft:moss_carpet"
+					}
+				},
+				{
+					"weight": 8,
+					"data": {
+						"Name": "newworld:moss_sprouts"
+					}
+				},
+				{
+					"weight": 30,
+					"data": {
+						"Name": "minecraft:air"
+					}
+				}
+			]
+		}
+	}
+}

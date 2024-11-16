@@ -1,0 +1,38 @@
+{
+	"display": {
+		"icon": {
+			"id": "newworld:mattock_crafting_template_head"
+		},
+		"title": {
+			"translate": "advancements.adventure.collect_template_fragment.title"
+		},
+		"description": {
+			"translate": "advancements.adventure.collect_template_fragment.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"parent": "minecraft:adventure/salvage_sherd",
+	"criteria": {
+		"mattock_template": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"newworld:mattock_crafting_template_head",
+							"newworld:mattock_crafting_template_shaft"
+						]
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		[
+			"mattock_template"
+		]
+	]
+}
