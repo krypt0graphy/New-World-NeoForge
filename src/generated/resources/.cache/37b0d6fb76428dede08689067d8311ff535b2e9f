@@ -1,0 +1,7 @@
+// 1.21	2024-11-16T19:15:32.1984085	Tags for minecraft:worldgen/biome mod id newworld
+c91c0bd6322449f95e8c2d3920ef57a2a7353f84 data/minecraft/tags/worldgen/biome/has_structure/mineshaft.json
+c91c0bd6322449f95e8c2d3920ef57a2a7353f84 data/minecraft/tags/worldgen/biome/has_structure/trail_ruins.json
+c91c0bd6322449f95e8c2d3920ef57a2a7353f84 data/minecraft/tags/worldgen/biome/has_structure/village_taiga.json
+c91c0bd6322449f95e8c2d3920ef57a2a7353f84 data/minecraft/tags/worldgen/biome/is_mountain.json
+c91c0bd6322449f95e8c2d3920ef57a2a7353f84 data/minecraft/tags/worldgen/biome/is_overworld.json
+becbb3e6d736ab8feb41683bc5afacce936c4825 data/newworld/tags/worldgen/biome/has_structure/buried_bunker.json

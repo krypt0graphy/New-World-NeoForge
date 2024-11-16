@@ -6,11 +6,10 @@ import com.kryptography.newworld.init.NWBlockEntityTypes;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWEntityTypes;
 import com.kryptography.newworld.init.NWItems;
-import com.kryptography.newworld.init.data.NWDataMaps;
+import com.kryptography.newworld.common.datagens.NWDataMapProvider;
 import com.kryptography.newworld.init.data.loot.NWLootModifiers;
-import com.kryptography.newworld.init.data.woodset.Woodset;
+import com.kryptography.newworld.init.data.woodset.FirBlockSet;
 import com.kryptography.newworld.init.worldgen.NWOverworldRegion;
-import com.kryptography.newworld.init.worldgen.structure.NWStructures;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
@@ -47,7 +46,7 @@ public class NewWorld {
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            NWDataMaps.register();
+            NWDataMapProvider.register();
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NWBlocks.FIR_SAPLING.getId(), NWBlocks.POTTED_FIR_SAPLING);
             Regions.register(new NWOverworldRegion(ResourceLocation.fromNamespaceAndPath(MOD_ID, "overworld"), 5));
         });
@@ -113,7 +112,7 @@ public class NewWorld {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent evt) {
         evt.enqueueWork(() -> {
-            Sheets.addWoodType(Woodset.FIR_WOOD_TYPE);
+            Sheets.addWoodType(FirBlockSet.FIR_WOOD_TYPE);
             EntityRenderers.register(NWEntityTypes.FIR_BOAT.get(), pContext -> new NWBoatRenderer(pContext, false));
             EntityRenderers.register(NWEntityTypes.FIR_CHEST_BOAT.get(), pContext -> new NWBoatRenderer(pContext, true));
         });

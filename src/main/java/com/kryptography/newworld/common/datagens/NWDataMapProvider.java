@@ -1,4 +1,4 @@
-package com.kryptography.newworld.init.data;
+package com.kryptography.newworld.common.datagens;
 
 import com.kryptography.newworld.init.NWBlocks;
 import net.minecraft.core.HolderLookup;
@@ -12,8 +12,8 @@ import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 
 import java.util.concurrent.CompletableFuture;
 
-public class NWDataMaps extends DataMapProvider {
-    protected NWDataMaps(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+public class NWDataMapProvider extends DataMapProvider {
+    public NWDataMapProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(packOutput, lookupProvider);
     }
 

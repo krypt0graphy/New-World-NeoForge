@@ -31,7 +31,6 @@ public class NWOverworldRegion extends Region {
                 .depth(Depth.SURFACE)
                 .weirdness(Weirdness.HIGH_SLICE_VARIANT_ASCENDING, Weirdness.HIGH_SLICE_VARIANT_DESCENDING, Weirdness.MID_SLICE_NORMAL_ASCENDING)
                 .build().forEach(point -> builder.add(point, NWBiomes.WOODED_MEADOW));
-
         builder.build().forEach(mapper);
     }
 }

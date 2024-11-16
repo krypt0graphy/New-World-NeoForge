@@ -1,10 +1,8 @@
 package com.kryptography.newworld.common.worldgen;
 
 import com.kryptography.newworld.init.worldgen.features.NWPlacedFeatures;
-import com.kryptography.newworld.init.worldgen.structure.NWProcessorsList;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.Music;
@@ -27,10 +25,7 @@ public class NWOverworldBiomeCreator {
         f = Mth.clamp(f, -1.0F, 1.0F);
         return Mth.hsvToRgb(0.62222224F - f * 0.05F, 0.5F + f * 0.1F, 1.0F);
     }
-    private static Biome biome(boolean hasPrecipitation, float temperature, float downfall, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
-    {
-        return biome(hasPrecipitation, temperature, downfall, 4159204, spawnBuilder, biomeBuilder, music);
-    }
+
     private static Biome biome(boolean hasPrecipitation, float temperature, float downfall, int waterColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
     {
         return (new Biome.BiomeBuilder()).hasPrecipitation(hasPrecipitation).temperature(temperature).downfall(downfall).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(329011).fogColor(12638463).skyColor(getSkyColor(temperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();

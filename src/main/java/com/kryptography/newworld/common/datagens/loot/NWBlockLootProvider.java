@@ -1,4 +1,4 @@
-package com.kryptography.newworld.init.data.loot;
+package com.kryptography.newworld.common.datagens.loot;
 
 import com.kryptography.newworld.init.NWBlocks;
 import net.minecraft.core.Holder;
@@ -9,10 +9,10 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.Set;
 
-public class NWBlockLootTables extends BlockLootSubProvider {
+public class NWBlockLootProvider extends BlockLootSubProvider {
 
 
-    public NWBlockLootTables(HolderLookup.Provider provider) {
+    public NWBlockLootProvider(HolderLookup.Provider provider) {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), provider);
     }
 

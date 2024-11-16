@@ -1,4 +1,4 @@
-package com.kryptography.newworld.init.data.loot;
+package com.kryptography.newworld.common.datagens.loot;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.NWItems;
@@ -14,8 +14,8 @@ import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 
 import java.util.concurrent.CompletableFuture;
 
-public class NWGlobalLootModifiers extends GlobalLootModifierProvider {
-    public NWGlobalLootModifiers(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+public class NWGlobalLootModifierProvider extends GlobalLootModifierProvider {
+    public NWGlobalLootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, NewWorld.MOD_ID);
     }
 

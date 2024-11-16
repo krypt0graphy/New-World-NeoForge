@@ -1,6 +1,7 @@
-package com.kryptography.newworld.init.data.tags;
+package com.kryptography.newworld.common.datagens.tags;
 
 import com.kryptography.newworld.NewWorld;
+import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;

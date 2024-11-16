@@ -1,4 +1,4 @@
-package com.kryptography.newworld.init.data;
+package com.kryptography.newworld.common.datagens;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.NWBlocks;
@@ -11,8 +11,8 @@ import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
-public class NWBlockStates extends BlockStateProvider {
-    public NWBlockStates(PackOutput output, ExistingFileHelper exFileHelper) {
+public class NWBlockStateProvider extends BlockStateProvider {
+    public NWBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, NewWorld.MOD_ID, exFileHelper);
     }
 

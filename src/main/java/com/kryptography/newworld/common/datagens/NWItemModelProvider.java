@@ -1,4 +1,4 @@
-package com.kryptography.newworld.init.data;
+package com.kryptography.newworld.common.datagens;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.NWBlocks;
@@ -16,8 +16,8 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.Locale;
 
-public class NWItemModels extends ItemModelProvider {
-    public NWItemModels(PackOutput output, ExistingFileHelper existingFileHelper) {
+public class NWItemModelProvider extends ItemModelProvider {
+    public NWItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, NewWorld.MOD_ID, existingFileHelper);
     }
 

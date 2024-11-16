@@ -3,13 +3,12 @@ package com.kryptography.newworld.init;
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.blocks.*;
 import com.kryptography.newworld.common.worldgen.tree.FirTreeGrower;
-import com.kryptography.newworld.init.data.woodset.Woodset;
+import com.kryptography.newworld.init.data.woodset.FirBlockSet;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -38,25 +37,25 @@ public class NWBlocks {
     public static final DeferredBlock<StairBlock> FIR_STAIRS = register("fir_stairs", () -> new StairBlock(FIR_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get())));
     public static final DeferredBlock<SlabBlock> FIR_SLAB = register("fir_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get())));
 
-    public static final DeferredBlock<DoorBlock> FIR_DOOR =  registerDoubleBlockItem("fir_door", () -> new DoorBlock(Woodset.FIR_SET, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).sound(SoundType.WOOD).noOcclusion()));
-    public static final DeferredBlock<TrapDoorBlock> FIR_TRAPDOOR = register("fir_trapdoor", () -> new TrapDoorBlock(Woodset.FIR_SET, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).noOcclusion()));
+    public static final DeferredBlock<DoorBlock> FIR_DOOR =  registerDoubleBlockItem("fir_door", () -> new DoorBlock(FirBlockSet.FIR_SET, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).sound(SoundType.WOOD).noOcclusion()));
+    public static final DeferredBlock<TrapDoorBlock> FIR_TRAPDOOR = register("fir_trapdoor", () -> new TrapDoorBlock(FirBlockSet.FIR_SET, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).noOcclusion()));
 
     public static final DeferredBlock<ButtonBlock> FIR_BUTTON = register("fir_button", () -> new ButtonBlock(BlockSetType.OAK, 30, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).noCollission().strength(0.5F)));
-    public static final DeferredBlock<PressurePlateBlock> FIR_PRESSURE_PLATE = register("fir_pressure_plate", () -> new PressurePlateBlock(Woodset.FIR_SET, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).forceSolidOn().noCollission().strength(0.5F)));
+    public static final DeferredBlock<PressurePlateBlock> FIR_PRESSURE_PLATE = register("fir_pressure_plate", () -> new PressurePlateBlock(FirBlockSet.FIR_SET, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).forceSolidOn().noCollission().strength(0.5F)));
 
     public static final DeferredBlock<FenceBlock> FIR_FENCE = register("fir_fence", () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get())));
-    public static final DeferredBlock<FenceGateBlock> FIR_FENCE_GATE = register("fir_fence_gate", () -> new FenceGateBlock(Woodset.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).forceSolidOn()));
+    public static final DeferredBlock<FenceGateBlock> FIR_FENCE_GATE = register("fir_fence_gate", () -> new FenceGateBlock(FirBlockSet.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).forceSolidOn()));
 
     public static final DeferredBlock<LeavesBlock> FIR_LEAVES = register("fir_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().noOcclusion().sound(SoundType.AZALEA_LEAVES).isSuffocating((state, getter, pos) -> false).isViewBlocking((state, getter, pos) -> false).isRedstoneConductor((state, level, pos) -> false)));
 
     public static final DeferredBlock<SaplingBlock> FIR_SAPLING = register("fir_sapling", () -> new SaplingBlock(FirTreeGrower.FIR, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).instabreak().sound(SoundType.GRASS).noCollission().randomTicks()));;
     public static final DeferredBlock<FlowerPotBlock> POTTED_FIR_SAPLING = BLOCKS.register("potted_fir_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FIR_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
 
-    public static final DeferredBlock<StandingSignBlock> FIR_SIGN = BLOCKS.register("fir_sign", () -> new FirStandingSignBlock(Woodset.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).noOcclusion().noCollission()));
-    public static final DeferredBlock<WallSignBlock> FIR_WALL_SIGN = BLOCKS.register("fir_wall_sign", () -> new FirWallSignBlock(Woodset.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).noOcclusion().noCollission()));
+    public static final DeferredBlock<StandingSignBlock> FIR_SIGN = BLOCKS.register("fir_sign", () -> new FirStandingSignBlock(FirBlockSet.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).noOcclusion().noCollission()));
+    public static final DeferredBlock<WallSignBlock> FIR_WALL_SIGN = BLOCKS.register("fir_wall_sign", () -> new FirWallSignBlock(FirBlockSet.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).noOcclusion().noCollission()));
 
-    public static final DeferredBlock<CeilingHangingSignBlock> FIR_HANGING_SIGN = BLOCKS.register("fir_hanging_sign", () -> new FirCeilingHangingSignBlock(Woodset.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).noCollission().strength(1.0F)));
-    public static final DeferredBlock<WallHangingSignBlock> FIR_WALL_HANGING_SIGN = BLOCKS.register("fir_wall_hanging_sign", () -> new FirWallHangingSignBlock(Woodset.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).noCollission().strength(1.0F)));
+    public static final DeferredBlock<CeilingHangingSignBlock> FIR_HANGING_SIGN = BLOCKS.register("fir_hanging_sign", () -> new FirCeilingHangingSignBlock(FirBlockSet.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).noCollission().strength(1.0F)));
+    public static final DeferredBlock<WallHangingSignBlock> FIR_WALL_HANGING_SIGN = BLOCKS.register("fir_wall_hanging_sign", () -> new FirWallHangingSignBlock(FirBlockSet.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).noCollission().strength(1.0F)));
 
     public static final DeferredBlock<Block> LOAM = register("loam", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).strength(1.2F, 3f).sound(SoundType.PACKED_MUD)));
     public static final DeferredBlock<StairBlock> LOAM_STAIRS = register("loam_stairs", () -> new StairBlock(LOAM.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(LOAM.get())));
