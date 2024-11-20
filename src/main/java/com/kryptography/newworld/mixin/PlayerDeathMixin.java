@@ -35,8 +35,8 @@ public abstract class PlayerDeathMixin {
     private void method(CallbackInfo ci) {
         Level level = player.level();
         BlockPos pos = getValidPos(level, player.getOnPos());
-        player.awardStat(Stats.ANIMALS_BRED, 1);
         if (pos != null && hasTombstone()) {
+
         if (!(level.getBlockState(pos).getBlock() instanceof TombstoneBlock)) {
             level.playSound(player, pos, level.getBlockState(pos).getSoundType(level, pos, player).getBreakSound(), SoundSource.BLOCKS);
             level.setBlockAndUpdate(pos, NWBlocks.TOMBSTONE.get().defaultBlockState().setValue(BlockStateProperties.CRACKED, true));

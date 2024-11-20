@@ -4,9 +4,11 @@ import com.kryptography.newworld.common.blocks.entity.TombstoneBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.client.renderer.block.model.BlockElementFace;
 import net.minecraft.client.renderer.block.model.BlockFaceUV;
+import net.minecraft.commands.Commands;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
+import net.minecraft.server.commands.KillCommand;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
@@ -42,71 +44,6 @@ public class TombstoneBlock extends BaseEntityBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final BooleanProperty CRACKED = BlockStateProperties.CRACKED;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-//
-//
-//
-//    public static final VoxelShape DOWN = Block.box(0, 0, 0, 16, 9, 16);
-//    public static final VoxelShape UP = Block.box(0, 7, 0, 16, 16, 16);
-//    public static final VoxelShape SOUTH = Block.box(0, 0, 0, 16, 16, 9);
-//    public static final VoxelShape NORTH = Block.box(0, 0, 7, 16, 16, 16);
-//    public static final VoxelShape EAST = Block.box(0, 0, 0, 9, 16, 16);
-//    public static final VoxelShape WEST = Block.box(7, 0, 0, 16, 16, 16);
-//
-//    public static final MapCodec<TombstoneBlock> CODEC = simpleCodec(TombstoneBlock::new);
-//
-//    public TombstoneBlock(Properties p_49795_) {
-//        super(p_49795_);
-//        registerDefaultState(defaultBlockState().setValue(WATERLOGGED, false));
-//    }
-//
-//    @Override
-//    protected MapCodec<? extends BaseEntityBlock> codec() {
-//        return null;
-//    }
-//
-//
-//    @Override
-//    protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-//        return UP;
-//    }
-//
-//    @Override
-//    protected RenderShape getRenderShape(BlockState pState) {
-//        return RenderShape.MODEL;
-//    }
-//
-//    @Override
-//    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-//        pBuilder.add(WATERLOGGED, CRACKED);
-//    }
-//
-//    @Override
-//    public @Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-//        return new TombstoneBlockEntity(pPos, pState);
-//    }
-//
-//    @Override
-//    protected void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
-//        if (pState.getBlock() != pNewState.getBlock()) {
-//            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-//            if (blockEntity instanceof TombstoneBlockEntity) {
-//                Containers.dropContentsOnDestroy(pState, pNewState, pLevel, pPos);
-//            }
-//        }
-//        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
-//    }
-//
-//    @Override
-//    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
-//        if (pLevel.isClientSide) {
-//            return InteractionResult.SUCCESS;
-//        } else {
-//            BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-//            if (blockentity instanceof TombstoneBlockEntity) {
-//                pPlayer.openMenu((TombstoneBlockEntity)blockentity);
-//            }
-//            return InteractionResult.CONSUME;
-//        }    }
 
     public static final MapCodec<TombstoneBlock> CODEC = simpleCodec(TombstoneBlock::new);
 
@@ -161,4 +98,6 @@ public class TombstoneBlock extends BaseEntityBlock {
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         return this.defaultBlockState().setValue(FACING, pContext.getNearestLookingDirection().getOpposite());
     }
+
 }
+
