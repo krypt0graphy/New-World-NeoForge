@@ -1,4 +1,4 @@
-// 1.21	2024-10-24T09:16:51.2439469	Loot Tables
+// 1.21	2024-11-16T22:47:34.9988291	Loot Tables
 902e49f60e8c917a98593020c9c0eb4a21746449 data/newworld/loot_table/blocks/fir_button.json
 6fc4c470bef6c870769091823c9996680d6fbede data/newworld/loot_table/blocks/fir_door.json
 4befee6ebf4b0053f4b50d045c4c90c03563f66b data/newworld/loot_table/blocks/fir_fence.json
@@ -32,3 +32,5 @@ b089f2867e2048772283ff83a9e19b0c53e58aee data/newworld/loot_table/blocks/loam_ti
 9ee5846d01b1162a99315f64eea1cbbdbe85eec9 data/newworld/loot_table/blocks/potted_pointed_dripstone.json
 2b4dfa4a6929ea3b84a0519e6642d166bacc57d7 data/newworld/loot_table/blocks/stripped_fir_log.json
 b24d7d0de3e4f1928625b13996fd0552630a9327 data/newworld/loot_table/blocks/stripped_fir_wood.json
+e84fa4d69621a8688874ce06eea14618dfd20efb data/newworld/loot_table/chests/bunker_barrel.json
+9f85528ded59cb0cc8f62640a6fdd846a866e865 data/newworld/loot_table/chests/bunker_cache.json

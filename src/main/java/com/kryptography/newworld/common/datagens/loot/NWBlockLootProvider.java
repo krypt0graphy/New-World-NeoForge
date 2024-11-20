@@ -55,7 +55,7 @@ public class NWBlockLootProvider extends BlockLootSubProvider {
 
         this.dropPottedContents(NWBlocks.POTTED_POINTED_DRIPSTONE.get());
 
-
+        this.dropSelf(NWBlocks.TOMBSTONE.get());
     }
     protected Iterable<Block> getKnownBlocks() {
         return NWBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;

@@ -6,6 +6,7 @@ import com.kryptography.newworld.common.datagens.NWDataMapProvider;
 import com.kryptography.newworld.common.datagens.NWItemModelProvider;
 import com.kryptography.newworld.common.datagens.NWRecipeProvider;
 import com.kryptography.newworld.common.datagens.loot.NWBlockLootProvider;
+import com.kryptography.newworld.common.datagens.loot.NWChestLootProvider;
 import com.kryptography.newworld.common.datagens.loot.NWGlobalLootModifierProvider;
 import com.kryptography.newworld.common.datagens.tags.NWBiomeTagsProvider;
 import com.kryptography.newworld.common.datagens.tags.NWBlockTagsProvider;
@@ -53,7 +54,7 @@ public class NWData {
         gen.addProvider(event.includeServer(), blockTagsProvider);
         gen.addProvider(event.includeClient(), new NWItemTagsProvider(packOutput, lookup, blockTagsProvider.contentsGetter(), existingFileHelper));
         gen.addProvider(event.includeClient(), new NWItemModelProvider(packOutput, existingFileHelper));
-        gen.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(NWBlockLootProvider::new, LootContextParamSets.BLOCK)), lookup));
+        gen.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(NWBlockLootProvider::new, LootContextParamSets.BLOCK), new LootTableProvider.SubProviderEntry(NWChestLootProvider::new, LootContextParamSets.CHEST)), lookup));
         gen.addProvider(event.includeClient(), new NWBlockStateProvider(packOutput, existingFileHelper));
         gen.addProvider(event.includeServer(), new NWDataMapProvider(packOutput, lookup));
         gen.addProvider(event.includeServer(), new NWRecipeProvider(packOutput, lookup));

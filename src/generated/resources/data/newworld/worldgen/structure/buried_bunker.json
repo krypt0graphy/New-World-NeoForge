@@ -1,0 +1,6 @@
+{
+  "type": "newworld:buried_bunker",
+  "biomes": "#newworld:has_structure/buried_bunker",
+  "spawn_overrides": {},
+  "step": "underground_structures"
+}

@@ -10,6 +10,7 @@ import com.kryptography.newworld.common.datagens.NWDataMapProvider;
 import com.kryptography.newworld.init.data.loot.NWLootModifiers;
 import com.kryptography.newworld.init.data.woodset.FirBlockSet;
 import com.kryptography.newworld.init.worldgen.NWOverworldRegion;
+import com.kryptography.newworld.init.worldgen.structure.NWStructureTypes;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
@@ -38,7 +39,7 @@ public class NewWorld {
         NWEntityTypes.ENTITIES.register(bus);
         NWLootModifiers.LOOT_MODIFIERS.register(bus);
         NWFeature.FEATURES.register(bus);
-        //NWStructures.STRUCTURES.register(bus);
+        NWStructureTypes.STRUCTURE_TYPES.register(bus);
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::addCreative);

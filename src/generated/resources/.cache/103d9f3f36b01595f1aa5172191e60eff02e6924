@@ -1,4 +1,4 @@
-// 1.21	2024-11-16T17:00:44.6445371	Registries
+// 1.21	2024-11-16T21:54:28.2055544	Registries
 60bda0285a2295308806de0151fbd403787a6131 data/newworld/neoforge/biome_modifier/birch_cherry_grove.json
 93c4dbd4daa1b56a7fe424562f8cf53c2cc0d7cf data/newworld/neoforge/biome_modifier/fir_meadow.json
 9226cf47feef6406ed0b30117acc299ba2773965 data/newworld/neoforge/biome_modifier/fir_taiga.json
@@ -41,3 +41,7 @@ b8370ae3513b74e2c8dacd09a0badce1dbfef0cd data/newworld/worldgen/placed_feature/l
 09a1ee6f8602c75168cd37145de5458e492114ae data/newworld/worldgen/placed_feature/trees_fir.json
 62e53dd9be0a949d32753b5931aad0420be0d3c2 data/newworld/worldgen/placed_feature/trees_fir_meadow.json
 54ce55f7a55ab46116661f4aaca31f262ca96515 data/newworld/worldgen/placed_feature/trees_fir_scarce.json
+9c525782be2d669435dba2de4c5895919157fb13 data/newworld/worldgen/processor_list/buried_bunker.json
+4fff79cdd3fa2ac8b229164495744b3cbb50472f data/newworld/worldgen/structure/buried_bunker.json
+6e280d850393b40c1ca9d72d6e8bb280cd3bb8fe data/newworld/worldgen/structure_set/buried_bunker.json
+ed8e55c62af8d8d4b14acf236604f1c62ec2b82e data/newworld/worldgen/template_pool/buried_bunker.json

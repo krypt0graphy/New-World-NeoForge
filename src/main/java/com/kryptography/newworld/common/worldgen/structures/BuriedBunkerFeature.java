@@ -1,6 +1,7 @@
 package com.kryptography.newworld.common.worldgen.structures;
 
 import com.kryptography.newworld.init.worldgen.structure.NWStructurePools;
+import com.kryptography.newworld.init.worldgen.structure.NWStructureTypes;
 import com.kryptography.newworld.init.worldgen.structure.NWStructures;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -23,7 +24,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSetting
 import java.util.Optional;
 
 public class BuriedBunkerFeature extends Structure {
-    protected BuriedBunkerFeature(StructureSettings codec) {
+    public BuriedBunkerFeature(StructureSettings codec) {
         super(codec);
     }
 
@@ -75,7 +76,7 @@ public class BuriedBunkerFeature extends Structure {
 
     @Override
     public StructureType<?> type() {
-        return NWStructures.BURIED_BUNKER.get();
+        return NWStructureTypes.BURIED_BUNKER.get();
     }
 
 
