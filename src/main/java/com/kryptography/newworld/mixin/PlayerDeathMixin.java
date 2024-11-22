@@ -6,6 +6,7 @@ import com.kryptography.newworld.common.blocks.entity.TombstoneBlockEntity;
 import com.kryptography.newworld.init.NWBlockEntityTypes;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
+import com.kryptography.newworld.init.data.NWStats;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
@@ -54,26 +55,34 @@ public abstract class PlayerDeathMixin {
         }
 
             level.getBlockEntity(pos, NWBlockEntityTypes.TOMBSTONE.get()).ifPresent(tombstone -> {
-                player.awardStat(Stats.ITEM_USED.get(NWBlocks.TOMBSTONE.asItem()), 1);
+                player.awardStat(NWStats.TOMBSTONE_ACTIVATION.get(), 1);
 
                 boolean decrementedTombstone = false;
                 player.captureDrops(new ArrayList<>());
 
 
                 for (NonNullList<ItemStack> itemStacks : compartments) {
+                    boolean removeTombstone = false;
 
                     for (int i = 0; i < itemStacks.size(); ++i) {
                         ItemStack itemStack = itemStacks.get(i);
                         if (!itemStack.isEmpty()) {
                             if (itemStack.is(NWBlocks.TOMBSTONE.asItem()) && !decrementedTombstone) {
-                                itemStack.shrink(1);
+                                if (itemStack.getCount() == 1) {
+                                    itemStacks.set(i, ItemStack.EMPTY);
+                                    removeTombstone = true;
+                                } else {
+                                    itemStack.shrink(1);
+                                }
                                 decrementedTombstone = true;
                             }
 
-                            if (level instanceof ServerLevel) {
+                            if (level instanceof ServerLevel && !removeTombstone) {
                                 placeOrDropStack(level, tombstone, itemStack);
                             }
-                            itemStacks.set(i, ItemStack.EMPTY);
+                            if (!itemStack.isEmpty()) {
+                                itemStacks.set(i, ItemStack.EMPTY);
+                            }
                         }
                     }
                 }

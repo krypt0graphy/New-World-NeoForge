@@ -49,6 +49,6 @@
   "item.newworld.smithing_template.mattock_crafting.applies_to": "Stick",
   "item.newworld.smithing_template.mattock_crafting.base_slot_description": "Add Stick",
   "item.newworld.smithing_template.mattock_crafting.ingredients": "Flint",
-  "newworld.tombstone_activation": "Tombstones Activated",
+  "stat.newworld.tombstone_activation": "Tombstones Activated",
   "upgrade.newworld.mattock_crafting": "Mattock Crafting"
 }
