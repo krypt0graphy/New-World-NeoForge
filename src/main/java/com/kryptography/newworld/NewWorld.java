@@ -100,6 +100,7 @@ public class NewWorld {
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_SIGN);
             addAfter(event, NWBlocks.FIR_SIGN, NWBlocks.FIR_HANGING_SIGN);
+            event.accept(NWBlocks.TOMBSTONE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {

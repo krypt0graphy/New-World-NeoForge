@@ -5,17 +5,24 @@ import com.kryptography.newworld.common.blocks.TombstoneBlock;
 import com.kryptography.newworld.common.blocks.entity.TombstoneBlockEntity;
 import com.kryptography.newworld.init.NWBlockEntityTypes;
 import com.kryptography.newworld.init.NWBlocks;
+import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,8 +30,13 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Mixin(Inventory.class)
 public abstract class PlayerDeathMixin {
@@ -34,38 +46,39 @@ public abstract class PlayerDeathMixin {
     @Inject(method = "dropAll", at = @At("HEAD"))
     private void method(CallbackInfo ci) {
         Level level = player.level();
-        BlockPos pos = getValidPos(level, player.getOnPos());
+        BlockPos pos = getValidPos(level, player.blockPosition());
         if (pos != null && hasTombstone()) {
-
         if (!(level.getBlockState(pos).getBlock() instanceof TombstoneBlock)) {
             level.playSound(player, pos, level.getBlockState(pos).getSoundType(level, pos, player).getBreakSound(), SoundSource.BLOCKS);
             level.setBlockAndUpdate(pos, NWBlocks.TOMBSTONE.get().defaultBlockState().setValue(BlockStateProperties.CRACKED, true));
         }
 
             level.getBlockEntity(pos, NWBlockEntityTypes.TOMBSTONE.get()).ifPresent(tombstone -> {
-                player.awardStat(Stats.ANIMALS_BRED, 1);
+                player.awardStat(Stats.ITEM_USED.get(NWBlocks.TOMBSTONE.asItem()), 1);
 
                 boolean decrementedTombstone = false;
+                player.captureDrops(new ArrayList<>());
+
 
                 for (NonNullList<ItemStack> itemStacks : compartments) {
+
                     for (int i = 0; i < itemStacks.size(); ++i) {
                         ItemStack itemStack = itemStacks.get(i);
-                        if (itemStack.is(NWBlocks.TOMBSTONE.asItem()) && !decrementedTombstone) {
-                            itemStack.shrink(1);
-                            decrementedTombstone = true;
-                        }
+                        if (!itemStack.isEmpty()) {
+                            if (itemStack.is(NWBlocks.TOMBSTONE.asItem()) && !decrementedTombstone) {
+                                itemStack.shrink(1);
+                                decrementedTombstone = true;
+                            }
 
-                        if (level instanceof ServerLevel) {
-                            placeOrDropStack(level, tombstone, itemStack);
+                            if (level instanceof ServerLevel) {
+                                placeOrDropStack(level, tombstone, itemStack);
+                            }
+                            itemStacks.set(i, ItemStack.EMPTY);
                         }
-                        itemStacks.set(i, ItemStack.EMPTY);
                     }
                 }
-
-
             });
         }
-
     }
 
     @Unique
@@ -94,6 +107,7 @@ public abstract class PlayerDeathMixin {
         }
         else {
             this.player.drop(currentStack, false);
+
         }
     }
 

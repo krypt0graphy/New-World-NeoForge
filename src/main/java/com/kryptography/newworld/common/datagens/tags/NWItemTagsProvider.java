@@ -52,5 +52,6 @@ public class NWItemTagsProvider extends ItemTagsProvider {
 
         this.tag(ItemTags.HANGING_SIGNS).add(NWBlocks.FIR_HANGING_SIGN.get().asItem());
         this.tag(NWItemTags.MATTOCK_PIECES).add(NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD.get(), NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get());
+        this.tag(NWItemTags.TOMBSTONE_MATERIALS).add(NWItems.ILLAGER_TOME.get(), NWBlocks.TOMBSTONE.get().asItem());
     }
 }

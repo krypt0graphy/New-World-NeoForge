@@ -44,6 +44,18 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has:loam", has(NWBlocks.LOAM))
                 .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, NWBlocks.TOMBSTONE)
+                .pattern("SDS")
+                .pattern("SAS")
+                .pattern("STS")
+                .define('S', Items.POLISHED_DEEPSLATE)
+                .define('D', Items.DIAMOND)
+                .define('A', NWItems.ILLAGER_TOME)
+                .define('T', NWBlocks.TOMBSTONE)
+                .unlockedBy("has_tombstone_or_illager_tome", has(NWItemTags.TOMBSTONE_MATERIALS))
+                .showNotification(true)
+                .save(pRecipeOutput);
+
         planksFromLog(pRecipeOutput, NWBlocks.FIR_PLANKS, NWItemTags.FIR_LOGS, 4);
         stairBuilder(NWBlocks.FIR_STAIRS, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(pRecipeOutput);
         slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.FIR_SLAB, NWBlocks.FIR_PLANKS);

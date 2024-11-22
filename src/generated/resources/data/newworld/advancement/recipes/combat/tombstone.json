@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "newworld:tombstone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tombstone_or_illager_tome": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#newworld:tombstone_materials"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tombstone_or_illager_tome"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "newworld:tombstone"
+    ]
+  }
+}

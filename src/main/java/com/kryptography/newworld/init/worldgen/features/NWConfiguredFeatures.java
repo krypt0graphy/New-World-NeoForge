@@ -57,6 +57,7 @@ public class NWConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FIR_TAIGA = registerKey("fir_taiga");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> FALLEN_FIR_LOG = registerKey("fallen_fir_log");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BURIAL_SITE = registerKey("burial_site");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> GLOW_LICHEN_WOODED_MEADOW = registerKey("glow_lichen_wooded_meadow");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BERRY_WOODED_MEADOW = registerKey("patch_berry_wooded_meadow");
@@ -88,6 +89,8 @@ public class NWConfiguredFeatures {
         register(bootstrap, NATURAL_FIR_BEES_002, Feature.TREE, grownFir().decorators(List.of(BEES_002, new AlterGroundDecorator(BlockStateProvider.simple(Blocks.PODZOL)))).build());
 
         register(bootstrap, FALLEN_FIR_LOG, NWFeature.FALLEN_FIR_LOG.get(), FeatureConfiguration.NONE);
+
+        register(bootstrap, BURIAL_SITE, NWFeature.BURIAL_SITE.get(), FeatureConfiguration.NONE);
 
         register(bootstrap, FIR_SPAWN, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placedFeatures.getOrThrow(NWPlacedFeatures.NATURAL_FIR_BEES_CHECKED), 0.06F), new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 0.1f)), placedFeatures.getOrThrow(NWPlacedFeatures.NATURAL_FIR_CHECKED)));
         register(bootstrap, FIR_MEADOW, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placedFeatures.getOrThrow(NWPlacedFeatures.FIR_BEES_CHECKED), 1.0F)), placedFeatures.getOrThrow(NWPlacedFeatures.FIR_CHECKED) ));

@@ -1,4 +1,4 @@
-// 1.21	2024-10-29T11:09:20.7364874	Tags for minecraft:item mod id newworld
+// 1.21	2024-11-22T00:06:21.1996768	Tags for minecraft:item mod id newworld
 252b718ef38f950caa76826167ee6cbcfd13f46f data/minecraft/tags/item/boats.json
 5c67cddfa694ae8c88954da173bca77aa59da04f data/minecraft/tags/item/bookshelf_books.json
 8144d336a9c77bcc2d41704410d5d1f3a2f6bd06 data/minecraft/tags/item/chest_boats.json
@@ -21,3 +21,4 @@ dd771db6ce6e3eee74d99c9a66b103ad3280bcdc data/minecraft/tags/item/wooden_pressur
 4333e5b0d3c082c5e91baec1955d1a9d418dc318 data/newworld/tags/item/ancient_tool_materials.json
 bc5d3c67cb09c847de8823ce9d94cdcd87e304ab data/newworld/tags/item/fir_logs.json
 21d53da183265dd269ec63bbabca688b5cde7ba9 data/newworld/tags/item/mattock_piece.json
+be083da45c8489ec47b75417ccc4d9bda42471e8 data/newworld/tags/item/tombstone_materials.json

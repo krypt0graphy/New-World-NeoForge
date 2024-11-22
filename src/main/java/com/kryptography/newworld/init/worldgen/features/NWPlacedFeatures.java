@@ -39,6 +39,7 @@ public class NWPlacedFeatures {
     public static final ResourceKey<PlacedFeature> TREES_FIR_MEADOW = registerKey("trees_fir_meadow");
 
     public static final ResourceKey<PlacedFeature> FALLEN_FIR_LOG = registerKey("fallen_fir_log");
+    public static final ResourceKey<PlacedFeature> BURIAL_SITE = registerKey("burial_site");
 
     public static final ResourceKey<PlacedFeature> LOAM_PATCH_CEILING = registerKey("loam_patch_ceiling");
     public static final ResourceKey<PlacedFeature> LOAM_ORE = registerKey("loam_ore");
@@ -65,6 +66,7 @@ public class NWPlacedFeatures {
         register(bootstrap, TREES_FIR_SCARCE, configuredFeatures.getOrThrow(NWConfiguredFeatures.FIR_TAIGA), VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(1)));
         register(bootstrap, TREES_FIR_MEADOW, configuredFeatures.getOrThrow(NWConfiguredFeatures.FIR_MEADOW), VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(40)));
         register(bootstrap, FALLEN_FIR_LOG, configuredFeatures.getOrThrow(NWConfiguredFeatures.FALLEN_FIR_LOG), List.of(RarityFilter.onAverageOnceEvery(7), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+        register(bootstrap, BURIAL_SITE, configuredFeatures.getOrThrow(NWConfiguredFeatures.BURIAL_SITE), List.of());
         register(bootstrap, PATCH_BERRY_WOODED_MEADOW, configuredFeatures.getOrThrow(NWConfiguredFeatures.PATCH_BERRY_WOODED_MEADOW), List.of(RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
         register(bootstrap, GLOW_LICHEN_WOODED_MEADOW, configuredFeatures.getOrThrow(NWConfiguredFeatures.GLOW_LICHEN_WOODED_MEADOW), List.of(CountPlacement.of(UniformInt.of(104, 157)), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, RarityFilter.onAverageOnceEvery(2), SurfaceRelativeThresholdFilter.of(Heightmap.Types.OCEAN_FLOOR_WG, 30, 300), BiomeFilter.biome()));
         register(bootstrap, PATCH_FERN_WOODED_MEADOW, configuredFeatures.getOrThrow(VegetationFeatures.PATCH_TAIGA_GRASS), List.of(CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
