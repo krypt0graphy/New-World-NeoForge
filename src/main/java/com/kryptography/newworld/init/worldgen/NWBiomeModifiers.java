@@ -1,10 +1,8 @@
 package com.kryptography.newworld.init.worldgen;
 
 import com.kryptography.newworld.NewWorld;
-import com.kryptography.newworld.init.worldgen.features.NWConfiguredFeatures;
 import com.kryptography.newworld.init.worldgen.features.NWPlacedFeatures;
 import net.minecraft.core.HolderSet;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
@@ -14,7 +12,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.neoforged.neoforge.common.world.BiomeModifier;
-import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.common.world.BiomeModifiers.AddFeaturesBiomeModifier;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 

@@ -20,7 +20,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
-import javax.print.DocFlavor;
 
 public class TombstoneBlock extends BaseEntityBlock {
 

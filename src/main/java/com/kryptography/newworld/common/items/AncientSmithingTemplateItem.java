@@ -4,15 +4,10 @@ import com.kryptography.newworld.NewWorld;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.ComponentContents;
-import net.minecraft.network.chat.ComponentUtils;
-import net.minecraft.network.chat.contents.PlainTextContents;
-import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.item.SmithingTemplateItem;
 
-import java.awt.*;
+
 import java.util.List;
 
 public class AncientSmithingTemplateItem extends SmithingTemplateItem {

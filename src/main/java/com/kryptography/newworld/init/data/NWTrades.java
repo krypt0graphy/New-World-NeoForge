@@ -2,7 +2,6 @@ package com.kryptography.newworld.init.data;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.NWBlocks;
-import com.kryptography.newworld.init.data.tags.NWItemTags;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;

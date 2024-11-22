@@ -19,73 +19,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BarrelBlock;
-import net.minecraft.world.level.block.ChestBlock;
+
 import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.ChestType;
-import net.neoforged.neoforge.client.event.ContainerScreenEvent;
 
 public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
-
-//    private NonNullList<ItemStack> itemStacks = NonNullList.withSize(45, ItemStack.EMPTY);
-//
-//    public TombstoneBlockEntity(BlockPos pPos, BlockState pBlockState) {
-//        super(NWEntityTypes.TOMBSTONE.get(), pPos, pBlockState);
-//    }
-//
-//    @Override
-//    public int getContainerSize() {
-//        return 45;
-//    }
-//
-//    @Override
-//    protected Component getDefaultName() {
-//        return Component.translatable("container.tombstone");
-//    }
-//
-//    @Override
-//    protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-//        super.saveAdditional(pTag, pRegistries);
-//        if (!this.trySaveLootTable(pTag)) {
-//            ContainerHelper.saveAllItems(pTag, this.itemStacks, pRegistries);
-//        }
-//    }
-//
-//    @Override
-//    protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-//        super.loadAdditional(pTag, pRegistries);
-//        this.itemStacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-//        if (!this.tryLoadLootTable(pTag)) {
-//            ContainerHelper.loadAllItems(pTag, this.itemStacks, pRegistries);
-//        }}
-//
-//    @Override
-//    protected NonNullList<ItemStack> getItems() {
-//        return this.itemStacks;
-//    }
-//
-//    @Override
-//    protected void setItems(NonNullList<ItemStack> pItems) {
-//        this.itemStacks = pItems;
-//    }
-//
-//    @Override
-//    protected AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory) {
-//        return ChestMenu.fiveRows(pContainerId, pInventory);
-//    }
-//
-//
-//
-//
-//    static void playSound(Level pLevel, BlockPos pPos, BlockState pState, SoundEvent pSound) {
-//            double d0 = (double)pPos.getX() + 0.5;
-//            double d1 = (double)pPos.getY() + 0.5;
-//            double d2 = (double)pPos.getZ() + 0.5;
-//
-//            pLevel.playSound(null, d0, d1, d2, pSound, SoundSource.BLOCKS, 0.5F, pLevel.random.nextFloat() * 0.1F + 0.9F);
-//    }
 
     private NonNullList<ItemStack> items = NonNullList.withSize(45, ItemStack.EMPTY);
 

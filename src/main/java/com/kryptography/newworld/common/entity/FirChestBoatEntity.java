@@ -1,22 +1,16 @@
 package com.kryptography.newworld.common.entity;
 
-import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWEntityTypes;
 import com.kryptography.newworld.init.NWItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.util.ByIdMap;
-import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-
-import java.util.function.IntFunction;
 
 public class FirChestBoatEntity extends ChestBoat {
     public static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(FirChestBoatEntity.class, EntityDataSerializers.INT);

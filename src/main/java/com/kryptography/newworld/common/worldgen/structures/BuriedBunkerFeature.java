@@ -2,7 +2,6 @@ package com.kryptography.newworld.common.worldgen.structures;
 
 import com.kryptography.newworld.init.worldgen.structure.NWStructurePools;
 import com.kryptography.newworld.init.worldgen.structure.NWStructureTypes;
-import com.kryptography.newworld.init.worldgen.structure.NWStructures;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;

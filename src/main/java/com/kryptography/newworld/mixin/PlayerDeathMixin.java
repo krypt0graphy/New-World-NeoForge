@@ -5,25 +5,17 @@ import com.kryptography.newworld.common.blocks.TombstoneBlock;
 import com.kryptography.newworld.common.blocks.entity.TombstoneBlockEntity;
 import com.kryptography.newworld.init.NWBlockEntityTypes;
 import com.kryptography.newworld.init.NWBlocks;
-import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.data.NWStats;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
-import org.checkerframework.checker.nullness.qual.NonNull;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -31,13 +23,9 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 @Mixin(Inventory.class)
 public abstract class PlayerDeathMixin {
