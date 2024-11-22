@@ -66,7 +66,7 @@ configurations {
 dependencies {
 
     implementation "net.neoforged:neoforge:${neo_version}"
-    implementation 'com.github.glitchfiend:TerraBlender-neoforge:1.21.1-4.1.0.3'
+    implementation "com.github.glitchfiend:TerraBlender-neoforge:${terrablender_version}"
 
 }
 
@@ -82,6 +82,7 @@ tasks.withType(ProcessResources).configureEach {
             minecraft_version      : minecraft_version,
             minecraft_version_range: minecraft_version_range,
             neo_version            : neo_version,
+            terrablender_version   : terrablender_version,
             neo_version_range      : neo_version_range,
             loader_version_range   : loader_version_range,
             mod_id                 : mod_id,
