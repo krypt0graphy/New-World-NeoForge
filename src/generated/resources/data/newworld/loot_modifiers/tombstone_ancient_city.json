@@ -1,0 +1,12 @@
+{
+  "type": "newworld:add_to_pool",
+  "chance_to_replace": 0.082,
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/ancient_city"
+    }
+  ],
+  "item": "newworld:tombstone",
+  "replace": false
+}

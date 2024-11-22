@@ -1,9 +1,10 @@
 package com.kryptography.newworld.common.datagens.loot;
 
 import com.kryptography.newworld.NewWorld;
+import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.data.loot.modifiers.AddItemModifier;
-import com.kryptography.newworld.init.data.loot.modifiers.ArchaeologyLootModifier;
+import com.kryptography.newworld.init.data.loot.modifiers.AddToPoolModifier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
@@ -35,17 +36,20 @@ public class NWGlobalLootModifierProvider extends GlobalLootModifierProvider {
         }, NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get(), 1));
 
         this.add("mattock_crafting_template_shaft_trail_ruins_rare",
-                new ArchaeologyLootModifier(new LootItemCondition[]{
+                new AddToPoolModifier(new LootItemCondition[]{
                         LootTableIdCondition.builder(BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_RARE.location()).build()
-                }, NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get(), 0.077F));
+                }, NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get(), 0.077F, true));
         this.add("mattock_crafting_template_shaft_desert_archaeology",
-                new ArchaeologyLootModifier(new LootItemCondition[]{
+                new AddToPoolModifier(new LootItemCondition[]{
                         LootTableIdCondition.builder(BuiltInLootTables.DESERT_PYRAMID_ARCHAEOLOGY.location()).build()
-                }, NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get(), 0.11F));
+                }, NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get(), 0.11F, true));
 
         this.add("illager_tome_woodland_mansion", new AddItemModifier(new LootItemCondition[]{
                 LootItemRandomChanceCondition.randomChance(0.85F).build(),
                 LootTableIdCondition.builder(BuiltInLootTables.WOODLAND_MANSION.location()).build()
         }, NWItems.ILLAGER_TOME.get(), 1));
+        this.add("tombstone_ancient_city", new AddToPoolModifier(new LootItemCondition[]{
+                LootTableIdCondition.builder(BuiltInLootTables.ANCIENT_CITY.location()).build()
+        }, NWBlocks.TOMBSTONE.asItem(), 0.082F, false));
     }
 }

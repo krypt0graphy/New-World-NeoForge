@@ -15,20 +15,24 @@ import net.neoforged.neoforge.common.loot.LootModifier;
 
 import java.util.function.Supplier;
 
-public class ArchaeologyLootModifier extends LootModifier {
+public class AddToPoolModifier extends LootModifier {
+
     private Item itemAdded;
     private float chance;
+    private boolean replace;
 
-    public static final Supplier<MapCodec<ArchaeologyLootModifier>> CODEC = Suppliers.memoize(() ->
+    public static final Supplier<MapCodec<AddToPoolModifier>> CODEC = Suppliers.memoize(() ->
             RecordCodecBuilder.mapCodec(instance -> codecStart(instance)
                     .and(BuiltInRegistries.ITEM.byNameCodec().fieldOf("item").forGetter(lm -> lm.itemAdded))
                     .and(Codec.FLOAT.fieldOf("chance_to_replace").forGetter(modifier -> modifier.chance))
-                    .apply(instance, ArchaeologyLootModifier::new)));
+                    .and(Codec.BOOL.fieldOf("replace").forGetter(modifier -> modifier.replace))
+                    .apply(instance, AddToPoolModifier::new)));
 
-    public ArchaeologyLootModifier(LootItemCondition[] conditionsIn, Item itemAdded, float chance) {
+    public AddToPoolModifier(LootItemCondition[] conditionsIn, Item itemAdded, float chance, boolean replace) {
         super(conditionsIn);
         this.itemAdded = itemAdded;
         this.chance = chance;
+        this.replace = replace;
     }
 
     @Override
@@ -40,7 +44,9 @@ public class ArchaeologyLootModifier extends LootModifier {
         }
 
         if(context.getRandom().nextFloat() < chance) {
-            generatedLoot.clear();
+            if (replace) {
+                generatedLoot.clear();
+            }
             generatedLoot.add(new ItemStack(this.itemAdded));
         }
 

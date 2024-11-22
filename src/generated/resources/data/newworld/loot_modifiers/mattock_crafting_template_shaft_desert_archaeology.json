@@ -1,5 +1,5 @@
 {
-  "type": "newworld:archaeology_loot",
+  "type": "newworld:add_to_pool",
   "chance_to_replace": 0.11,
   "conditions": [
     {
@@ -7,5 +7,6 @@
       "loot_table_id": "minecraft:archaeology/desert_pyramid"
     }
   ],
-  "item": "newworld:mattock_crafting_template_shaft"
+  "item": "newworld:mattock_crafting_template_shaft",
+  "replace": true
 }
