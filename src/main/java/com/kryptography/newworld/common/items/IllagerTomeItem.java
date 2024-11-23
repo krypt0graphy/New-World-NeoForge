@@ -11,7 +11,12 @@ public class IllagerTomeItem extends Item {
     }
 
     @Override
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
+        return true;
+    }
+
+    @Override
     public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
-        return new ItemStack(NWItems.ILLAGER_TOME.get());
+        return itemStack.copy();
     }
 }

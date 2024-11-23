@@ -46,5 +46,15 @@
   "item.newworld.smithing_template.mattock_crafting.applies_to": "Палиця",
   "item.newworld.smithing_template.mattock_crafting.base_slot_description": "Розмістіть палицю",
   "item.newworld.smithing_template.mattock_crafting.ingredients": "Кремінь",
-  "upgrade.newworld.mattock_crafting": "Майстрування кирки"
+  "upgrade.newworld.mattock_crafting": "Майстрування кирки",
+  "advancements.adventure.collect_ancient_mattock.description": "Craft an Ancient Mattock using template fragments.",
+  "advancements.adventure.collect_ancient_mattock.title": "Renaissance Tool",
+  "advancements.adventure.collect_template_fragment.description": "Discover an ancient crafting template fragment.",
+  "advancements.adventure.collect_template_fragment.title": "A Piece of History",
+  "block.newworld.moss_sprouts": "Moss Sprouts",
+  "block.newworld.tombstone": "Tombstone",
+  "item.newworld.illager_tome": "Illager Tome",
+  "item.newworld.jeb_book": "Jeb Book",
+  "item.newworld.mattock_crafting_template": "Smithing Template",
+  "stat.newworld.tombstone_activation": "Tombstones Activated"
 }

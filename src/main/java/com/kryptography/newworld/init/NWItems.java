@@ -23,6 +23,4 @@ public class NWItems {
     public static final DeferredItem<Item> MATTOCK_CRAFTING_TEMPLATE = ITEMS.register("mattock_crafting_template", () -> new AncientSmithingTemplateItem("mattock_crafting"));
     public static final DeferredItem<Item> MATTOCK_CRAFTING_TEMPLATE_HEAD = ITEMS.register("mattock_crafting_template_head", () -> new SmithingTemplatePieceItem(new Item.Properties()));
     public static final DeferredItem<Item> MATTOCK_CRAFTING_TEMPLATE_SHAFT = ITEMS.register("mattock_crafting_template_shaft", () -> new SmithingTemplatePieceItem(new Item.Properties()));
-
-
 }

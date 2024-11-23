@@ -9,7 +9,6 @@ import com.kryptography.newworld.init.data.NWStats;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Inventory;
@@ -17,8 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -32,7 +30,6 @@ import java.util.List;
 
 @Mixin(Inventory.class)
 public abstract class PlayerDeathMixin {
-    private static final Logger log = LoggerFactory.getLogger(PlayerDeathMixin.class);
     @Shadow @Final public Player player;
     @Shadow @Final private List<NonNullList<ItemStack>> compartments;
 
@@ -51,7 +48,6 @@ public abstract class PlayerDeathMixin {
 
                 boolean decrementedTombstone = false;
                 player.captureDrops(new ArrayList<>());
-                int t = -2;
 
                 for (NonNullList<ItemStack> itemStacks : compartments) {
                     for (int i = 0; i < itemStacks.size(); ++i) {
@@ -59,7 +55,6 @@ public abstract class PlayerDeathMixin {
                         ItemStack itemStack = itemStacks.get(i);
                         if (!itemStack.isEmpty()) {
                             if (itemStack.is(NWBlocks.TOMBSTONE.asItem()) && !decrementedTombstone) {
-                                t = i;
                                 itemStacks.set(i, ItemStack.EMPTY);
                                 decrementedTombstone = true;
                                 skip = decrementedTombstone;

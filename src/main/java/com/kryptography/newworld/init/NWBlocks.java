@@ -2,6 +2,7 @@ package com.kryptography.newworld.init;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.blocks.*;
+import com.kryptography.newworld.common.items.TombstoneBlockItem;
 import com.kryptography.newworld.common.worldgen.tree.FirTreeGrower;
 import com.kryptography.newworld.init.data.woodset.FirBlockSet;
 import net.minecraft.core.Direction;
@@ -86,7 +87,7 @@ public class NWBlocks {
 
     public static <T extends Block> DeferredBlock<T> registerTombstone(String name, Supplier<T> block) {
         DeferredBlock<T> ret = BLOCKS.register(name, block);
-        NWItems.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties().stacksTo(1)));
+        NWItems.ITEMS.register(name, () -> new TombstoneBlockItem(ret.get(), new Item.Properties().stacksTo(1)));
         return ret;
     }
 
