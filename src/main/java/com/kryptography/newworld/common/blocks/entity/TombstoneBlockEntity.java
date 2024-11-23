@@ -82,11 +82,10 @@ public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
 
     public int getEmptySlot() {
         for(int i = 0; i < getContainerSize(); ++i) {
-            if ((items.get(i)).isEmpty()) {
+            if (items.get(i).isEmpty()) {
                 return i;
             }
         }
-
         return -1;
     }
 
@@ -98,6 +97,13 @@ public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
             }
         }
         return -1;
+    }
+
+    public boolean hasRemainingSpaceForItem(ItemStack pDestination, ItemStack pOrigin) {
+        return !pDestination.isEmpty()
+                && ItemStack.isSameItemSameComponents(pDestination, pOrigin)
+                && pDestination.isStackable()
+                && pDestination.getCount() < this.getMaxStackSize(pDestination);
     }
 
 

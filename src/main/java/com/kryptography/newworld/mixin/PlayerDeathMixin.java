@@ -9,6 +9,7 @@ import com.kryptography.newworld.init.data.NWStats;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Inventory;
@@ -16,6 +17,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -29,6 +32,7 @@ import java.util.List;
 
 @Mixin(Inventory.class)
 public abstract class PlayerDeathMixin {
+    private static final Logger log = LoggerFactory.getLogger(PlayerDeathMixin.class);
     @Shadow @Final public Player player;
     @Shadow @Final private List<NonNullList<ItemStack>> compartments;
 
@@ -47,29 +51,32 @@ public abstract class PlayerDeathMixin {
 
                 boolean decrementedTombstone = false;
                 player.captureDrops(new ArrayList<>());
-
+                int t = -2;
 
                 for (NonNullList<ItemStack> itemStacks : compartments) {
-                    boolean removeTombstone = false;
-
                     for (int i = 0; i < itemStacks.size(); ++i) {
+                        boolean skip = false;
                         ItemStack itemStack = itemStacks.get(i);
+                        player.displayClientMessage(itemStack.getDisplayName(), false);
                         if (!itemStack.isEmpty()) {
+                            player.displayClientMessage(Component.literal("Stack isnt empty"), false);
                             if (itemStack.is(NWBlocks.TOMBSTONE.asItem()) && !decrementedTombstone) {
-                                if (itemStack.getCount() == 1) {
-                                    itemStacks.set(i, ItemStack.EMPTY);
-                                    removeTombstone = true;
-                                } else {
-                                    itemStack.shrink(1);
-                                }
+                                t = i;
+                                itemStacks.set(i, ItemStack.EMPTY);
                                 decrementedTombstone = true;
+                                skip = decrementedTombstone;
+                                player.displayClientMessage(Component.literal("Decremented tombstone"), false);
                             }
 
-                            if (level instanceof ServerLevel && !removeTombstone) {
+                            if (level instanceof ServerLevel &&!skip ) {
+                                player.displayClientMessage(Component.literal(String.valueOf(i)), false);
+                                player.displayClientMessage(Component.literal(String.valueOf(t)), false);
                                 placeOrDropStack(level, tombstone, itemStack);
+                                player.displayClientMessage(Component.literal("Added to tombstone"), false);
                             }
-                            if (!itemStack.isEmpty()) {
+                            if (!itemStack.isEmpty() && !skip) {
                                 itemStacks.set(i, ItemStack.EMPTY);
+                                player.displayClientMessage(Component.literal("Cleared from inventory"), false);
                             }
                         }
                     }
@@ -91,8 +98,9 @@ public abstract class PlayerDeathMixin {
 
             else if (ItemStack.isSameItemSameComponents(tombstoneStack, currentStack)) {
                 if (tombstoneStack.getCount() + currentStack.getCount() > tombstoneStack.getMaxStackSize()) {
-                    tombstoneStack.setCount(tombstoneStack.getMaxStackSize());
+                    int maxSize = tombstoneStack.getMaxStackSize();
                     currentStack.setCount(tombstoneStack.getCount() + currentStack.getCount() - tombstoneStack.getMaxStackSize());
+                    tombstoneStack.setCount(maxSize);
 
                     placeOrDropStack(world, tombstoneEntity, currentStack.copyWithCount(tombstoneStack.getCount() + currentStack.getCount() - tombstoneStack.getMaxStackSize()));
                     currentStack.copyAndClear();
@@ -101,10 +109,8 @@ public abstract class PlayerDeathMixin {
                     currentStack.setCount(tombstoneStack.getCount() + currentStack.getCount());
                 }
             }
-        }
-        else {
-            this.player.drop(currentStack, false);
-
+        } else {
+            tombstoneEntity.setItem(44, currentStack);
         }
     }
 
