@@ -57,26 +57,19 @@ public abstract class PlayerDeathMixin {
                     for (int i = 0; i < itemStacks.size(); ++i) {
                         boolean skip = false;
                         ItemStack itemStack = itemStacks.get(i);
-                        player.displayClientMessage(itemStack.getDisplayName(), false);
                         if (!itemStack.isEmpty()) {
-                            player.displayClientMessage(Component.literal("Stack isnt empty"), false);
                             if (itemStack.is(NWBlocks.TOMBSTONE.asItem()) && !decrementedTombstone) {
                                 t = i;
                                 itemStacks.set(i, ItemStack.EMPTY);
                                 decrementedTombstone = true;
                                 skip = decrementedTombstone;
-                                player.displayClientMessage(Component.literal("Decremented tombstone"), false);
                             }
 
                             if (level instanceof ServerLevel &&!skip ) {
-                                player.displayClientMessage(Component.literal(String.valueOf(i)), false);
-                                player.displayClientMessage(Component.literal(String.valueOf(t)), false);
                                 placeOrDropStack(level, tombstone, itemStack);
-                                player.displayClientMessage(Component.literal("Added to tombstone"), false);
                             }
                             if (!itemStack.isEmpty() && !skip) {
                                 itemStacks.set(i, ItemStack.EMPTY);
-                                player.displayClientMessage(Component.literal("Cleared from inventory"), false);
                             }
                         }
                     }
