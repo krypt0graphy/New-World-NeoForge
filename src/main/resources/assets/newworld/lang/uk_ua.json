@@ -1,7 +1,4 @@
 {
-  "advancements.story.collect_ancient_mattock.description": "Відкрийте стародавню кирку.",
-  "advancements.story.collect_ancient_mattock.title": "Інструмент Відродження",
-  "biome.newworld.enfolded_scrapyard": "Загорнена звалка",
   "biome.newworld.wooded_meadow": "Лісиста лука",
   "block.newworld.fir_button": "Ялицева кнопка",
   "block.newworld.fir_door": "Ялицеві двері",
@@ -32,10 +29,7 @@
   "block.newworld.loam_wall": "Суглинкова стіна",
   "block.newworld.stripped_fir_log": "Обтесана ялицева колода",
   "block.newworld.stripped_fir_wood": "Обтесана ялицева деревина",
-  "entity.newworld.automaton": "Автоматон",
-  "item.minecraft.smithing_template": "Ковальський шаблон",
   "item.newworld.ancient_mattock": "Стародавня кирка",
-  "item.newworld.automaton_spawn_egg": "Яйце виклику автоматона",
   "item.newworld.fir_boat": "Ялицевий човен",
   "item.newworld.fir_chest_boat": "Ялицевий човен зі скринею",
   "item.newworld.mattock_crafting_template_head": "Фрагмент шаблону",
