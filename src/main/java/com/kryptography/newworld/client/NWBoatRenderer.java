@@ -26,7 +26,7 @@ public class NWBoatRenderer extends BoatRenderer {
         super(pContext, pChestBoat);
         this.boatResources = Stream.of(FirBoatEntity.Type.values())
                 .collect(ImmutableMap.toImmutableMap(type -> type,
-                    type -> Pair.of(ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID, getTextureLocation(type, pChestBoat)), this.createBoatModel(pContext, type, pChestBoat)))
+                    type -> Pair.of( NewWorld.id(getTextureLocation(type, pChestBoat)), this.createBoatModel(pContext, type, pChestBoat)))
                 );
     }
 
@@ -49,7 +49,7 @@ public class NWBoatRenderer extends BoatRenderer {
     }
 
     private static ModelLayerLocation createLocation(String pPath, String pModel) {
-        return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID, pPath), pModel);
+        return new ModelLayerLocation( NewWorld.id(pPath), pModel);
     }
 
 

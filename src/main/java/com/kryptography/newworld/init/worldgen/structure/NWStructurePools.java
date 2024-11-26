@@ -40,11 +40,8 @@ public class NWStructurePools {
         );
     }
 
-
     public static ResourceKey<StructureTemplatePool> registerKey(String name) {
-        return ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID, name));
+        return ResourceKey.create(Registries.TEMPLATE_POOL,  NewWorld.id(name));
     }
-
-
 
 }

@@ -2,7 +2,6 @@ package com.kryptography.newworld.init.data.tags;
 
 import com.kryptography.newworld.NewWorld;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 
@@ -14,6 +13,6 @@ public class NWBlockTags {
 
 
     public static TagKey<Block> blockTag(String name) {
-        return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID, name));
+        return TagKey.create(Registries.BLOCK,  NewWorld.id(name));
     }
 }

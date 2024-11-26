@@ -1,21 +1,11 @@
 package com.kryptography.newworld.common.blocks.entity;
 
-import com.kryptography.newworld.common.blocks.TombstoneBlock;
 import com.kryptography.newworld.init.NWBlockEntityTypes;
-import com.kryptography.newworld.init.NWEntityTypes;
-import com.kryptography.newworld.init.NWItems;
-import net.minecraft.client.gui.screens.inventory.ContainerScreen;
 import net.minecraft.core.*;
-import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.ItemStack;
@@ -80,15 +70,6 @@ public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
         return ChestMenu.threeRows(pId, pPlayer, this);
     }
 
-    public int getEmptySlot() {
-        for(int i = 0; i < getContainerSize(); ++i) {
-            if (items.get(i).isEmpty()) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
     public int getCompatibleSlot(ItemStack stack) {
         for(int i = 0; i < getContainerSize(); ++i) {
             ItemStack currentStack = items.get(i);
@@ -98,24 +79,5 @@ public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
         }
         return -1;
     }
-
-    public boolean hasRemainingSpaceForItem(ItemStack pDestination, ItemStack pOrigin) {
-        return !pDestination.isEmpty()
-                && ItemStack.isSameItemSameComponents(pDestination, pOrigin)
-                && pDestination.isStackable()
-                && pDestination.getCount() < this.getMaxStackSize(pDestination);
-    }
-
-
-
-    void playSound(BlockState pState, SoundEvent pSound) {
-        Vec3i vec3i = pState.getValue(TombstoneBlock.FACING).getNormal();
-        double d0 = (double)this.worldPosition.getX() + 0.5 + (double)vec3i.getX() / 2.0;
-        double d1 = (double)this.worldPosition.getY() + 0.5 + (double)vec3i.getY() / 2.0;
-        double d2 = (double)this.worldPosition.getZ() + 0.5 + (double)vec3i.getZ() / 2.0;
-        this.level.playSound(null, d0, d1, d2, pSound, SoundSource.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
-    }
-    
-
 }
 

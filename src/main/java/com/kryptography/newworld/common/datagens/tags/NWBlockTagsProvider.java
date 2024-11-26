@@ -71,7 +71,7 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
           NWBlocks.POTTED_FIR_SAPLING.get()
         );
 
-        //this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add( TOMBSTONE );
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(NWBlocks.TOMBSTONE.get());
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
                 NWBlocks.LOAM.get(), NWBlocks.LOAM_STAIRS.get(), NWBlocks.LOAM_SLAB.get(), NWBlocks.LOAM_WALL.get(),
                 NWBlocks.LOAM_BRICKS.get(), NWBlocks.LOAM_BRICK_STAIRS.get(), NWBlocks.LOAM_BRICK_SLAB.get(), NWBlocks.LOAM_BRICK_WALL.get(),

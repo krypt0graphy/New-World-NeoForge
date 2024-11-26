@@ -2,7 +2,6 @@ package com.kryptography.newworld.init.data.tags;
 
 import com.kryptography.newworld.NewWorld;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
@@ -13,6 +12,6 @@ public class NWItemTags {
     public static final TagKey<Item> TOMBSTONE_MATERIALS = itemTag("tombstone_materials");
 
     public static TagKey<Item> itemTag(String name) {
-        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID, name));
+        return TagKey.create(Registries.ITEM, NewWorld.id(name));
     }
 }

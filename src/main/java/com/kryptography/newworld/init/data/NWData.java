@@ -14,15 +14,10 @@ import com.kryptography.newworld.common.datagens.tags.NWItemTagsProvider;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.worldgen.NWWorldgenData;
-import net.minecraft.core.Cloner;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.resources.RegistryDataLoader;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
@@ -38,7 +33,6 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -68,21 +62,6 @@ public class NWData {
         gen.addProvider(event.includeServer(), new NWRecipeProvider(packOutput, lookup));
         gen.addProvider(event.includeServer(), new NWGlobalLootModifierProvider(packOutput, lookup));
         gen.addProvider(event.includeServer(), new NWBiomeTagsProvider(packOutput, datapackProvider.getRegistryProvider(),existingFileHelper));
-    }
-
-    private static HolderLookup.Provider constructRegistries(HolderLookup.Provider original, RegistrySetBuilder datapackEntriesBuilder)
-    {
-        Cloner.Factory clonerFactory = new Cloner.Factory();
-        var builderKeys = new HashSet<>(datapackEntriesBuilder.getEntryKeys());
-        RegistryDataLoader.WORLDGEN_REGISTRIES.stream().forEach(data -> {
-            // Add keys for missing registries
-            if (!builderKeys.contains(data.key()))
-                datapackEntriesBuilder.add(data.key(), context -> {});
-
-            data.runWithArguments(clonerFactory::addCodec);
-        });
-
-        return datapackEntriesBuilder.buildPatch(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY), original, clonerFactory).patches();
     }
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -136,7 +115,7 @@ public class NWData {
         }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            addAfter(event, Items.SPRUCE_BOAT, NWItems.FIR_BOAT);
+            addAfter(event, Items.SPRUCE_CHEST_BOAT, NWItems.FIR_BOAT);
             addAfter(event, NWItems.FIR_BOAT, NWItems.FIR_CHEST_BOAT);
             addAfter(event, Items.NETHERITE_HOE, NWItems.ANCIENT_MATTOCK);
         }

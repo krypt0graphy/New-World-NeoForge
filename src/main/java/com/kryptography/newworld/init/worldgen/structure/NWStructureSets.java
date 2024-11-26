@@ -5,7 +5,6 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
@@ -23,9 +22,7 @@ public class NWStructureSets {
                 new RandomSpreadStructurePlacement(24, 4, RandomSpreadType.LINEAR, 1694767080)));
     }
 
-
-
     public static ResourceKey<StructureSet> registerKey(String name) {
-        return ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID, name));
+        return ResourceKey.create(Registries.STRUCTURE_SET, NewWorld.id(name));
     }
 }

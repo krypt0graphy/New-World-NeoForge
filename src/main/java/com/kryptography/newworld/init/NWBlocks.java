@@ -11,7 +11,6 @@ import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -41,7 +40,7 @@ public class NWBlocks {
     public static final DeferredBlock<DoorBlock> FIR_DOOR =  registerDoubleBlockItem("fir_door", () -> new DoorBlock(FirBlockSet.FIR_SET, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).sound(SoundType.WOOD).noOcclusion()));
     public static final DeferredBlock<TrapDoorBlock> FIR_TRAPDOOR = register("fir_trapdoor", () -> new TrapDoorBlock(FirBlockSet.FIR_SET, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).noOcclusion()));
 
-    public static final DeferredBlock<ButtonBlock> FIR_BUTTON = register("fir_button", () -> new ButtonBlock(BlockSetType.OAK, 30, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).noCollission().strength(0.5F)));
+    public static final DeferredBlock<ButtonBlock> FIR_BUTTON = register("fir_button", () -> new ButtonBlock(FirBlockSet.FIR_SET, 30, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).noCollission().strength(0.5F)));
     public static final DeferredBlock<PressurePlateBlock> FIR_PRESSURE_PLATE = register("fir_pressure_plate", () -> new PressurePlateBlock(FirBlockSet.FIR_SET, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).forceSolidOn().noCollission().strength(0.5F)));
 
     public static final DeferredBlock<FenceBlock> FIR_FENCE = register("fir_fence", () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get())));

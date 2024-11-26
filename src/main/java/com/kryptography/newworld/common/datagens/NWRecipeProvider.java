@@ -7,7 +7,6 @@ import com.kryptography.newworld.init.data.tags.NWItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -124,6 +123,6 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
     }
 
     public void stonecutterRecipe(RecipeOutput pRecipeOutput, RecipeCategory category, ItemLike output, ItemLike input, int count) {
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), category, output, count).unlockedBy(getHasName(input), has(input)).save(pRecipeOutput, ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID, getConversionRecipeName(output, input)) + "_stonecutting");
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), category, output, count).unlockedBy(getHasName(input), has(input)).save(pRecipeOutput, NewWorld.id( getConversionRecipeName(output, input)) + "_stonecutting");
     }
 }

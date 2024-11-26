@@ -93,10 +93,6 @@ public class FirBoatEntity extends Boat {
             return this.name;
         }
 
-        public Block getPlanks() {
-            return this.planks;
-        }
-
         public String toString() {
             return this.name;
         }

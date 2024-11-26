@@ -6,7 +6,6 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -17,7 +16,7 @@ public class NWBiomes {
 
     private static ResourceKey<Biome> registerKey(String name)
     {
-        return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID, name));
+        return ResourceKey.create(Registries.BIOME, NewWorld.id(name));
     }
 
     public static void bootstrap(BootstrapContext<Biome> context) {

@@ -61,7 +61,7 @@ public class TombstoneBlock extends BaseEntityBlock {
     @Override
     protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         Direction direction = pState.getValue(FACING);
-        switch ((AttachFace)pState.getValue(FACE)) {
+        switch (pState.getValue(FACE)) {
             case FLOOR:
                 return DOWN;
             case WALL:

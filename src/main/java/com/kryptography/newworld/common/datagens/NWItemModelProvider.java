@@ -50,26 +50,26 @@ public class NWItemModelProvider extends ItemModelProvider {
     
     public void buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID,
+                .texture("texture",  NewWorld.id(
                         "block/" + baseBlock.getId().getPath()));
     }
 
     public void fenceItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID,
+                .texture("texture",  NewWorld.id(
                         "block/" + baseBlock.getId().getPath()));
     }
 
     public void wallItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
-                .texture("wall",  ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID,
+                .texture("wall",  NewWorld.id(
                         "block/" + baseBlock.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/handheld")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID,"item/" + item.getId().getPath()));
+                NewWorld.id("item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder buildItem(String name, String parent, int emissivity, ResourceLocation... layers) {
@@ -90,6 +90,6 @@ public class NWItemModelProvider extends ItemModelProvider {
     }
 
     public static ResourceLocation prefix(String name) {
-        return ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID, name.toLowerCase(Locale.ROOT));
+        return NewWorld.id(name.toLowerCase(Locale.ROOT));
     }
 }

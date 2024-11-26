@@ -1,7 +1,6 @@
 package com.kryptography.newworld.common.items;
 
-import com.kryptography.newworld.init.NWBlocks;
-import com.kryptography.newworld.init.NWItems;
+
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 

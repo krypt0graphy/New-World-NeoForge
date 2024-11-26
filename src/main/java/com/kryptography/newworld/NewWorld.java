@@ -50,7 +50,7 @@ public class NewWorld {
         event.enqueueWork(() -> {
             NWDataMapProvider.register();
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NWBlocks.FIR_SAPLING.getId(), NWBlocks.POTTED_FIR_SAPLING);
-            Regions.register(new NWOverworldRegion(ResourceLocation.fromNamespaceAndPath(MOD_ID, "overworld"), 5));
+            Regions.register(new NWOverworldRegion(id("overworld"), 5));
         });
     }
 

@@ -40,11 +40,11 @@ public class NWBlockStateProvider extends BlockStateProvider {
         this.trapdoorBlock(NWBlocks.FIR_TRAPDOOR.get(), modLoc("block/fir_trapdoor"), true);
 
         this.simpleBlock(NWBlocks.FIR_SAPLING.get(), models().cross(NWBlocks.FIR_SAPLING.getRegisteredName(), blockTexture(NWBlocks.FIR_SAPLING.get())).renderType("cutout"));
-        this.simpleBlockWithItem(NWBlocks.POTTED_FIR_SAPLING.get(), models().singleTexture("potted_fir_sapling", ResourceLocation.fromNamespaceAndPath("minecraft", "block/flower_pot_cross"), "plant", blockTexture(NWBlocks.FIR_SAPLING.get())).renderType("cutout"));
+        this.simpleBlockWithItem(NWBlocks.POTTED_FIR_SAPLING.get(), models().singleTexture("potted_fir_sapling", ResourceLocation.withDefaultNamespace("block/flower_pot_cross"), "plant", blockTexture(NWBlocks.FIR_SAPLING.get())).renderType("cutout"));
 
-        this.simpleBlockWithItem(NWBlocks.POTTED_POINTED_DRIPSTONE.get(), models().singleTexture("potted_pointed_dripstone", ResourceLocation.fromNamespaceAndPath("minecraft", "block/flower_pot_cross"), "plant", blockTexture(Blocks.POINTED_DRIPSTONE).withSuffix("_up_tip")).renderType("cutout"));
+        this.simpleBlockWithItem(NWBlocks.POTTED_POINTED_DRIPSTONE.get(), models().singleTexture("potted_pointed_dripstone", ResourceLocation.withDefaultNamespace("block/flower_pot_cross"), "plant", blockTexture(Blocks.POINTED_DRIPSTONE).withSuffix("_up_tip")).renderType("cutout"));
 
-        this.signBlock((StandingSignBlock) NWBlocks.FIR_SIGN.get(), ((WallSignBlock) NWBlocks.FIR_WALL_SIGN.get()), blockTexture(NWBlocks.FIR_PLANKS.get()));
+        this.signBlock(NWBlocks.FIR_SIGN.get(), NWBlocks.FIR_WALL_SIGN.get(), blockTexture(NWBlocks.FIR_PLANKS.get()));
         this.hangingSignBlock(NWBlocks.FIR_HANGING_SIGN.get(), NWBlocks.FIR_WALL_HANGING_SIGN.get(), blockTexture(NWBlocks.STRIPPED_FIR_LOG.get()));
 
         blockItem(NWBlocks.FIR_STAIRS);

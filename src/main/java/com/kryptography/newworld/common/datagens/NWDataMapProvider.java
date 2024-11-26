@@ -21,14 +21,12 @@ public class NWDataMapProvider extends DataMapProvider {
     @SuppressWarnings("deprecation")
     protected void gather() {
         var compostables = this.builder(NeoForgeDataMaps.COMPOSTABLES);
-        var fuel = this.builder(NeoForgeDataMaps.FURNACE_FUELS);
 
         compostables.add(NWBlocks.FIR_LEAVES.get().asItem().builtInRegistryHolder(), new Compostable(0.3f), false);
         compostables.add(NWBlocks.FIR_SAPLING.get().asItem().builtInRegistryHolder(), new Compostable(0.3f), false);
     }
 
     public static void register() {
-
         registerFlammable(NWBlocks.FIR_PLANKS.get(), 5, 20);
         registerFlammable(NWBlocks.FIR_SLAB.get(), 5, 20);
         registerFlammable(NWBlocks.FIR_STAIRS.get(), 5, 20);
@@ -39,8 +37,6 @@ public class NWDataMapProvider extends DataMapProvider {
         registerFlammable(NWBlocks.FIR_WOOD.get(), 5, 5);
         registerFlammable(NWBlocks.STRIPPED_FIR_LOG.get(), 5, 5);
         registerFlammable(NWBlocks.STRIPPED_FIR_WOOD.get(), 5, 5);
-
-
     }
 
     public static void registerFlammable(Block block, int encouragement, int flammability) {
