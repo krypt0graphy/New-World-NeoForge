@@ -6,7 +6,7 @@ import com.kryptography.newworld.init.NWBlockEntityTypes;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWEntityTypes;
 import com.kryptography.newworld.init.NWItems;
-import com.kryptography.newworld.common.datagens.NWDataMapProvider;
+import com.kryptography.newworld.common.datagenproviders.NWDataMapProvider;
 import com.kryptography.newworld.init.data.NWData;
 import com.kryptography.newworld.init.data.NWStats;
 import com.kryptography.newworld.init.data.loot.NWLootModifiers;

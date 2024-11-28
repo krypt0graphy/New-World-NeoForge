@@ -1,4 +1,4 @@
-package com.kryptography.newworld.common.datagens.loot;
+package com.kryptography.newworld.common.datagenproviders.loot;
 
 import com.kryptography.newworld.init.NWBlocks;
 import net.minecraft.core.Holder;

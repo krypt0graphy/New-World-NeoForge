@@ -1,16 +1,16 @@
 package com.kryptography.newworld.init.data;
 
 import com.kryptography.newworld.NewWorld;
-import com.kryptography.newworld.common.datagens.NWBlockStateProvider;
-import com.kryptography.newworld.common.datagens.NWDataMapProvider;
-import com.kryptography.newworld.common.datagens.NWItemModelProvider;
-import com.kryptography.newworld.common.datagens.NWRecipeProvider;
-import com.kryptography.newworld.common.datagens.loot.NWBlockLootProvider;
-import com.kryptography.newworld.common.datagens.loot.NWChestLootProvider;
-import com.kryptography.newworld.common.datagens.loot.NWGlobalLootModifierProvider;
-import com.kryptography.newworld.common.datagens.tags.NWBiomeTagsProvider;
-import com.kryptography.newworld.common.datagens.tags.NWBlockTagsProvider;
-import com.kryptography.newworld.common.datagens.tags.NWItemTagsProvider;
+import com.kryptography.newworld.common.datagenproviders.NWBlockStateProvider;
+import com.kryptography.newworld.common.datagenproviders.NWDataMapProvider;
+import com.kryptography.newworld.common.datagenproviders.NWItemModelProvider;
+import com.kryptography.newworld.common.datagenproviders.NWRecipeProvider;
+import com.kryptography.newworld.common.datagenproviders.loot.NWBlockLootProvider;
+import com.kryptography.newworld.common.datagenproviders.loot.NWChestLootProvider;
+import com.kryptography.newworld.common.datagenproviders.loot.NWGlobalLootModifierProvider;
+import com.kryptography.newworld.common.datagenproviders.tags.NWBiomeTagsProvider;
+import com.kryptography.newworld.common.datagenproviders.tags.NWBlockTagsProvider;
+import com.kryptography.newworld.common.datagenproviders.tags.NWItemTagsProvider;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.worldgen.NWWorldgenData;

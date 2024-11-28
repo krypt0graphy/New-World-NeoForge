@@ -1,4 +1,4 @@
-package com.kryptography.newworld.common.datagens.tags;
+package com.kryptography.newworld.common.datagenproviders.tags;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
@@ -71,12 +71,15 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
           NWBlocks.POTTED_FIR_SAPLING.get()
         );
 
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(NWBlocks.TOMBSTONE.get());
-        this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
-                NWBlocks.LOAM.get(), NWBlocks.LOAM_STAIRS.get(), NWBlocks.LOAM_SLAB.get(), NWBlocks.LOAM_WALL.get(),
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                NWBlocks.TOMBSTONE.get(),
                 NWBlocks.LOAM_BRICKS.get(), NWBlocks.LOAM_BRICK_STAIRS.get(), NWBlocks.LOAM_BRICK_SLAB.get(), NWBlocks.LOAM_BRICK_WALL.get(),
                 NWBlocks.LOAM_TILES.get(), NWBlocks.LOAM_TILE_STAIRS.get(), NWBlocks.LOAM_TILE_SLAB.get(), NWBlocks.LOAM_TILE_WALL.get()
 
+
+        );
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
+                NWBlocks.LOAM.get(), NWBlocks.LOAM_STAIRS.get(), NWBlocks.LOAM_SLAB.get(), NWBlocks.LOAM_WALL.get()
         );
 
 

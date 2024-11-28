@@ -1,4 +1,4 @@
-package com.kryptography.newworld.common.datagens;
+package com.kryptography.newworld.common.datagenproviders;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.NWBlocks;
