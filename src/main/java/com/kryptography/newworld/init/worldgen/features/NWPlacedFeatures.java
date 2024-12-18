@@ -54,9 +54,9 @@ public class NWPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = bootstrap.lookup(Registries.CONFIGURED_FEATURE);
 
         register(bootstrap, FIR_CHECKED, configuredFeatures.getOrThrow(NWConfiguredFeatures.FIR),  List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
-        register(bootstrap, FIR_BEES_CHECKED, configuredFeatures.getOrThrow(NWConfiguredFeatures.FIR_BEES_002),  List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+        register(bootstrap, FIR_BEES_CHECKED, configuredFeatures.getOrThrow(NWConfiguredFeatures.FIR_BEES),  List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
         register(bootstrap, NATURAL_FIR_CHECKED, configuredFeatures.getOrThrow(NWConfiguredFeatures.NATURAL_FIR),  List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
-        register(bootstrap, NATURAL_FIR_BEES_CHECKED, configuredFeatures.getOrThrow(NWConfiguredFeatures.NATURAL_FIR_BEES_002),  List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+        register(bootstrap, NATURAL_FIR_BEES_CHECKED, configuredFeatures.getOrThrow(NWConfiguredFeatures.NATURAL_FIR_BEES),  List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
         register(bootstrap, TREES_FIR, configuredFeatures.getOrThrow(NWConfiguredFeatures.FIR_SPAWN), VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 5)));
         register(bootstrap, TREES_FIR_SCARCE, configuredFeatures.getOrThrow(NWConfiguredFeatures.FIR_TAIGA), VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(1)));
         register(bootstrap, TREES_FIR_MEADOW, configuredFeatures.getOrThrow(NWConfiguredFeatures.FIR_MEADOW), VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(40)));
