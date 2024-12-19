@@ -49,5 +49,7 @@
   "item.newworld.smithing_template.mattock_crafting.base_slot_description": "Add Stick",
   "item.newworld.smithing_template.mattock_crafting.ingredients": "Flint",
   "stat.newworld.tombstone_activation": "Tombstones Activated",
-  "upgrade.newworld.mattock_crafting": "Mattock Crafting"
+  "upgrade.newworld.mattock_crafting": "Mattock Crafting",
+  "painting.newworld.shadow_woman.author": "AvocadoSpud",
+  "painting.newworld.shadow_woman.title": "Shadow Woman"
 }
