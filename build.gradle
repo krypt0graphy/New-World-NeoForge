@@ -18,6 +18,10 @@ repositories {
         name = "Forge"
         url = "https://maven.minecraftforge.net"
     }
+    maven {
+        name = 'TerraformersMC'
+        url = 'https://maven.terraformersmc.com/'
+    }
 }
 
 base {
@@ -66,7 +70,7 @@ configurations {
 dependencies {
 
     implementation "net.neoforged:neoforge:${neo_version}"
-    implementation "com.github.glitchfiend:TerraBlender-neoforge:${terrablender_version}"
+    implementation "com.terraformersmc:biolith-neoforge:${bio_version}"
 
 }
 
@@ -82,7 +86,8 @@ tasks.withType(ProcessResources).configureEach {
             minecraft_version      : minecraft_version,
             minecraft_version_range: minecraft_version_range,
             neo_version            : neo_version,
-            terrablender_version   : terrablender_version,
+            bio_version            : bio_version,
+            bio_version_range      : bio_version_range,
             neo_version_range      : neo_version_range,
             loader_version_range   : loader_version_range,
             mod_id                 : mod_id,

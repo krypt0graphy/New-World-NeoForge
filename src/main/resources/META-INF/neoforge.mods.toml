@@ -35,9 +35,9 @@ config="newworld.mixins.json"
     ordering="NONE"
     side="BOTH"
 [[dependencies.${mod_id}]]
-    modId="terrablender"
+    modId="biolith"
     type="required"
-    versionRange="[${terrablender_version},)"
+    versionRange="${bio_version_range}"
     ordering="NONE"
     side="BOTH"
 
