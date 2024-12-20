@@ -1,5 +1,6 @@
-// 1.21	2024-11-21T23:53:35.1560298	Loot Tables
+// 1.21.1	2024-12-20T21:24:23.8723484	Loot Tables
 902e49f60e8c917a98593020c9c0eb4a21746449 data/newworld/loot_table/blocks/fir_button.json
+f663bc3c9897c346ea89d45cb6f000bed9d5af86 data/newworld/loot_table/blocks/fir_cabinet.json
 6fc4c470bef6c870769091823c9996680d6fbede data/newworld/loot_table/blocks/fir_door.json
 4befee6ebf4b0053f4b50d045c4c90c03563f66b data/newworld/loot_table/blocks/fir_fence.json
 80506a27521b9293d157fd44af6c5c1bca4a7e17 data/newworld/loot_table/blocks/fir_fence_gate.json

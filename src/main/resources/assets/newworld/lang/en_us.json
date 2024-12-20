@@ -35,6 +35,7 @@
   "block.newworld.stripped_fir_log": "Stripped Fir Log",
   "block.newworld.stripped_fir_wood": "Stripped Fir Wood",
   "block.newworld.tombstone": "Tombstone",
+  "block.newworld.fir_cabinet": "Fir Cabinet",
   "item.newworld.ancient_mattock": "Ancient Mattock",
   "item.newworld.fir_boat": "Fir Boat",
   "item.newworld.fir_chest_boat": "Fir Boat with Chest",
@@ -50,6 +51,6 @@
   "item.newworld.smithing_template.mattock_crafting.ingredients": "Flint",
   "stat.newworld.tombstone_activation": "Tombstones Activated",
   "upgrade.newworld.mattock_crafting": "Mattock Crafting",
-  "painting.newworld.shadow_woman.author": "AvocadoSpud",
-  "painting.newworld.shadow_woman.title": "Shadow Woman"
+  "painting.newworld.providence.author": "AvocadoSpud",
+  "painting.newworld.providence.title": "Shadow Woman"
 }

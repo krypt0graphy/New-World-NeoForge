@@ -107,6 +107,8 @@ public class NWData {
             addAfter(event, NWBlocks.LOAM_TILES, NWBlocks.LOAM_TILE_STAIRS);
             addAfter(event, NWBlocks.LOAM_TILE_STAIRS, NWBlocks.LOAM_TILE_SLAB);
             addAfter(event, NWBlocks.LOAM_TILE_SLAB, NWBlocks.LOAM_TILE_WALL);
+
+            NWBlocks.FIR_CABINET.ifPresent(event::accept);
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_SIGN);
@@ -119,6 +121,7 @@ public class NWData {
             addAfter(event, NWItems.FIR_BOAT, NWItems.FIR_CHEST_BOAT);
             addAfter(event, Items.NETHERITE_HOE, NWItems.ANCIENT_MATTOCK);
         }
+
     }
 
     public static void addAfter(BuildCreativeModeTabContentsEvent event, ItemLike first, ItemLike second) {

@@ -1,11 +1,11 @@
-// 1.21	2024-11-28T00:23:53.7402843	Tags for minecraft:block mod id newworld
+// 1.21.1	2024-12-20T21:24:23.8673452	Tags for minecraft:block mod id newworld
 763757eba8d924693eb1c6c5b603eefad2b5629a data/minecraft/tags/block/base_stone_overworld.json
 94a1a924b9e4dafdd0919819e6dc2e9dc15d356f data/minecraft/tags/block/ceiling_hanging_signs.json
 531531a2cbe2b2b6b19b4a23489c73b358063609 data/minecraft/tags/block/fence_gates.json
 e19bea980b997c27eb770cf9f26a759d3923315a data/minecraft/tags/block/flower_pots.json
 432b95dbae3cd8699f1a817c9864c5050594e508 data/minecraft/tags/block/leaves.json
 a05ffb0112a755a264958d236d52fe9de224beeb data/minecraft/tags/block/logs_that_burn.json
-a0459114e0580fe030a79b9c50f93c730edbfd98 data/minecraft/tags/block/mineable/axe.json
+da17fcd218783d3988e58e7336172657443c8574 data/minecraft/tags/block/mineable/axe.json
 f76641b84da949ddb4b941e4e6b1fd34ed624b13 data/minecraft/tags/block/mineable/pickaxe.json
 a8dc762510e50180e682b13fe1e43957fa03ae87 data/minecraft/tags/block/mineable/shovel.json
 d087000b7764f6129dcc8a61a296068803b3f31c data/minecraft/tags/block/overworld_natural_logs.json

@@ -5,6 +5,8 @@ import com.kryptography.newworld.common.blocks.*;
 import com.kryptography.newworld.common.items.TombstoneBlockItem;
 import com.kryptography.newworld.common.worldgen.tree.FirTreeGrower;
 import com.kryptography.newworld.init.data.woodset.FirBlockSet;
+import com.kryptography.newworld.integration.Mods;
+import com.kryptography.newworld.integration.farmersdelight.FDIntegration;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DoubleHighBlockItem;
@@ -17,6 +19,7 @@ import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.Optional;
 import java.util.function.Supplier;
 
 public class NWBlocks {
@@ -76,6 +79,7 @@ public class NWBlocks {
     public static final DeferredBlock<Block> TOMBSTONE = registerTombstone("tombstone", () -> new TombstoneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).strength(0.7F, 1200).pushReaction(PushReaction.IGNORE).isSuffocating(((pState, pLevel, pPos) -> false)).sound(SoundType.POLISHED_DEEPSLATE).noOcclusion()));
     public static final DeferredBlock<FlowerPotBlock> POTTED_POINTED_DRIPSTONE = BLOCKS.register("potted_pointed_dripstone", () -> new FlowerPotBlock(Blocks.POINTED_DRIPSTONE, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).noOcclusion()));
 
+    public static final Optional<DeferredBlock<Block>> FIR_CABINET = Mods.FARMERSDELIGHT.runIfInstalled(() -> (DeferredBlock<Block>) register("fir_cabinet", FDIntegration.cabinetBlock()));
 
 
     public static <T extends Block> DeferredBlock<T> register(String name, Supplier<T> block) {

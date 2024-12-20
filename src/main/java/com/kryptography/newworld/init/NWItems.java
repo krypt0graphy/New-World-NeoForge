@@ -7,6 +7,7 @@ import net.minecraft.world.item.*;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+
 public class NWItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(NewWorld.MOD_ID);

@@ -1,9 +1,8 @@
 plugins {
     id 'java-library'
-    id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.0.145'
+    id 'net.neoforged.moddev' version '1.0.23'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -14,14 +13,7 @@ version = mod_version
 group = mod_group_id
 
 repositories {
-    maven {
-        name = "Forge"
-        url = "https://maven.minecraftforge.net"
-    }
-    maven {
-        name = 'TerraformersMC'
-        url = 'https://maven.terraformersmc.com/'
-    }
+    mavenLocal()
 }
 
 base {
@@ -31,35 +23,42 @@ base {
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 
-runs {
-    configureEach {
-
-        systemProperty 'forge.logging.markers', 'REGISTRIES'
-
-
-        systemProperty 'forge.logging.console.level', 'debug'
-
-        modSource project.sourceSets.main
+neoForge {
+    version = project.neo_version
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
     }
-
-    client {
-        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        gameTestServer {
+            type = "gameTestServer"
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        data {
+            data()
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
     }
-
-    server {
-        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
-        programArgument '--nogui'
-    }
-
-
-    gameTestServer {
-        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
-    }
-
-    data {
-             programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
     }
 }
+
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
@@ -67,19 +66,28 @@ configurations {
     runtimeClasspath.extendsFrom localRuntime
 }
 
+repositories {
+    maven {
+        name = "Forge"
+        url = "https://maven.minecraftforge.net"
+    }
+    maven {
+        name = 'TerraformersMC'
+        url = 'https://maven.terraformersmc.com/'
+    }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+    }
+}
+
 dependencies {
 
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "com.terraformersmc:biolith-neoforge:${bio_version}"
+    implementation "maven.modrinth:farmers-delight:1.21.1-${fd_version}"
 
 }
-
-minecraft {
-    accessTransformers {
-        file('src/main/resources/META-INF/accesstransformer.cfg')
-    }
-}
-
 
 tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
@@ -88,6 +96,8 @@ tasks.withType(ProcessResources).configureEach {
             neo_version            : neo_version,
             bio_version            : bio_version,
             bio_version_range      : bio_version_range,
+            fd_version             : fd_version,
+            fd_version_range       : fd_version_range,
             neo_version_range      : neo_version_range,
             loader_version_range   : loader_version_range,
             mod_id                 : mod_id,
@@ -98,11 +108,12 @@ tasks.withType(ProcessResources).configureEach {
             mod_description        : mod_description
     ]
     inputs.properties replaceProperties
-
     filesMatching(['META-INF/neoforge.mods.toml']) {
         expand replaceProperties
     }
 }
+
+
 
 publishing {
     publications {

@@ -50,6 +50,7 @@
   "item.newworld.smithing_template.mattock_crafting.ingredients": "Кремінь",
   "stat.newworld.tombstone_activation": "Tombstones Activated",
   "upgrade.newworld.mattock_crafting": "Майстрування кирки",
-  "painting.newworld.shadow_woman.author": "AvocadoSpud",
-  "painting.newworld.shadow_woman.title": "Shadow Woman"
+  "painting.newworld.providence.author": "AvocadoSpud",
+  "painting.newworld.providence.title": "Shadow Woman",
+  "block.newworld.fir_cabinet": "Fir Cabinet"
 }

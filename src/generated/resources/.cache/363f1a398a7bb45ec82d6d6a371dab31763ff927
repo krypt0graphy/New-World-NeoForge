@@ -1,5 +1,6 @@
-// 1.21	2024-10-26T16:43:29.2552285	Block States: newworld
+// 1.21.1	2024-12-20T21:24:23.8814918	Block States: newworld
 0f063c9bd245ffd1e8305e087cf85971beb00141 assets/newworld/blockstates/fir_button.json
+be8ab0d3196df58d6b26b584b7a81201ce255110 assets/newworld/blockstates/fir_cabinet.json
 9567b0d357d6be7476ca633157b207a758527f07 assets/newworld/blockstates/fir_door.json
 536fec6aa239e2bde9f6b2b7da58f088959cdc5d assets/newworld/blockstates/fir_fence.json
 4bb747bafcea4ab880f0471947edef02adf1e000 assets/newworld/blockstates/fir_fence_gate.json
@@ -35,6 +36,8 @@ bedc2f7936dcdbfc00d030ea882ff4886691463d assets/newworld/blockstates/stripped_fi
 7307a06b4b47cdc750a4f80992a339ba4075bb49 assets/newworld/blockstates/stripped_fir_wood.json
 c7e214c0413fabac5d34129a44f9c24ff0269836 assets/newworld/models/block/fir_button.json
 78f5a73b121ed911da7b09c8bdeef287b314e183 assets/newworld/models/block/fir_button_pressed.json
+8e7aa4b6f6d43a36fa7e30ba14ea51e0ffa9dbd4 assets/newworld/models/block/fir_cabinet.json
+ea94198f96879b7159399de36515c2256b08699d assets/newworld/models/block/fir_cabinet_open.json
 0a0105b29f8dcccb3ee3faaf08d64b5eff68946c assets/newworld/models/block/fir_door_bottom_left.json
 9a6aca714cfd78067611ba81d2a04fb878ca3a31 assets/newworld/models/block/fir_door_bottom_left_open.json
 e58dc77c02ade88f6d5a63f63839503619b0bd40 assets/newworld/models/block/fir_door_bottom_right.json
@@ -102,6 +105,7 @@ d7a4f90db8104394a1afe42f8196cd8283dbdf27 assets/newworld/models/block/potted_fir
 555adbc8d91898aa7e4a21b27e029b13e465912e assets/newworld/models/block/stripped_fir_log_horizontal.json
 f85a8e0c9839049748c854f85e23d1ced28e8bcd assets/newworld/models/block/stripped_fir_wood.json
 d23d999d0f730dfd9a89a6161b8bc4022bcc2e46 assets/newworld/models/block/stripped_fir_wood_horizontal.json
+f817bfbcbf5d5733683bd79e21332a233500bc95 assets/newworld/models/item/fir_cabinet.json
 e498166eb383503f7aa9d5b036be0b59f76cdcf6 assets/newworld/models/item/fir_fence_gate.json
 696a309729659bc474ddc1dcb043fb34d804493e assets/newworld/models/item/fir_leaves.json
 3428fdcf79c128d0fb6318887bb84aaa68eca4c9 assets/newworld/models/item/fir_log.json

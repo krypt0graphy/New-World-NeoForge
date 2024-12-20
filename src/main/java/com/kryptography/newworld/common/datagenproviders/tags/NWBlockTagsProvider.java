@@ -133,5 +133,9 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
                         Blocks.WARPED_ROOTS,
                         Blocks.HANGING_ROOTS
                 );
+
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(
+          NWBlocks.FIR_CABINET.get().get()
+        );
     }
 }

@@ -3,9 +3,12 @@ package com.kryptography.newworld.common.datagenproviders.loot;
 import com.kryptography.newworld.init.NWBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.Set;
 
@@ -56,8 +59,12 @@ public class NWBlockLootProvider extends BlockLootSubProvider {
         this.dropPottedContents(NWBlocks.POTTED_POINTED_DRIPSTONE.get());
 
         this.dropSelf(NWBlocks.TOMBSTONE.get());
+
+        this.add(NWBlocks.FIR_CABINET.get().get(), this::createNameableBlockEntityTable);
     }
     protected Iterable<Block> getKnownBlocks() {
         return NWBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
+
+
 }

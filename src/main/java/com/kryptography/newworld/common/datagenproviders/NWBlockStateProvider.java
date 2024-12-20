@@ -1,6 +1,7 @@
 package com.kryptography.newworld.common.datagenproviders;
 
 import com.kryptography.newworld.NewWorld;
+import com.kryptography.newworld.common.blocks.FirCabinetBlock;
 import com.kryptography.newworld.init.NWBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -77,6 +78,8 @@ public class NWBlockStateProvider extends BlockStateProvider {
 
         mossSproutBlock(NWBlocks.MOSS_SPROUTS.get(), true);
 
+        cabinetBlock(NWBlocks.FIR_CABINET.get().get(), "fir");
+        blockItem(NWBlocks.FIR_CABINET.get());
     }
 
 
@@ -115,8 +118,18 @@ public class NWBlockStateProvider extends BlockStateProvider {
         return BuiltInRegistries.BLOCK.getKey(block);
     }
 
+    private String blockName(Block block) {
+        return BuiltInRegistries.BLOCK.getKey(block).getPath();
+    }
 
-
-
+    public void cabinetBlock(Block block, String woodType) {
+        this.horizontalBlock(block, state -> {
+            String suffix = state.getValue(FirCabinetBlock.OPEN) ? "_open" : "";
+            return models().orientable(blockName(block) + suffix,
+                    NewWorld.id("block/" + woodType + "_cabinet_side"),
+                    NewWorld.id("block/" + woodType + "_cabinet_front" + suffix),
+                    NewWorld.id("block/" + woodType + "_cabinet_top"));
+        });
+    }
 }
 
