@@ -4,6 +4,7 @@ import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.blocks.FirCabinetBlock;
 import com.kryptography.newworld.common.blocks.FirTrimmedPlankBlock;
 import com.kryptography.newworld.init.NWBlocks;
+import com.kryptography.newworld.integration.Mods;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -79,15 +80,6 @@ public class NWBlockStateProvider extends BlockStateProvider {
 
 
         mossSproutBlock(NWBlocks.MOSS_SPROUTS.get(), true);
-
-        cabinetBlock(NWBlocks.FIR_CABINET.get().value(), "fir");
-        blockItem(NWBlocks.FIR_CABINET.get());
-
-        this.simpleBlock(NWBlocks.FIR_BOOKSHELF.get().value(), models().cubeColumn(name(NWBlocks.FIR_BOOKSHELF.get().get()), blockTexture(NWBlocks.FIR_BOOKSHELF.get().get()), blockTexture(NWBlocks.FIR_PLANKS.get())));
-        this.blockItem(NWBlocks.FIR_BOOKSHELF.get());
-
-        trimmedPlank(NWBlocks.TRIMMED_FIR_PLANKS.get());
-
     }
 
 
@@ -127,35 +119,6 @@ public class NWBlockStateProvider extends BlockStateProvider {
 
     private String blockName(Block block) {
         return BuiltInRegistries.BLOCK.getKey(block).getPath();
-    }
-
-    private void cabinetBlock(Block block, String woodType) {
-        this.horizontalBlock(block, state -> {
-            String suffix = state.getValue(FirCabinetBlock.OPEN) ? "_open" : "";
-            return models().orientable(blockName(block) + suffix,
-                    NewWorld.id("block/" + woodType + "_cabinet_side"),
-                    NewWorld.id("block/" + woodType + "_cabinet_front" + suffix),
-                    NewWorld.id("block/" + woodType + "_cabinet_top"));
-        });
-    }
-    private void trimmedPlank(DeferredBlock<?> block) {
-        this.getVariantBuilder(block.get()).forAllStates(state -> {
-                Boolean up = state.getValue(FirTrimmedPlankBlock.UP);
-                Boolean down = state.getValue(FirTrimmedPlankBlock.DOWN);
-                ModelFile model;
-                if(!down && !up) {
-                    model = models().cubeColumn(name(block.get()) + "_middle", blockTexture(block.get()).withSuffix("_middle"), blockTexture(block.get()).withSuffix("_top"));
-                } else if (!down && up) {
-                    model = models().cubeColumn(name(block.get()) + "_upper", blockTexture(block.get()).withSuffix("_upper"), blockTexture(block.get()).withSuffix("_top"));
-                } else if (down && !up) {
-                    model = models().cubeColumn(name(block.get()) + "_lower", blockTexture(block.get()).withSuffix("_lower"), blockTexture(block.get()).withSuffix("_top"));
-                } else {
-                    model = models().cubeColumn(name(block.get()), blockTexture(block.get()), blockTexture(block.get()).withSuffix("_top"));
-                }
-                return ConfiguredModel.builder().modelFile(model).build();
-                }
-        );
-        this.blockItem(block);
     }
 }
 

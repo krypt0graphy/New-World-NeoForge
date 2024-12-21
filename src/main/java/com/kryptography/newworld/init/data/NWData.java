@@ -5,7 +5,6 @@ import com.kryptography.newworld.common.datagenproviders.NWBlockStateProvider;
 import com.kryptography.newworld.common.datagenproviders.NWDataMapProvider;
 import com.kryptography.newworld.common.datagenproviders.NWItemModelProvider;
 import com.kryptography.newworld.common.datagenproviders.NWRecipeProvider;
-import com.kryptography.newworld.common.datagenproviders.loot.NWBlockLootProvider;
 import com.kryptography.newworld.common.datagenproviders.loot.NWChestLootProvider;
 import com.kryptography.newworld.common.datagenproviders.loot.NWGlobalLootModifierProvider;
 import com.kryptography.newworld.common.datagenproviders.tags.NWBiomeTagsProvider;
@@ -57,7 +56,6 @@ public class NWData {
         gen.addProvider(event.includeServer(), blockTagsProvider);
         gen.addProvider(event.includeClient(), new NWItemTagsProvider(packOutput, lookup, blockTagsProvider.contentsGetter(), existingFileHelper));
         gen.addProvider(event.includeClient(), new NWItemModelProvider(packOutput, existingFileHelper));
-        gen.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(NWBlockLootProvider::new, LootContextParamSets.BLOCK), new LootTableProvider.SubProviderEntry(NWChestLootProvider::new, LootContextParamSets.CHEST)), lookup));
         gen.addProvider(event.includeClient(), new NWBlockStateProvider(packOutput, existingFileHelper));
         gen.addProvider(event.includeServer(), new NWDataMapProvider(packOutput, lookup));
         gen.addProvider(event.includeServer(), new NWRecipeProvider(packOutput, lookup));
@@ -113,7 +111,9 @@ public class NWData {
             addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_STAIRS);
             addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM);
 
-            NWBlocks.FIR_CABINET.ifPresent(event::accept);
+            if (Mods.FARMERSDELIGHT.isLoaded()) {
+                NWBlocks.FIR_CABINET.ifPresent(event::accept);
+            }
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_HANGING_SIGN);

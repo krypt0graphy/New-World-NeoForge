@@ -76,7 +76,7 @@ public class NWBlocks {
     public static final DeferredBlock<SlabBlock> LOAM_TILE_SLAB = register("loam_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(LOAM_TILES.get())));
     public static final DeferredBlock<WallBlock> LOAM_TILE_WALL = register("loam_tile_wall", () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(LOAM_TILES.get())));
 
-    public static final DeferredBlock<Block> MOSS_SPROUTS = register("moss_sprouts", () -> new MossSproutsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS).offsetType(BlockBehaviour.OffsetType.XZ).sound(SoundType.MOSS_CARPET).noLootTable()));
+    public static final DeferredBlock<Block> MOSS_SPROUTS = register("moss_sprouts", () -> new MossSproutsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS).offsetType(BlockBehaviour.OffsetType.XZ).sound(SoundType.MOSS_CARPET)));
     public static final DeferredBlock<Block> TOMBSTONE = registerTombstone("tombstone", () -> new TombstoneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).strength(0.7F, 1200).pushReaction(PushReaction.IGNORE).isSuffocating(((pState, pLevel, pPos) -> false)).sound(SoundType.POLISHED_DEEPSLATE).noOcclusion()));
     public static final DeferredBlock<FlowerPotBlock> POTTED_POINTED_DRIPSTONE = BLOCKS.register("potted_pointed_dripstone", () -> new FlowerPotBlock(Blocks.POINTED_DRIPSTONE, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).noOcclusion()));
 
