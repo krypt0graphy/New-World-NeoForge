@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "newworld:block/trimmed_fir_planks_top",
+    "side": "newworld:block/trimmed_fir_planks_upper"
+  }
+}

@@ -1,12 +1,11 @@
 package com.kryptography.newworld.init;
 
 import com.kryptography.newworld.NewWorld;
-import com.kryptography.newworld.common.blocks.entity.FirCabinetBlockEntity;
 import com.kryptography.newworld.common.blocks.entity.FirHangingSignBlockEntity;
 import com.kryptography.newworld.common.blocks.entity.FirSignBlockEntity;
 import com.kryptography.newworld.common.blocks.entity.TombstoneBlockEntity;
 import com.kryptography.newworld.integration.Mods;
-import com.kryptography.newworld.integration.farmersdelight.FDIntegration;
+import com.kryptography.newworld.integration.FDIntegration;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;

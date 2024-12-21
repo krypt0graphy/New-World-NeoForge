@@ -14,6 +14,7 @@ import com.kryptography.newworld.common.datagenproviders.tags.NWItemTagsProvider
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.worldgen.NWWorldgenData;
+import com.kryptography.newworld.integration.Mods;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -81,44 +82,48 @@ public class NWData {
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_BUTTON);
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_PRESSURE_PLATE);
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_TRAPDOOR);
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_DOOR);
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_FENCE_GATE);
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_FENCE);
+            if(Mods.NOMANSLAND.isLoaded()) {
+                addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.TRIMMED_FIR_PLANKS.get());
+                addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_BOOKSHELF.get());
+            }
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_SLAB);
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_STAIRS);
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_PLANKS);
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.STRIPPED_FIR_WOOD);
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.STRIPPED_FIR_LOG);
+            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_WOOD);
             addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_LOG);
-            addAfter(event, NWBlocks.FIR_LOG, NWBlocks.FIR_WOOD);
-            addAfter(event, NWBlocks.FIR_WOOD, NWBlocks.STRIPPED_FIR_LOG);
-            addAfter(event, NWBlocks.STRIPPED_FIR_LOG, NWBlocks.STRIPPED_FIR_WOOD);
-            addAfter(event, NWBlocks.STRIPPED_FIR_WOOD, NWBlocks.FIR_PLANKS);
-            addAfter(event, NWBlocks.FIR_PLANKS, NWBlocks.FIR_STAIRS);
-            addAfter(event, NWBlocks.FIR_STAIRS, NWBlocks.FIR_SLAB);
-            addAfter(event, NWBlocks.FIR_SLAB, NWBlocks.FIR_FENCE);
-            addAfter(event, NWBlocks.FIR_FENCE, NWBlocks.FIR_FENCE_GATE);
-            addAfter(event, NWBlocks.FIR_FENCE_GATE, NWBlocks.FIR_DOOR);
-            addAfter(event, NWBlocks.FIR_DOOR, NWBlocks.FIR_TRAPDOOR);
-            addAfter(event, NWBlocks.FIR_TRAPDOOR, NWBlocks.FIR_PRESSURE_PLATE);
-            addAfter(event, NWBlocks.FIR_PRESSURE_PLATE, NWBlocks.FIR_BUTTON);
 
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILE_WALL);
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILE_SLAB);
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILE_STAIRS);
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILES);
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICK_WALL);
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICK_SLAB);
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICK_STAIRS);
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICKS);
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_WALL);
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_SLAB);
+            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_STAIRS);
             addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM);
-            addAfter(event, NWBlocks.LOAM, NWBlocks.LOAM_STAIRS);
-            addAfter(event, NWBlocks.LOAM_STAIRS, NWBlocks.LOAM_SLAB);
-            addAfter(event, NWBlocks.LOAM_SLAB, NWBlocks.LOAM_WALL);
-            addAfter(event, NWBlocks.LOAM_WALL, NWBlocks.LOAM_BRICKS);
-            addAfter(event, NWBlocks.LOAM_BRICKS, NWBlocks.LOAM_BRICK_STAIRS);
-            addAfter(event, NWBlocks.LOAM_BRICK_STAIRS, NWBlocks.LOAM_BRICK_SLAB);
-            addAfter(event, NWBlocks.LOAM_BRICK_SLAB, NWBlocks.LOAM_BRICK_WALL);
-            addAfter(event, NWBlocks.LOAM_BRICK_WALL, NWBlocks.LOAM_TILES);
-            addAfter(event, NWBlocks.LOAM_TILES, NWBlocks.LOAM_TILE_STAIRS);
-            addAfter(event, NWBlocks.LOAM_TILE_STAIRS, NWBlocks.LOAM_TILE_SLAB);
-            addAfter(event, NWBlocks.LOAM_TILE_SLAB, NWBlocks.LOAM_TILE_WALL);
 
             NWBlocks.FIR_CABINET.ifPresent(event::accept);
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_HANGING_SIGN);
             addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_SIGN);
-            addAfter(event, NWBlocks.FIR_SIGN, NWBlocks.FIR_HANGING_SIGN);
             event.accept(NWBlocks.TOMBSTONE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            addAfter(event, Items.SPRUCE_CHEST_BOAT, NWItems.FIR_CHEST_BOAT);
             addAfter(event, Items.SPRUCE_CHEST_BOAT, NWItems.FIR_BOAT);
-            addAfter(event, NWItems.FIR_BOAT, NWItems.FIR_CHEST_BOAT);
             addAfter(event, Items.NETHERITE_HOE, NWItems.ANCIENT_MATTOCK);
         }
 

@@ -1,4 +1,5 @@
-// 1.21.1	2024-12-20T21:24:23.8723484	Loot Tables
+// 1.21.1	2024-12-21T01:06:04.4645005	Loot Tables
+be215329f5a61dc4cfdc0c57ec85b290dc2f376b data/newworld/loot_table/blocks/fir_bookshelf.json
 902e49f60e8c917a98593020c9c0eb4a21746449 data/newworld/loot_table/blocks/fir_button.json
 f663bc3c9897c346ea89d45cb6f000bed9d5af86 data/newworld/loot_table/blocks/fir_cabinet.json
 6fc4c470bef6c870769091823c9996680d6fbede data/newworld/loot_table/blocks/fir_door.json
@@ -34,5 +35,6 @@ b089f2867e2048772283ff83a9e19b0c53e58aee data/newworld/loot_table/blocks/loam_ti
 2b4dfa4a6929ea3b84a0519e6642d166bacc57d7 data/newworld/loot_table/blocks/stripped_fir_log.json
 b24d7d0de3e4f1928625b13996fd0552630a9327 data/newworld/loot_table/blocks/stripped_fir_wood.json
 0559a9b197957ae1fb13cb3e7f31d899635e2a3d data/newworld/loot_table/blocks/tombstone.json
+0afd649c710617ef13966e40cfef7d804370d443 data/newworld/loot_table/blocks/trimmed_fir_planks.json
 e84fa4d69621a8688874ce06eea14618dfd20efb data/newworld/loot_table/chests/bunker_barrel.json
 9f85528ded59cb0cc8f62640a6fdd846a866e865 data/newworld/loot_table/chests/bunker_cache.json

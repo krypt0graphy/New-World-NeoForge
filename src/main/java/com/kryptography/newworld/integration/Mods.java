@@ -27,4 +27,10 @@ public enum Mods {
             return Optional.of(toRun.get());
         return Optional.empty();
     }
+    public void executeIfInstalled(Supplier<Runnable> toExecute) {
+        if (isLoaded()) {
+            toExecute.get().run();
+        }
+    }
+
 }

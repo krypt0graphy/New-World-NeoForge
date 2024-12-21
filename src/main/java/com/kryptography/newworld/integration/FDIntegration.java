@@ -1,4 +1,4 @@
-package com.kryptography.newworld.integration.farmersdelight;
+package com.kryptography.newworld.integration;
 
 import com.kryptography.newworld.common.blocks.FirCabinetBlock;
 import com.kryptography.newworld.common.blocks.entity.FirCabinetBlockEntity;

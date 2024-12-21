@@ -1,4 +1,5 @@
-// 1.21.1	2024-12-20T21:24:23.8814918	Block States: newworld
+// 1.21.1	2024-12-21T01:50:57.1753438	Block States: newworld
+52c404fd8f7860d7c8210189d575e867f4ca54a5 assets/newworld/blockstates/fir_bookshelf.json
 0f063c9bd245ffd1e8305e087cf85971beb00141 assets/newworld/blockstates/fir_button.json
 be8ab0d3196df58d6b26b584b7a81201ce255110 assets/newworld/blockstates/fir_cabinet.json
 9567b0d357d6be7476ca633157b207a758527f07 assets/newworld/blockstates/fir_door.json
@@ -34,6 +35,8 @@ afc2d65e3b7f60e2c6d11432b8b7118f1de49773 assets/newworld/blockstates/moss_sprout
 b41145349246ba14900c984601b8bae5d5d999ea assets/newworld/blockstates/potted_pointed_dripstone.json
 bedc2f7936dcdbfc00d030ea882ff4886691463d assets/newworld/blockstates/stripped_fir_log.json
 7307a06b4b47cdc750a4f80992a339ba4075bb49 assets/newworld/blockstates/stripped_fir_wood.json
+2c4898a68d0d927acb998aaf84d432c11f8a8b02 assets/newworld/blockstates/trimmed_fir_planks.json
+bdec840aad696f0cd5393b419a3cf02161c0fee1 assets/newworld/models/block/fir_bookshelf.json
 c7e214c0413fabac5d34129a44f9c24ff0269836 assets/newworld/models/block/fir_button.json
 78f5a73b121ed911da7b09c8bdeef287b314e183 assets/newworld/models/block/fir_button_pressed.json
 8e7aa4b6f6d43a36fa7e30ba14ea51e0ffa9dbd4 assets/newworld/models/block/fir_cabinet.json
@@ -105,6 +108,11 @@ d7a4f90db8104394a1afe42f8196cd8283dbdf27 assets/newworld/models/block/potted_fir
 555adbc8d91898aa7e4a21b27e029b13e465912e assets/newworld/models/block/stripped_fir_log_horizontal.json
 f85a8e0c9839049748c854f85e23d1ced28e8bcd assets/newworld/models/block/stripped_fir_wood.json
 d23d999d0f730dfd9a89a6161b8bc4022bcc2e46 assets/newworld/models/block/stripped_fir_wood_horizontal.json
+c4e59bd64fc6f067c2a4bc3c5512003fd2abdc6e assets/newworld/models/block/trimmed_fir_planks.json
+7bf681699c7f23e15eba97fcdfd8be401b2e3642 assets/newworld/models/block/trimmed_fir_planks_lower.json
+0969bdf8b5d164470966dc92362559a0bd1958d1 assets/newworld/models/block/trimmed_fir_planks_middle.json
+ecb0fc125ecc873f808fa9da0287c0f52601ad04 assets/newworld/models/block/trimmed_fir_planks_upper.json
+d91a8a4276e5ed0e45593a590551c08da9b49763 assets/newworld/models/item/fir_bookshelf.json
 f817bfbcbf5d5733683bd79e21332a233500bc95 assets/newworld/models/item/fir_cabinet.json
 e498166eb383503f7aa9d5b036be0b59f76cdcf6 assets/newworld/models/item/fir_fence_gate.json
 696a309729659bc474ddc1dcb043fb34d804493e assets/newworld/models/item/fir_leaves.json
@@ -128,3 +136,4 @@ c3c89563d3616730abe607fb0764a055fa9e93d9 assets/newworld/models/item/potted_fir_
 0a9b1c390c6a7ba135653cc393cbadc79b3acced assets/newworld/models/item/potted_pointed_dripstone.json
 6cfde97a4c9c07bad7598c5d06affefd1ae428c7 assets/newworld/models/item/stripped_fir_log.json
 635e26ab10b63f694aa40d45b0d70e87fcec5b32 assets/newworld/models/item/stripped_fir_wood.json
+2f10a5c3236c95b48807f4ffb67a042170edee31 assets/newworld/models/item/trimmed_fir_planks.json

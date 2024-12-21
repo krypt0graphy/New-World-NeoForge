@@ -7,7 +7,10 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.Set;
@@ -60,11 +63,16 @@ public class NWBlockLootProvider extends BlockLootSubProvider {
 
         this.dropSelf(NWBlocks.TOMBSTONE.get());
 
-        this.add(NWBlocks.FIR_CABINET.get().get(), this::createNameableBlockEntityTable);
+        this.add(NWBlocks.FIR_CABINET.get().value(), this::createNameableBlockEntityTable);
+
+        this.add(NWBlocks.FIR_BOOKSHELF.get().value(), this::createBookshelfDrops);
+        this.dropSelf(NWBlocks.TRIMMED_FIR_PLANKS.get().value());
     }
     protected Iterable<Block> getKnownBlocks() {
         return NWBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 
-
+    protected LootTable.Builder createBookshelfDrops(Block block) {
+        return createSingleItemTableWithSilkTouch(block, Items.BOOK, ConstantValue.exactly(3.0F));
+    }
 }

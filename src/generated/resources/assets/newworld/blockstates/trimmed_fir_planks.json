@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "down=false,up=false": {
+      "model": "newworld:block/trimmed_fir_planks_middle"
+    },
+    "down=false,up=true": {
+      "model": "newworld:block/trimmed_fir_planks_upper"
+    },
+    "down=true,up=false": {
+      "model": "newworld:block/trimmed_fir_planks_lower"
+    },
+    "down=true,up=true": {
+      "model": "newworld:block/trimmed_fir_planks"
+    }
+  }
+}

@@ -79,6 +79,9 @@ repositories {
         name = "Modrinth"
         url = "https://api.modrinth.com/maven"
     }
+    flatDir {
+        dir "libs"
+    }
 }
 
 dependencies {
@@ -86,7 +89,7 @@ dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "com.terraformersmc:biolith-neoforge:${bio_version}"
     implementation "maven.modrinth:farmers-delight:1.21.1-${fd_version}"
-
+    implementation "com.farcr:nomansland:0.0.5:alpha"
 }
 
 tasks.withType(ProcessResources).configureEach {
@@ -98,6 +101,8 @@ tasks.withType(ProcessResources).configureEach {
             bio_version_range      : bio_version_range,
             fd_version             : fd_version,
             fd_version_range       : fd_version_range,
+            nml_version            : nml_version,
+            nml_version_range      : nml_version_range,
             neo_version_range      : neo_version_range,
             loader_version_range   : loader_version_range,
             mod_id                 : mod_id,

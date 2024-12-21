@@ -2,12 +2,14 @@ package com.kryptography.newworld.common.datagenproviders;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.blocks.FirCabinetBlock;
+import com.kryptography.newworld.common.blocks.FirTrimmedPlankBlock;
 import com.kryptography.newworld.init.NWBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -78,8 +80,14 @@ public class NWBlockStateProvider extends BlockStateProvider {
 
         mossSproutBlock(NWBlocks.MOSS_SPROUTS.get(), true);
 
-        cabinetBlock(NWBlocks.FIR_CABINET.get().get(), "fir");
+        cabinetBlock(NWBlocks.FIR_CABINET.get().value(), "fir");
         blockItem(NWBlocks.FIR_CABINET.get());
+
+        this.simpleBlock(NWBlocks.FIR_BOOKSHELF.get().value(), models().cubeColumn(name(NWBlocks.FIR_BOOKSHELF.get().get()), blockTexture(NWBlocks.FIR_BOOKSHELF.get().get()), blockTexture(NWBlocks.FIR_PLANKS.get())));
+        this.blockItem(NWBlocks.FIR_BOOKSHELF.get());
+
+        trimmedPlank(NWBlocks.TRIMMED_FIR_PLANKS.get());
+
     }
 
 
@@ -97,7 +105,6 @@ public class NWBlockStateProvider extends BlockStateProvider {
 
     private void mossSproutBlock (Block moss, boolean tint) {
         this.simpleBlock(NWBlocks.MOSS_SPROUTS.get(), models().withExistingParent(NWBlocks.MOSS_SPROUTS.getRegisteredName(), "block/tinted_cross").renderType("cutout").texture("cross", blockTexture(NWBlocks.MOSS_SPROUTS.get())));
-
     }
 
     private void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
@@ -122,7 +129,7 @@ public class NWBlockStateProvider extends BlockStateProvider {
         return BuiltInRegistries.BLOCK.getKey(block).getPath();
     }
 
-    public void cabinetBlock(Block block, String woodType) {
+    private void cabinetBlock(Block block, String woodType) {
         this.horizontalBlock(block, state -> {
             String suffix = state.getValue(FirCabinetBlock.OPEN) ? "_open" : "";
             return models().orientable(blockName(block) + suffix,
@@ -130,6 +137,25 @@ public class NWBlockStateProvider extends BlockStateProvider {
                     NewWorld.id("block/" + woodType + "_cabinet_front" + suffix),
                     NewWorld.id("block/" + woodType + "_cabinet_top"));
         });
+    }
+    private void trimmedPlank(DeferredBlock<?> block) {
+        this.getVariantBuilder(block.get()).forAllStates(state -> {
+                Boolean up = state.getValue(FirTrimmedPlankBlock.UP);
+                Boolean down = state.getValue(FirTrimmedPlankBlock.DOWN);
+                ModelFile model;
+                if(!down && !up) {
+                    model = models().cubeColumn(name(block.get()) + "_middle", blockTexture(block.get()).withSuffix("_middle"), blockTexture(block.get()).withSuffix("_top"));
+                } else if (!down && up) {
+                    model = models().cubeColumn(name(block.get()) + "_upper", blockTexture(block.get()).withSuffix("_upper"), blockTexture(block.get()).withSuffix("_top"));
+                } else if (down && !up) {
+                    model = models().cubeColumn(name(block.get()) + "_lower", blockTexture(block.get()).withSuffix("_lower"), blockTexture(block.get()).withSuffix("_top"));
+                } else {
+                    model = models().cubeColumn(name(block.get()), blockTexture(block.get()), blockTexture(block.get()).withSuffix("_top"));
+                }
+                return ConfiguredModel.builder().modelFile(model).build();
+                }
+        );
+        this.blockItem(block);
     }
 }
 

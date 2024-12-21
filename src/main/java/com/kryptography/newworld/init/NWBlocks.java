@@ -6,7 +6,8 @@ import com.kryptography.newworld.common.items.TombstoneBlockItem;
 import com.kryptography.newworld.common.worldgen.tree.FirTreeGrower;
 import com.kryptography.newworld.init.data.woodset.FirBlockSet;
 import com.kryptography.newworld.integration.Mods;
-import com.kryptography.newworld.integration.farmersdelight.FDIntegration;
+import com.kryptography.newworld.integration.FDIntegration;
+import com.kryptography.newworld.integration.NMLIntegration;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DoubleHighBlockItem;
@@ -51,7 +52,7 @@ public class NWBlocks {
 
     public static final DeferredBlock<LeavesBlock> FIR_LEAVES = register("fir_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().noOcclusion().sound(SoundType.AZALEA_LEAVES).isSuffocating((state, getter, pos) -> false).isViewBlocking((state, getter, pos) -> false).isRedstoneConductor((state, level, pos) -> false)));
 
-    public static final DeferredBlock<SaplingBlock> FIR_SAPLING = register("fir_sapling", () -> new SaplingBlock(FirTreeGrower.FIR, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).instabreak().sound(SoundType.GRASS).noCollission().randomTicks()));;
+    public static final DeferredBlock<SaplingBlock> FIR_SAPLING = register("fir_sapling", () -> new SaplingBlock(FirTreeGrower.FIR, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).instabreak().sound(SoundType.GRASS).noCollission().randomTicks()));
     public static final DeferredBlock<FlowerPotBlock> POTTED_FIR_SAPLING = BLOCKS.register("potted_fir_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FIR_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
 
     public static final DeferredBlock<StandingSignBlock> FIR_SIGN = BLOCKS.register("fir_sign", () -> new FirStandingSignBlock(FirBlockSet.FIR_WOOD_TYPE, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS.get()).strength(3.0F).noOcclusion().noCollission()));
@@ -79,8 +80,12 @@ public class NWBlocks {
     public static final DeferredBlock<Block> TOMBSTONE = registerTombstone("tombstone", () -> new TombstoneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).strength(0.7F, 1200).pushReaction(PushReaction.IGNORE).isSuffocating(((pState, pLevel, pPos) -> false)).sound(SoundType.POLISHED_DEEPSLATE).noOcclusion()));
     public static final DeferredBlock<FlowerPotBlock> POTTED_POINTED_DRIPSTONE = BLOCKS.register("potted_pointed_dripstone", () -> new FlowerPotBlock(Blocks.POINTED_DRIPSTONE, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).noOcclusion()));
 
+    //Farmer's Delight
     public static final Optional<DeferredBlock<Block>> FIR_CABINET = Mods.FARMERSDELIGHT.runIfInstalled(() -> (DeferredBlock<Block>) register("fir_cabinet", FDIntegration.cabinetBlock()));
 
+    //No Man's Land
+    public static final Optional<DeferredBlock<Block>> FIR_BOOKSHELF = Mods.NOMANSLAND.runIfInstalled(() -> register("fir_bookshelf", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF))));
+    public static final Optional<DeferredBlock<Block>> TRIMMED_FIR_PLANKS = Mods.NOMANSLAND.runIfInstalled(() -> (DeferredBlock < Block >) register("trimmed_fir_planks", NMLIntegration.trimmedPlanks()));
 
     public static <T extends Block> DeferredBlock<T> register(String name, Supplier<T> block) {
         DeferredBlock<T> ret = BLOCKS.register(name, block);
