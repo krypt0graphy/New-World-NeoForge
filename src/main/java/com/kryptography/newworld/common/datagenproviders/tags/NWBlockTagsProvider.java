@@ -2,7 +2,6 @@ package com.kryptography.newworld.common.datagenproviders.tags;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
-import com.kryptography.newworld.integration.Mods;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -22,6 +21,29 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(
+                NWBlocks.FIR_PLANKS.get(),
+                NWBlocks.FIR_BUTTON.get(),
+                NWBlocks.FIR_DOOR.get(),
+                NWBlocks.FIR_TRAPDOOR.get(),
+                NWBlocks.FIR_FENCE.get(),
+                NWBlocks.FIR_SLAB.get(),
+                NWBlocks.FIR_STAIRS.get(),
+                NWBlocks.FIR_PRESSURE_PLATE.get(),
+                NWBlocks.FIR_FENCE_GATE.get(),
+                NWBlocks.FIR_SIGN.get(),
+                NWBlocks.FIR_WALL_SIGN.get(),
+                NWBlocks.FIR_HANGING_SIGN.get(),
+                NWBlocks.FIR_WALL_HANGING_SIGN.get()
+        ).addOptional(
+                NWBlocks.FIR_CABINET.get().getId()
+        ).addOptional(
+                NWBlocks.FIR_BOOKSHELF.get().getId()
+        ).addOptional(
+                NWBlocks.TRIMMED_FIR_PLANKS.get().getId()
+        ).addTag(
+                NWBlockTags.FIR_LOGS
+        );
         this.tag(BlockTags.LOGS_THAT_BURN).addTags(NWBlockTags.FIR_LOGS);
         this.tag(BlockTags.SAPLINGS).add(NWBlocks.FIR_SAPLING.get());
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(NWBlocks.FIR_LOG.get());
@@ -59,13 +81,12 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
                 NWBlocks.TOMBSTONE.get(),
                 NWBlocks.LOAM_BRICKS.get(), NWBlocks.LOAM_BRICK_STAIRS.get(), NWBlocks.LOAM_BRICK_SLAB.get(), NWBlocks.LOAM_BRICK_WALL.get(),
                 NWBlocks.LOAM_TILES.get(), NWBlocks.LOAM_TILE_STAIRS.get(), NWBlocks.LOAM_TILE_SLAB.get(), NWBlocks.LOAM_TILE_WALL.get()
-
-
         );
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
                 NWBlocks.LOAM.get(), NWBlocks.LOAM_STAIRS.get(), NWBlocks.LOAM_SLAB.get(), NWBlocks.LOAM_WALL.get()
         );
 
+        this.tag(BlockTags.MINEABLE_WITH_HOE).add(NWBlocks.FIR_LEAVES.get());
 
         this.tag(BlockTags.BASE_STONE_OVERWORLD).add(NWBlocks.LOAM.get());
 

@@ -11,7 +11,6 @@ public class NWBlockTags {
     public static final TagKey<Block> SMALL_BUSH_PLANTABLE = blockTag("small_bush_plantable");
     public static final TagKey<Block> TOMBSTONE_REPLACEABLE = blockTag("tombstone_replaceable");
 
-
     public static TagKey<Block> blockTag(String name) {
         return TagKey.create(Registries.BLOCK,  NewWorld.id(name));
     }
