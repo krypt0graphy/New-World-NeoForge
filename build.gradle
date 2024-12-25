@@ -17,7 +17,7 @@ repositories {
 }
 
 base {
-    archivesName = mod_id + "-neoforge"
+    archivesName = mod_id + "-neoforge-" + minecraft_version
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -79,6 +79,10 @@ repositories {
         name = "Modrinth"
         url = "https://api.modrinth.com/maven"
     }
+    maven {
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
+    }
     flatDir {
         dir "libs"
     }
@@ -90,6 +94,7 @@ dependencies {
     implementation "com.terraformersmc:biolith-neoforge:${bio_version}"
     implementation "maven.modrinth:farmers-delight:1.21.1-${fd_version}"
     implementation "com.farcr:nomansland:0.0.5:alpha"
+    runtimeOnly "mezz.jei:jei-$minecraft_version-neoforge:19.21.0.247"
 }
 
 tasks.withType(ProcessResources).configureEach {

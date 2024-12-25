@@ -70,6 +70,7 @@ public class NWData {
             addAfter(event, Items.SPRUCE_LEAVES, NWBlocks.FIR_LEAVES.get());
             addAfter(event, Items.SPRUCE_SAPLING, NWBlocks.FIR_SAPLING.get());
             addAfter(event, Items.SHORT_GRASS, NWBlocks.MOSS_SPROUTS.get());
+            addAfter(event, Items.MUD, NWBlocks.LOAM.get());
 
         }
 
