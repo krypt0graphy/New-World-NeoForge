@@ -1,9 +1,9 @@
 package com.kryptography.newworld.common.blocks;
 
-import com.farcr.nomansland.common.block.TrimmedPlankBlock;
+//import com.farcr.nomansland.common.block.TrimmedPlankBlock;
 
-public class FirTrimmedPlankBlock extends TrimmedPlankBlock {
-    public FirTrimmedPlankBlock(Properties pProperties) {
-        super(pProperties);
-    }
+public class FirTrimmedPlankBlock /* extends TrimmedPlankBlock */ {
+//    public FirTrimmedPlankBlock(Properties pProperties) {
+//        super(pProperties);
+//    }
 }

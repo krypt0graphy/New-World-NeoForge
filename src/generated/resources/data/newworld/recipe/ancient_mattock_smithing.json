@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:flint"
-  },
-  "base": {
-    "item": "minecraft:stick"
-  },
+  "addition": "minecraft:flint",
+  "base": "minecraft:stick",
   "result": {
     "count": 1,
     "id": "newworld:ancient_mattock"
   },
-  "template": {
-    "item": "newworld:mattock_crafting_template"
-  }
+  "template": "newworld:mattock_crafting_template"
 }

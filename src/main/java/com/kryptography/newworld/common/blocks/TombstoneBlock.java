@@ -25,7 +25,7 @@ public class TombstoneBlock extends BaseEntityBlock {
 
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final BooleanProperty CRACKED = BlockStateProperties.CRACKED;
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final EnumProperty<AttachFace> FACE = BlockStateProperties.ATTACH_FACE;
 
     public static final VoxelShape DOWN = Block.box(0, 0, 0, 16, 9, 16);

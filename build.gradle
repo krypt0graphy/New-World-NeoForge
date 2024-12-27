@@ -25,6 +25,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 neoForge {
     version = project.neo_version
+
     parchment {
         mappingsVersion = project.parchment_mappings_version
         minecraftVersion = project.parchment_minecraft_version
@@ -43,6 +44,7 @@ neoForge {
             type = "gameTestServer"
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
+
         data {
             data()
             programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
@@ -52,12 +54,14 @@ neoForge {
             logLevel = org.slf4j.event.Level.DEBUG
         }
     }
+
     mods {
         "${mod_id}" {
             sourceSet(sourceSets.main)
         }
     }
 }
+
 
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
@@ -88,8 +92,8 @@ dependencies {
 
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "com.terraformersmc:biolith-neoforge:${bio_version}"
-    implementation "maven.modrinth:farmers-delight:1.21.1-${fd_version}"
-    implementation "com.farcr:nomansland:0.0.5:alpha"
+    //implementation "maven.modrinth:farmers-delight:1.21.1-${fd_version}"
+    //implementation "com.farcr:nomansland:0.0.5:alpha"
 }
 
 tasks.withType(ProcessResources).configureEach {

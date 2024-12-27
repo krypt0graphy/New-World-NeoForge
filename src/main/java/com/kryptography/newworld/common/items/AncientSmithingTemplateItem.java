@@ -15,8 +15,8 @@ public class AncientSmithingTemplateItem extends SmithingTemplateItem {
     private static final ChatFormatting DESCRIPTION_FORMATTING = ChatFormatting.BLUE;
 
 
-    public AncientSmithingTemplateItem(String name) {
-        super(makeAppliesToText(name), makeIngredientText(name), makeTitleText(name), makeBaseSlotDesc(name), makeAdditionalSlotDesc(name), emptyList(), emptyList());
+    public AncientSmithingTemplateItem(String name, Properties properties) {
+        super(makeAppliesToText(name), makeIngredientText(name), makeBaseSlotDesc(name), makeAdditionalSlotDesc(name), emptyList(), emptyList(), properties);
     }
 
     public static Component makeAdditionalSlotDesc(String name) {
@@ -30,9 +30,6 @@ public class AncientSmithingTemplateItem extends SmithingTemplateItem {
     }
     public static Component makeAppliesToText(String name) {
         return Component.translatable(Util.makeDescriptionId("item", NewWorld.id( "smithing_template." + name + ".applies_to"))).withStyle(DESCRIPTION_FORMATTING);
-    }
-    public static Component makeTitleText(String name) {
-        return Component.translatable(Util.makeDescriptionId("upgrade", NewWorld.id(name))).withStyle(TITLE_FORMATTING);
     }
 
     public static List<ResourceLocation> emptyList() {

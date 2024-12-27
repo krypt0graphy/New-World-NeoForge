@@ -49,7 +49,7 @@ public class LoamSnowFeature extends Feature<NoneFeatureConfiguration> {
 
         return random.nextInt(9) > 7
                 && pos.getY() < level.getHeight(Heightmap.Types.MOTION_BLOCKING, pos.getX(), pos.getZ())
-                && pos.getY() > level.getMinBuildHeight()
+                && pos.getY() > level.getMinY()
                 && level.getBlockState(pos).is(Blocks.CALCITE);
     }
 }

@@ -46,7 +46,7 @@ public class BurialSiteFeature extends Feature<NoneFeatureConfiguration> {
         List<BlockPos> towerPositions = new ArrayList<>();
 
         for (BlockPos pos : BlockPos.betweenClosed(origin.offset(-width, 1, -width), origin.offset(width, 5, width))) {
-            if (worldGenLevel.getBlockState(pos).isSolidRender(worldGenLevel, pos)) {
+            if (worldGenLevel.getBlockState(pos).isSolidRender()) {
                 return false;
             }
         }
@@ -75,7 +75,7 @@ public class BurialSiteFeature extends Feature<NoneFeatureConfiguration> {
                                 blockEntity.setLootTable(BuiltInLootTables.UNDERWATER_RUIN_SMALL, currentPos.asLong()));
                     }
                     if (worldGenLevel.getRandom().nextFloat() > 0.6){
-                        worldGenLevel.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolder(CaveFeatures.SCULK_PATCH_DEEP_DARK).ifPresent((feature) -> {
+                        worldGenLevel.registryAccess().lookup(Registries.CONFIGURED_FEATURE).get().get(CaveFeatures.SCULK_PATCH_DEEP_DARK).ifPresent((feature) -> {
                             feature.value().place(worldGenLevel, pContext.chunkGenerator(), random, currentPos);
                         });
                     }
@@ -95,8 +95,8 @@ public class BurialSiteFeature extends Feature<NoneFeatureConfiguration> {
                 placeBlock(worldGenLevel, currentPos.above(length+2), Blocks.SCULK_SENSOR.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, true));
 
                 Direction.stream().filter(direction -> direction.getAxis() != Direction.Axis.Y).forEach(direction -> {
-                    placeBlock(worldGenLevel, currentPos.above(length+2).offset(direction.getNormal()), Blocks.DEEPSLATE_BRICKS.defaultBlockState());
-                    placeBlock(worldGenLevel, currentPos.above(length+1).offset(direction.getNormal()), Blocks.DEEPSLATE_BRICK_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, SlabType.TOP));
+                    placeBlock(worldGenLevel, currentPos.above(length+2).offset(direction.getUnitVec3i()), Blocks.DEEPSLATE_BRICKS.defaultBlockState());
+                    placeBlock(worldGenLevel, currentPos.above(length+1).offset(direction.getUnitVec3i()), Blocks.DEEPSLATE_BRICK_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, SlabType.TOP));
                 });
 
                 

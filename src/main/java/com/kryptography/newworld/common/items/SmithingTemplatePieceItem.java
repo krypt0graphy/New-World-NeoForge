@@ -15,11 +15,6 @@ public class SmithingTemplatePieceItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
-        pTooltipComponents.add(getDescription().copy().withStyle(ChatFormatting.GRAY));
-    }
-
-    @Override
-    public Component getDescription() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+        pTooltipComponents.add(Component.translatable(this.getDescriptionId() + ".desc").copy().withStyle(ChatFormatting.GRAY));
     }
 }

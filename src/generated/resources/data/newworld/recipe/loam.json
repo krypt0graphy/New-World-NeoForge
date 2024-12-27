@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "C": {
-      "item": "minecraft:clay"
-    },
-    "D": {
-      "item": "minecraft:dirt"
-    }
+    "C": "minecraft:clay",
+    "D": "minecraft:dirt"
   },
   "pattern": [
     "CD",

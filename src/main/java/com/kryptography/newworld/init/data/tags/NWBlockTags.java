@@ -1,6 +1,7 @@
 package com.kryptography.newworld.init.data.tags;
 
 import com.kryptography.newworld.NewWorld;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -12,6 +13,6 @@ public class NWBlockTags {
     public static final TagKey<Block> TOMBSTONE_REPLACEABLE = blockTag("tombstone_replaceable");
 
     public static TagKey<Block> blockTag(String name) {
-        return TagKey.create(Registries.BLOCK,  NewWorld.id(name));
+        return TagKey.create(BuiltInRegistries.BLOCK.key(),  NewWorld.id(name));
     }
 }

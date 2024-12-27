@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": {
-      "item": "newworld:illager_tome"
-    },
-    "D": {
-      "item": "minecraft:diamond"
-    },
-    "S": {
-      "item": "minecraft:polished_deepslate"
-    },
-    "T": {
-      "item": "newworld:tombstone"
-    }
+    "A": "newworld:illager_tome",
+    "D": "minecraft:diamond",
+    "S": "minecraft:polished_deepslate",
+    "T": "newworld:tombstone"
   },
   "pattern": [
     "SDS",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "newworld:loam_bricks"
-    }
+    "#": "newworld:loam_bricks"
   },
   "pattern": [
     "###"

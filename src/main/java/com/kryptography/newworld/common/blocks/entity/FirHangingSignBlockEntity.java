@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class FirHangingSignBlockEntity extends SignBlockEntity {
     public FirHangingSignBlockEntity(BlockPos pos, BlockState state) {
-        super(NWBlockEntityTypes.FIR_HANGING_SIGN_BLOCK_ENTITY.get(), pos, state);
+        super(pos, state);
     }
 
     @Override

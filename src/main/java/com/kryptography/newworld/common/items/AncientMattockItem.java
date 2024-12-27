@@ -4,7 +4,8 @@ import com.google.common.collect.Sets;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+
+import net.minecraft.world.item.ToolMaterial;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 
@@ -18,8 +19,8 @@ public class AncientMattockItem extends DiggerItem {
             ItemAbilities.AXE_DIG, ItemAbilities.SHOVEL_DIG, ItemAbilities.HOE_DIG, ItemAbilities.PICKAXE_DIG
     ).collect(Collectors.toCollection(Sets::newIdentityHashSet));
 
-    public AncientMattockItem(Tier pTier, Properties pProperties) {
-        super(pTier, NWBlockTags.MATTOCK_MINEABLE, pProperties);
+    public AncientMattockItem(ToolMaterial toolMaterial,float atkDmg, float atkSpeed, Properties pProperties) {
+        super(toolMaterial, NWBlockTags.MATTOCK_MINEABLE, atkDmg, atkSpeed, pProperties);
     }
 
     @Override

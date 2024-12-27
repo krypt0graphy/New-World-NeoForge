@@ -50,14 +50,14 @@ public class BuriedBunkerFeature extends Structure {
     protected Optional<GenerationStub> findGenerationPoint(GenerationContext pContext) {
         ChunkPos chunkPos = pContext.chunkPos();
         BlockPos pos = new BlockPos(chunkPos.getMiddleBlockPosition(0));
-        Registry<StructureTemplatePool> pools = pContext.registryAccess().registryOrThrow(Registries.TEMPLATE_POOL);
-        HolderGetter<StructureTemplatePool> poolGetter = pools.asLookup();
+        Registry<StructureTemplatePool> pools = pContext.registryAccess().lookupOrThrow(Registries.TEMPLATE_POOL);
+
         if(!spawnChecks(pContext)) {
             return Optional.empty();
         }
         Optional<GenerationStub> structurePiecesGenerator = JigsawPlacement.addPieces(
                 pContext,
-                poolGetter.getOrThrow(NWStructurePools.BURIED_BUNKER),
+                pools.getOrThrow(NWStructurePools.BURIED_BUNKER),
                 Optional.empty(),
                 1,
                 pos.below(6),

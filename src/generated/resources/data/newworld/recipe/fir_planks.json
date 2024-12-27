@@ -3,9 +3,7 @@
   "category": "building",
   "group": "planks",
   "ingredients": [
-    {
-      "tag": "newworld:fir_logs"
-    }
+    "#newworld:fir_logs"
   ],
   "result": {
     "count": 4,

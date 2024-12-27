@@ -8,8 +8,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import java.util.function.Supplier;
 
 public class NMLIntegration {
-
-    public static Supplier<? extends Block> trimmedPlanks() {
-        return () -> new FirTrimmedPlankBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS));
-    }
+//
+//    public static Supplier<? extends Block> trimmedPlanks() {
+//        return () -> new FirTrimmedPlankBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS));
+//    }
 }

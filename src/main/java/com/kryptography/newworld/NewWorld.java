@@ -1,6 +1,5 @@
 package com.kryptography.newworld;
 
-import com.kryptography.newworld.client.NWBoatRenderer;
 import com.kryptography.newworld.common.worldgen.NWFeature;
 import com.kryptography.newworld.init.NWBlockEntityTypes;
 import com.kryptography.newworld.init.NWBlocks;
@@ -12,18 +11,21 @@ import com.kryptography.newworld.init.data.NWStats;
 import com.kryptography.newworld.init.data.loot.NWLootModifiers;
 import com.kryptography.newworld.init.data.woodset.FirBlockSet;
 import com.kryptography.newworld.init.worldgen.NWBiomePlacement;
-import com.kryptography.newworld.init.worldgen.NWBiomes;
 import com.kryptography.newworld.init.worldgen.structure.NWStructureTypes;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 
 @Mod(NewWorld.MOD_ID)
 
@@ -45,6 +47,7 @@ public class NewWorld {
         NWBiomePlacement.register();
 
         bus.addListener(this::commonSetup);
+        bus.addListener(this::addBlockEntityTypes);
         bus.addListener(NWData::addCreative);
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -54,13 +57,14 @@ public class NewWorld {
         });
     }
 
-    @SubscribeEvent
-    public static void clientSetup(FMLClientSetupEvent evt) {
-        evt.enqueueWork(() -> {
-            Sheets.addWoodType(FirBlockSet.FIR_WOOD_TYPE);
-            EntityRenderers.register(NWEntityTypes.FIR_BOAT.get(), pContext -> new NWBoatRenderer(pContext, false));
-            EntityRenderers.register(NWEntityTypes.FIR_CHEST_BOAT.get(), pContext -> new NWBoatRenderer(pContext, true));
-        });
+
+
+    public void addBlockEntityTypes(BlockEntityTypeAddBlocksEvent event) {
+        event.modify(BlockEntityType.HANGING_SIGN,
+                NWBlocks.FIR_HANGING_SIGN.get(), NWBlocks.FIR_WALL_HANGING_SIGN.get());
+
+        event.modify(BlockEntityType.SIGN,
+                NWBlocks.FIR_SIGN.get(), NWBlocks.FIR_WALL_SIGN.get());
     }
 
 }

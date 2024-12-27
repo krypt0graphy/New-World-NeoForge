@@ -35,15 +35,16 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
                 NWBlocks.FIR_WALL_SIGN.get(),
                 NWBlocks.FIR_HANGING_SIGN.get(),
                 NWBlocks.FIR_WALL_HANGING_SIGN.get()
-        ).addOptional(
+        ).addTag(
+                NWBlockTags.FIR_LOGS
+        );
+        /*.addOptional(
                 NWBlocks.FIR_CABINET.get().getId()
         ).addOptional(
                 NWBlocks.FIR_BOOKSHELF.get().getId()
         ).addOptional(
                 NWBlocks.TRIMMED_FIR_PLANKS.get().getId()
-        ).addTag(
-                NWBlockTags.FIR_LOGS
-        );
+        )*/
         this.tag(BlockTags.LOGS_THAT_BURN).addTags(NWBlockTags.FIR_LOGS);
         this.tag(BlockTags.SAPLINGS).add(NWBlocks.FIR_SAPLING.get());
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(NWBlocks.FIR_LOG.get());
