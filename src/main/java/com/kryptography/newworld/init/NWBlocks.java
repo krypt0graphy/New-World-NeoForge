@@ -100,7 +100,7 @@ public class NWBlocks {
     }
     public static <T extends Block> DeferredBlock<T> registerTombstone(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
         DeferredBlock<T> ret = BLOCKS.register(name, () -> block.apply(properties.get().setId(ResourceKey.create(Registries.BLOCK, NewWorld.id(name)))));
-        NWItems.register(name, itemProps -> new BlockItem(ret.get(), itemProps), () -> new Item.Properties().stacksTo(1));
+        NWItems.register(name, itemProps -> new TombstoneBlockItem(ret.get(), itemProps), () -> new Item.Properties().stacksTo(1));
         return ret;
     }
     public static <T extends Block> DeferredBlock<T> registerDoubleBlockItem(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {

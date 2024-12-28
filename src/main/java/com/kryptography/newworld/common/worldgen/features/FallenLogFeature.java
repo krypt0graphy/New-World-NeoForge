@@ -39,12 +39,12 @@ public class FallenLogFeature extends Feature<NoneFeatureConfiguration>{
     public void placeLog(WorldGenLevel level, BlockPos pos, Direction direction, int currentLoop) {
         BlockPos currentPos = pos.relative(direction, currentLoop);
         if(level.getBlockState(currentPos.below()).isSolid() && level.getBlockState(currentPos).is(BlockTags.REPLACEABLE)) {
-            level.setBlock(currentPos, NWBlocks.FIR_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, direction.getAxis()), 64);
+            level.setBlock(currentPos, NWBlocks.FIR_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, direction.getAxis()), 2);
         } else {
             boolean foundValid = false;
             for (int j = -6; j < 3; j++) {
                 if (level.getBlockState(currentPos.below(j)).isSolid() && level.getBlockState(currentPos.below(j - 1)).is(BlockTags.REPLACEABLE) && !foundValid) {
-                    level.setBlock(currentPos.below(j - 1), NWBlocks.FIR_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, direction.getAxis()), 64);
+                    level.setBlock(currentPos.below(j - 1), NWBlocks.FIR_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, direction.getAxis()), 2);
                     foundValid = true;
                 }
             }
