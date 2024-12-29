@@ -13,3 +13,7 @@ Features:
 - Moss Sprouts: New decorative plant which can spawn in moss vegetation
 - Farmer's Delight Integration: Fir cabinets
 - No Man's Land Integration: Fir bookshelves and trimmed planks
+
+  ## Before opening issues:
+  - Make sure you're on the right repository for the modloader you are using
+  - When posting the issue post your latest.log or crash report with it
