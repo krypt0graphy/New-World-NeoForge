@@ -3,7 +3,6 @@ package com.kryptography.newworld.init;
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.entity.FirBoatEntity;
 import com.kryptography.newworld.common.entity.FirChestBoatEntity;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;

@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-08T22:17:08.2681452	Recipes
+// 1.20.1	2025-01-08T23:34:45.0026887	Recipes
 31d9e8a3085ba935bf77c24acf5b9700e4b60101 data/newworld/advancements/recipes/building_blocks/fir_planks.json
 866b095496f15aee80cca8c8c3e1ba22d60d12d1 data/newworld/advancements/recipes/building_blocks/fir_slab.json
 03f69ba0f7f877eef2a37e02f0e073a2e2151d43 data/newworld/advancements/recipes/building_blocks/fir_stairs.json
@@ -41,6 +41,7 @@ ca5af6537eb7117d69df03b68442130580154d01 data/newworld/advancements/recipes/buil
 4826b1e7a5b18694c997b40c08d733a57be2f89d data/newworld/advancements/recipes/decorations/fir_fence.json
 4a28913db378c993f4027c07227c5badb6b5f077 data/newworld/advancements/recipes/decorations/fir_hanging_sign.json
 18e76ba1d00d49b27d9d3bb4a3c716dc716f9ddc data/newworld/advancements/recipes/decorations/fir_sign.json
+c83e59b64ca7c55666a89d7c4ffe58d64db5d43a data/newworld/advancements/recipes/fir_cabinet.json
 74a910aff2ea615f332941dc7fca738921530704 data/newworld/advancements/recipes/redstone/fir_button.json
 b04d7b67718623af9d3b462115ac051dfdfc29d0 data/newworld/advancements/recipes/redstone/fir_door.json
 1102d4a41f31a7bda6a3f743171486e28c69dc48 data/newworld/advancements/recipes/redstone/fir_fence_gate.json
@@ -53,7 +54,8 @@ af90cb2059eee1b2a9a63ec54bd1cc37464a1686 data/newworld/advancements/recipes/tran
 812d8fe4888839ee0100cbcfe56460f0aada99e6 data/newworld/recipes/ancient_mattock_smithing.json
 ff64f7f328e32b8e53798764eccbca978c234bfa data/newworld/recipes/fir_boat.json
 2193ebc3682b1af320724925c440092419c472cc data/newworld/recipes/fir_button.json
-4cd5976d959c98b0d46a0bd7000dc36a3226cd69 data/newworld/recipes/fir_chest_boat.json
+39c5afffccaa45c693a5b0c7ff4c8339a092435f data/newworld/recipes/fir_cabinet.json
+e94ef1fcfbf9b43e68ded0a62448b2e59861a628 data/newworld/recipes/fir_chest_boat.json
 af05a1380ac333d7f5aec40de7abc767548bedc2 data/newworld/recipes/fir_door.json
 4e0b9b97f6865f94e41bffd0541aecd10b77708c data/newworld/recipes/fir_fence.json
 7088cd6574967e71b7a4efd1d70f7eb4679e45ea data/newworld/recipes/fir_fence_gate.json

@@ -7,6 +7,7 @@ import com.kryptography.newworld.common.worldgen.tree.FirTreeGrower;
 import com.kryptography.newworld.init.data.woodset.FirBlockSet;
 
 import com.kryptography.newworld.integration.FDIntegration;
+import com.kryptography.newworld.integration.Mods;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DoubleHighBlockItem;
@@ -80,7 +81,7 @@ public class NWBlocks {
     public static final RegistryObject<FlowerPotBlock> POTTED_POINTED_DRIPSTONE = BLOCKS.register("potted_pointed_dripstone", () -> new FlowerPotBlock(Blocks.POINTED_DRIPSTONE, BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).noOcclusion()));
 
     //Farmer's Delight
-    public static final RegistryObject<Block> FIR_CABINET = (RegistryObject<Block>) register("fir_cabinet", FDIntegration.cabinetBlock());
+    public static final RegistryObject<Block> FIR_CABINET = (RegistryObject<Block>) register("fir_cabinet", Mods.FARMERSDELIGHT.isLoaded() ? () -> FDIntegration.cabinetBlock() : () -> new Block(BlockBehaviour.Properties.of()));
 
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> ret = BLOCKS.register(name, block);

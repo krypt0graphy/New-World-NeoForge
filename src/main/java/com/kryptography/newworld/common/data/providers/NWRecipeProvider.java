@@ -4,13 +4,16 @@ import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.data.tags.NWItemTags;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
@@ -64,7 +67,7 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
         woodFromLogs(pRecipeOutput, NWBlocks.FIR_WOOD.get(), NWBlocks.FIR_LOG.get());
         woodFromLogs(pRecipeOutput, NWBlocks.STRIPPED_FIR_WOOD.get(), NWBlocks.STRIPPED_FIR_LOG.get());
         woodenBoat(pRecipeOutput, NWItems.FIR_BOAT.get(), NWBlocks.FIR_PLANKS.get());
-        chestBoat(pRecipeOutput, NWItems.FIR_CHEST_BOAT.get(), NWBlocks.FIR_PLANKS.get());
+        chestBoat(pRecipeOutput, NWItems.FIR_CHEST_BOAT.get(), NWItems.FIR_BOAT.get());
         hangingSign(pRecipeOutput, NWBlocks.FIR_HANGING_SIGN.get(), NWBlocks.STRIPPED_FIR_LOG.get());
         signBuilder(NWItems.FIR_SIGN.get(), Ingredient.of(NWBlocks.FIR_PLANKS.get())).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS.get())).save(pRecipeOutput);
         doorBuilder(NWBlocks.FIR_DOOR.get(), Ingredient.of(NWBlocks.FIR_PLANKS.get())).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS.get())).save(pRecipeOutput);
@@ -110,6 +113,19 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
                         NWItems.ANCIENT_MATTOCK.get())
                 .unlocks("has_mattock_crafting_template", has(NWItems.MATTOCK_CRAFTING_TEMPLATE.get()))
                 .save(pRecipeOutput, NewWorld.id("ancient_mattock_smithing"));
+
+
+        ConditionalRecipe.builder().addCondition(new ModLoadedCondition("farmersdelight")).addRecipe(c ->
+                ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, NWBlocks.FIR_CABINET.get())
+                        .pattern("___")
+                        .pattern("D D")
+                        .pattern("___")
+                        .define('_', NWBlocks.FIR_SLAB.get())
+                        .define('D', NWBlocks.FIR_TRAPDOOR.get())
+                        .unlockedBy("has_fir_trapdoor", has(NWBlocks.FIR_TRAPDOOR.get()))
+                        .group("fd_cabinet")
+                        .save(c)
+        ).generateAdvancement().build(pRecipeOutput, NewWorld.id("fir_cabinet"));
     }
 
     public void stoneSetRecipes(Consumer<FinishedRecipe> pRecipeOutput, ItemLike base, ItemLike stairs, ItemLike slab, ItemLike wall) {

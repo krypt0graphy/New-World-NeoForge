@@ -3,6 +3,7 @@ package com.kryptography.newworld.init;
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.entity.FirBoatEntity;
 import com.kryptography.newworld.common.items.*;
+import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
@@ -19,7 +20,7 @@ public class NWItems {
     public static final RegistryObject<Item> FIR_BOAT = ITEMS.register("fir_boat", () -> new FirBoatItem(false, FirBoatEntity.Type.FIR, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> FIR_CHEST_BOAT = ITEMS.register("fir_chest_boat", () -> new FirBoatItem(true, FirBoatEntity.Type.FIR, new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<AncientMattockItem> ANCIENT_MATTOCK = ITEMS.register("ancient_mattock", () -> new AncientMattockItem(0.0F, -3.0F, AncientToolTier.ANCIENT, BlockTags.NEEDS_DIAMOND_TOOL, new Item.Properties()));
+    public static final RegistryObject<AncientMattockItem> ANCIENT_MATTOCK = ITEMS.register("ancient_mattock", () -> new AncientMattockItem(0.0F, -3.0F, AncientToolTier.ANCIENT, NWBlockTags.MATTOCK_MINEABLE, new Item.Properties()));
 
     public static final RegistryObject<Item> ILLAGER_TOME = ITEMS.register("illager_tome", () -> new IllagerTomeItem(new Item.Properties().rarity(Rarity.EPIC)));
 

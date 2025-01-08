@@ -5,6 +5,8 @@ import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import com.kryptography.newworld.init.data.tags.NWItemTags;
+import com.kryptography.newworld.integration.FDIntegration;
+import com.kryptography.newworld.integration.Mods;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -35,9 +37,6 @@ public class NWItemTagsProvider extends ItemTagsProvider {
 
         this.tag(ItemTags.BOOKSHELF_BOOKS).add(NWItems.ILLAGER_TOME.get());
 
-        //this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(NWItems.ANCIENT_MATTOCK.get());
-        //this.tag(ItemTags.VANISHING_ENCHANTABLE).add(NWItems.ANCIENT_MATTOCK.get());
-
         this.tag(ItemTags.LEAVES).add(NWBlocks.FIR_LEAVES.get().asItem());
         this.tag(ItemTags.WOODEN_BUTTONS).add(NWBlocks.FIR_BUTTON.get().asItem());
         this.tag(ItemTags.WOODEN_DOORS).add(NWBlocks.FIR_DOOR.get().asItem());
@@ -53,5 +52,9 @@ public class NWItemTagsProvider extends ItemTagsProvider {
         this.tag(ItemTags.HANGING_SIGNS).add(NWBlocks.FIR_HANGING_SIGN.get().asItem());
         this.tag(NWItemTags.MATTOCK_PIECES).add(NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD.get(), NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get());
         this.tag(NWItemTags.TOMBSTONE_MATERIALS).add(NWItems.ILLAGER_TOME.get(), NWBlocks.TOMBSTONE.get().asItem());
+
+        if(Mods.FARMERSDELIGHT.isLoaded()) {
+            this.tag(FDIntegration.WOODEN_CABINETS).add(NWBlocks.FIR_CABINET.get().asItem());
+        }
     }
 }

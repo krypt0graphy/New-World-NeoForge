@@ -11,6 +11,7 @@ import com.kryptography.newworld.common.data.providers.loot.NWGlobalLootModifier
 import com.kryptography.newworld.common.data.providers.tags.NWBiomeTagsProvider;
 import com.kryptography.newworld.common.data.providers.tags.NWBlockTagsProvider;
 import com.kryptography.newworld.common.data.providers.tags.NWItemTagsProvider;
+import com.kryptography.newworld.common.data.providers.tags.NWPaintingVariantTagProvider;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.worldgen.NWWorldgenData;
@@ -61,6 +62,7 @@ public class NWData {
         gen.addProvider(event.includeServer(), new NWRecipeProvider(packOutput));
         gen.addProvider(event.includeServer(), new NWGlobalLootModifierProvider(packOutput, lookup));
         gen.addProvider(event.includeServer(), new NWBiomeTagsProvider(packOutput, datapackProvider.getRegistryProvider(),existingFileHelper));
+        gen.addProvider(event.includeClient(), new NWPaintingVariantTagProvider(packOutput, lookup, existingFileHelper));
     }
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
