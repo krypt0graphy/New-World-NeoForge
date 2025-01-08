@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "newworld:fir_planks"
+    }
+  ],
+  "result": {
+    "item": "newworld:fir_button"
+  }
+}

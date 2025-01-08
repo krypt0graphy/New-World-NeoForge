@@ -3,7 +3,7 @@ package com.kryptography.newworld.init.worldgen.structure;
 import com.kryptography.newworld.NewWorld;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
@@ -14,7 +14,7 @@ public class NWStructureSets {
 
     public static final ResourceKey<StructureSet> BURIED_BUNKER = registerKey("buried_bunker");
 
-    public static void bootstrap(BootstrapContext<StructureSet> context) {
+    public static void bootstrap(BootstapContext<StructureSet> context) {
         HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
         context.register(BURIED_BUNKER, new StructureSet(

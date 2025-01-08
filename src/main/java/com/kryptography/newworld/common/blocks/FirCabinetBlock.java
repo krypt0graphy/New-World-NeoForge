@@ -5,6 +5,7 @@ import com.kryptography.newworld.init.NWBlockEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -15,20 +16,20 @@ import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.entity.CabinetBlockEntity;
 
+
 public class FirCabinetBlock extends CabinetBlock {
     public FirCabinetBlock(Properties properties) {
         super(properties);
     }
 
     @Override
-    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!level.isClientSide) {
             BlockEntity tile = level.getBlockEntity(pos);
             if (tile instanceof FirCabinetBlockEntity) {
                 player.openMenu((CabinetBlockEntity)tile);
             }
         }
-
         return InteractionResult.SUCCESS;
     }
 

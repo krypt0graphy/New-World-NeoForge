@@ -15,9 +15,11 @@ public class MossSproutsBlock extends TallGrassBlock implements BonemealableBloc
     }
 
     @Override
-    protected VoxelShape getVisualShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+    public VoxelShape getVisualShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
     }
+
+
 
 
 }

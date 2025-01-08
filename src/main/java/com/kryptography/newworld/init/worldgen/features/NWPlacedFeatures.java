@@ -5,7 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
@@ -50,7 +50,7 @@ public class NWPlacedFeatures {
     public static final ResourceKey<PlacedFeature> PATCH_FERN_WOODED_MEADOW = registerKey("patch_fern_wooded_meadow");
     public static final ResourceKey<PlacedFeature> BIRCH_CHERRY_GROVE = registerKey("birch_cherry_grove");
 
-    public static void bootstrap(BootstrapContext<PlacedFeature> bootstrap) {
+    public static void bootstrap(BootstapContext<PlacedFeature> bootstrap) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = bootstrap.lookup(Registries.CONFIGURED_FEATURE);
 
         register(bootstrap, FIR_CHECKED, configuredFeatures.getOrThrow(NWConfiguredFeatures.FIR),  List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
@@ -80,7 +80,7 @@ public class NWPlacedFeatures {
         return ResourceKey.create(Registries.PLACED_FEATURE,  NewWorld.id(name));
     }
 
-    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
+    private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
                                  List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }

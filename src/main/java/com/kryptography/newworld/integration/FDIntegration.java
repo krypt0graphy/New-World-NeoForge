@@ -13,12 +13,12 @@ import java.util.function.Supplier;
 public class FDIntegration {
 
     public static Supplier<? extends Block> cabinetBlock() {
-        return () -> new FirCabinetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL));
+        return () -> new FirCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL));
     }
 
     public static Supplier<? extends BlockEntityType<?>> cabinetBlockEntity() {
         return () -> BlockEntityType.Builder.of(FirCabinetBlockEntity::new,
-                NWBlocks.FIR_CABINET.get().value()
+                NWBlocks.FIR_CABINET.get()
         ).build(null);
     }
 }

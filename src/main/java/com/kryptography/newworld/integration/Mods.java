@@ -1,12 +1,12 @@
 package com.kryptography.newworld.integration;
 
-import net.neoforged.fml.ModList;
+
+import net.minecraftforge.fml.ModList;
 
 import java.util.Optional;
 import java.util.function.Supplier;
 
 
-//Author: Tazer https://github.com/tazercopter
 public enum Mods {
     BIOLITH,
     FARMERSDELIGHT,

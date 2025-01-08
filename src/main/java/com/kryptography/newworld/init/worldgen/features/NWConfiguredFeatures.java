@@ -1,12 +1,11 @@
 package com.kryptography.newworld.init.worldgen.features;
 
 import com.kryptography.newworld.NewWorld;
-import com.kryptography.newworld.common.worldgen.NWFeature;
 import com.kryptography.newworld.init.NWBlocks;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.MiscOverworldFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -71,7 +70,7 @@ public class NWConfiguredFeatures {
 
     public static List<Block> VALID_BERRY_BUSH_BLOCKS = List.of(Blocks.GRASS_BLOCK, Blocks.PODZOL, Blocks.DIRT, Blocks.COARSE_DIRT, Blocks.ROOTED_DIRT, Blocks.MOSS_BLOCK);
 
-    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> bootstrap) {
+    public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> bootstrap) {
         HolderGetter<ConfiguredFeature<?, ?>> features = bootstrap.lookup(Registries.CONFIGURED_FEATURE);
         HolderGetter<PlacedFeature> placedFeatures = bootstrap.lookup(Registries.PLACED_FEATURE);
 
@@ -128,7 +127,7 @@ public class NWConfiguredFeatures {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, NewWorld.id( name));
     }
 
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,
+    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context,
                                                                                           ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
         context.register(key, new ConfiguredFeature<>(feature, configuration));
     }

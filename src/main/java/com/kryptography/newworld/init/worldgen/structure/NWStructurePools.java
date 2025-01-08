@@ -6,7 +6,7 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
@@ -18,9 +18,9 @@ public class NWStructurePools {
 
     public static final ResourceKey<StructureTemplatePool> BURIED_BUNKER = registerKey("buried_bunker");
 
-    private static final ResourceKey<StructureTemplatePool> EMPTY = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.withDefaultNamespace("empty"));
+    private static final ResourceKey<StructureTemplatePool> EMPTY = ResourceKey.create(Registries.TEMPLATE_POOL, new ResourceLocation("minecraft", "empty"));
 
-    public static void bootstrap(BootstrapContext<StructureTemplatePool> bootstrap) {
+    public static void bootstrap(BootstapContext<StructureTemplatePool> bootstrap) {
 
         HolderGetter<StructureTemplatePool> templateLookup = bootstrap.lookup(Registries.TEMPLATE_POOL);
         Holder<StructureTemplatePool> empty = templateLookup.getOrThrow(EMPTY);

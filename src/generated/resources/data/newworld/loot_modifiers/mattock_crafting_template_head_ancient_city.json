@@ -6,10 +6,9 @@
       "condition": "minecraft:random_chance"
     },
     {
-      "condition": "neoforge:loot_table_id",
+      "condition": "forge:loot_table_id",
       "loot_table_id": "minecraft:chests/ancient_city"
     }
   ],
-  "count": 1,
   "item": "newworld:mattock_crafting_template_head"
 }

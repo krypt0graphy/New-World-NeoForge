@@ -8,8 +8,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
 public class FirWallSignBlock extends WallSignBlock {
-    public FirWallSignBlock(WoodType p_58069_, Properties p_58068_) {
-        super(p_58069_, p_58068_);
+    public FirWallSignBlock(WoodType type, Properties properties) {
+        super(properties, type);
     }
 
     @Override

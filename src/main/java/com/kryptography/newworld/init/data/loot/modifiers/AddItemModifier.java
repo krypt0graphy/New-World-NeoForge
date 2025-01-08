@@ -10,19 +10,22 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
-import net.neoforged.neoforge.common.loot.LootModifier;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
+import net.minecraftforge.common.loot.LootModifier;
+import net.minecraftforge.registries.ForgeRegistries;
+
 
 import java.util.function.Supplier;
 
 public class AddItemModifier extends LootModifier {
-
-    public static final Supplier<MapCodec<AddItemModifier>> CODEC = Suppliers.memoize(() ->
-      RecordCodecBuilder.mapCodec(instance -> instance.group(
-              LOOT_CONDITIONS_CODEC.fieldOf("conditions").forGetter(lm -> lm.conditions),
-              BuiltInRegistries.ITEM.byNameCodec().fieldOf("item").forGetter(lm -> lm.itemAdded),
-              Codec.intRange(0, Integer.MAX_VALUE).fieldOf("count").forGetter((lm) -> lm.amountAdded)
-      ).apply(instance, AddItemModifier::new)));
+    public static final Supplier<Codec<AddItemModifier>> CODEC = Suppliers.memoize(() ->
+            RecordCodecBuilder.create(inst -> codecStart(inst).and(
+                            inst.group(
+                                    ForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter((m) -> m.itemAdded.asItem()),
+                                    Codec.INT.optionalFieldOf("count", 1).forGetter((m) -> m.amountAdded)
+                            )
+                    )
+                    .apply(inst, AddItemModifier::new)));
 
 
 
@@ -42,7 +45,7 @@ public class AddItemModifier extends LootModifier {
     }
 
     @Override
-    public MapCodec<? extends IGlobalLootModifier> codec() {
+    public Codec<? extends IGlobalLootModifier> codec() {
         return CODEC.get();
     }
 }

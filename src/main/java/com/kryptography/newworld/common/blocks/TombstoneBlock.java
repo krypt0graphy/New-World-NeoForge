@@ -4,6 +4,7 @@ import com.kryptography.newworld.common.blocks.entity.TombstoneBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -35,13 +36,6 @@ public class TombstoneBlock extends BaseEntityBlock {
     public static final VoxelShape EAST = Block.box(0,0,0,9,16,16);
     public static final VoxelShape WEST = Block.box(7, 0, 0, 16, 16,16);
 
-    public static final MapCodec<TombstoneBlock> CODEC = simpleCodec(TombstoneBlock::new);
-
-    @Override
-    public MapCodec<TombstoneBlock> codec() {
-        return CODEC;
-    }
-
     public TombstoneBlock(BlockBehaviour.Properties p_49046_) {
         super(p_49046_);
         this.registerDefaultState(
@@ -59,7 +53,7 @@ public class TombstoneBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         Direction direction = pState.getValue(FACING);
         switch (pState.getValue(FACE)) {
             case FLOOR:
@@ -78,9 +72,11 @@ public class TombstoneBlock extends BaseEntityBlock {
         }
     }
 
+
     @Override
-    protected void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        Containers.dropContentsOnDestroy(pState, pNewState, pLevel, pPos);
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+        BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+        Containers.dropContents(pLevel, pPos, (Container) blockEntity);
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
 
@@ -92,10 +88,9 @@ public class TombstoneBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected RenderShape getRenderShape(BlockState pState) {
+    public RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
     }
-
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {

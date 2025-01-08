@@ -49,10 +49,11 @@ public class FirBoatEntity extends Boat {
         return Type.byId(this.entityData.get(DATA_ID_TYPE));
     }
 
+
     @Override
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        super.defineSynchedData(builder);
-        builder.define(DATA_ID_TYPE, 0);
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.getEntityData().define(DATA_ID_TYPE, Type.FIR.ordinal());
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {

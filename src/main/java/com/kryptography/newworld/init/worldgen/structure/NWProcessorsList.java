@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.kryptography.newworld.NewWorld;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -18,7 +18,7 @@ public class NWProcessorsList {
     public static final ResourceKey<StructureProcessorList> BURIED_BUNKER = registerKey("buried_bunker");
 
 
-    public static void bootstrap(BootstrapContext<StructureProcessorList> context) {
+    public static void bootstrap(BootstapContext<StructureProcessorList> context) {
         HolderGetter<Block> holdergetter = context.lookup(Registries.BLOCK);
 
         register(context, BURIED_BUNKER,
@@ -32,7 +32,7 @@ public class NWProcessorsList {
                         ))));
     }
 
-    private static void register(BootstrapContext<StructureProcessorList> pContext, ResourceKey<StructureProcessorList> pKey, List<StructureProcessor> pProcessors) {
+    private static void register(BootstapContext<StructureProcessorList> pContext, ResourceKey<StructureProcessorList> pKey, List<StructureProcessor> pProcessors) {
         pContext.register(pKey, new StructureProcessorList(pProcessors));
     }
 

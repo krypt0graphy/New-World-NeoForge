@@ -5,7 +5,7 @@ import com.kryptography.newworld.common.worldgen.structures.BuriedBunkerFeature;
 import com.kryptography.newworld.init.data.tags.NWBiomeTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -19,7 +19,7 @@ public class NWStructures {
 
     public static final ResourceKey<Structure> BURIED_BUNKER = registerKey("buried_bunker");
 
-    public static void bootstrap(BootstrapContext<Structure> context) {
+    public static void bootstrap(BootstapContext<Structure> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
         HolderGetter<StructureTemplatePool> templatePools = context.lookup(Registries.TEMPLATE_POOL);
 

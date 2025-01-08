@@ -14,11 +14,9 @@ import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
-import net.minecraft.world.level.levelgen.structure.pools.DimensionPadding;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
-import net.minecraft.world.level.levelgen.structure.pools.alias.PoolAliasLookup;
-import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
+
 
 import java.util.Optional;
 
@@ -55,7 +53,7 @@ public class BuriedBunkerFeature extends Structure {
         if(!spawnChecks(pContext)) {
             return Optional.empty();
         }
-        Optional<GenerationStub> structurePiecesGenerator = JigsawPlacement.addPieces(
+        return (Optional<GenerationStub>) JigsawPlacement.addPieces(
                 pContext,
                 poolGetter.getOrThrow(NWStructurePools.BURIED_BUNKER),
                 Optional.empty(),
@@ -63,12 +61,8 @@ public class BuriedBunkerFeature extends Structure {
                 pos.below(6),
                 false,
                 Optional.of(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES),
-                80,
-                PoolAliasLookup.EMPTY,
-                DimensionPadding.ZERO,
-                LiquidSettings.APPLY_WATERLOGGING
+                80
         );
-        return structurePiecesGenerator;
     }
 
     

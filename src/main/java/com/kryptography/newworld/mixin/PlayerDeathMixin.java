@@ -54,7 +54,7 @@ public abstract class PlayerDeathMixin {
                         boolean skip = false;
                         ItemStack itemStack = itemStacks.get(i);
                         if (!itemStack.isEmpty()) {
-                            if (itemStack.is(NWBlocks.TOMBSTONE.asItem()) && !decrementedTombstone) {
+                            if (itemStack.is(NWBlocks.TOMBSTONE.get().asItem()) && !decrementedTombstone) {
                                 itemStacks.set(i, ItemStack.EMPTY);
                                 decrementedTombstone = true;
                                 skip = decrementedTombstone;
@@ -84,7 +84,7 @@ public abstract class PlayerDeathMixin {
                 tombstoneEntity.setItem(compatibleSlot, currentStack);
             }
 
-            else if (ItemStack.isSameItemSameComponents(tombstoneStack, currentStack)) {
+            else if (ItemStack.isSameItemSameTags(tombstoneStack, currentStack)) {
                 if (tombstoneStack.getCount() + currentStack.getCount() > tombstoneStack.getMaxStackSize()) {
                     int maxSize = tombstoneStack.getMaxStackSize();
                     currentStack.setCount(tombstoneStack.getCount() + currentStack.getCount() - tombstoneStack.getMaxStackSize());
@@ -105,7 +105,7 @@ public abstract class PlayerDeathMixin {
     @Unique
     private boolean hasTombstone() {
         for (NonNullList<ItemStack> itemStacks : this.compartments) {
-            if (itemStacks.stream().anyMatch(stack -> stack.is(NWBlocks.TOMBSTONE.asItem())) ) {
+            if (itemStacks.stream().anyMatch(stack -> stack.is(NWBlocks.TOMBSTONE.get().asItem())) ) {
                 return true;
             }
         }

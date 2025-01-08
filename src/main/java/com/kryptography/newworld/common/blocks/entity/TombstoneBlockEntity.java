@@ -22,22 +22,22 @@ public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
     }
 
     @Override
-    protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-        super.saveAdditional(pTag, pRegistries);
+    protected void saveAdditional(CompoundTag pTag) {
+        super.saveAdditional(pTag);
         if (!this.trySaveLootTable(pTag)) {
-            ContainerHelper.saveAllItems(pTag, this.items, pRegistries);
+            ContainerHelper.saveAllItems(pTag, this.items);
         }
-        super.saveAdditional(pTag, pRegistries);
+        super.saveAdditional(pTag);
     }
 
     @Override
-    protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-        super.loadAdditional(pTag, pRegistries);
+    public void load(CompoundTag pTag) {
+        super.load(pTag);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         if (!this.tryLoadLootTable(pTag)) {
-            ContainerHelper.loadAllItems(pTag, this.items, pRegistries);
+            ContainerHelper.loadAllItems(pTag, this.items);
         }
-        super.loadAdditional(pTag, pRegistries);
+        super.load(pTag);
     }
 
     @Override
@@ -73,7 +73,7 @@ public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
     public int getCompatibleSlot(ItemStack stack) {
         for(int i = 0; i < getContainerSize(); ++i) {
             ItemStack currentStack = items.get(i);
-            if (currentStack.isEmpty() || (ItemStack.isSameItemSameComponents(currentStack, stack) && currentStack.getCount() < currentStack.getMaxStackSize())) {
+            if (currentStack.isEmpty() || (ItemStack.isSameItemSameTags(currentStack, stack) && currentStack.getCount() < currentStack.getMaxStackSize())) {
                 return i;
             }
         }

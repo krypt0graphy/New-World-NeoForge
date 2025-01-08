@@ -6,8 +6,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.StatFormatter;
 import net.minecraft.stats.Stats;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.ApiStatus;
 
 
@@ -18,15 +18,15 @@ public class NWStats {
     public static final DeferredRegister<ResourceLocation> STATS = DeferredRegister.create(Registries.CUSTOM_STAT, NewWorld.MOD_ID);
 
     private static final Map<ResourceLocation, StatFormatter> FORMATTERS = new HashMap<>();
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> TOMBSTONE_ACTIVATION = register("tombstone_activation");
-    private static DeferredHolder<ResourceLocation, ResourceLocation> register(String name, StatFormatter formatter) {
+    public static final RegistryObject<ResourceLocation> TOMBSTONE_ACTIVATION = register("tombstone_activation");
+    private static RegistryObject<ResourceLocation> register(String name, StatFormatter formatter) {
         ResourceLocation resourceLocation = NewWorld.id(name);
-        DeferredHolder<ResourceLocation, ResourceLocation> holder = STATS.register(name, () -> resourceLocation);
+        RegistryObject<ResourceLocation> holder = STATS.register(name, () -> resourceLocation);
         FORMATTERS.put(resourceLocation, formatter);
         return holder;
     }
 
-    private static DeferredHolder<ResourceLocation, ResourceLocation> register(String name) {
+    private static RegistryObject<ResourceLocation> register(String name) {
         return register(name, StatFormatter.DEFAULT);
     }
 

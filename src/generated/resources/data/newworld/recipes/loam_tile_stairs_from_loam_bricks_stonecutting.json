@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "newworld:loam_bricks"
+  },
+  "result": "newworld:loam_tile_stairs"
+}

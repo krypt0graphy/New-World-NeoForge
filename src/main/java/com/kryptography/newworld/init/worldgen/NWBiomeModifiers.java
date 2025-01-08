@@ -4,15 +4,17 @@ import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.worldgen.features.NWPlacedFeatures;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.neoforged.neoforge.common.world.BiomeModifier;
-import net.neoforged.neoforge.common.world.BiomeModifiers.AddFeaturesBiomeModifier;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.minecraftforge.common.world.BiomeModifier;
+import net.minecraftforge.common.world.ForgeBiomeModifiers;
+import net.minecraftforge.common.world.ForgeBiomeModifiers.AddFeaturesBiomeModifier;
+import net.minecraftforge.registries.ForgeRegistries;
+
 
 public class NWBiomeModifiers {
     public static final ResourceKey<BiomeModifier> FIR_TAIGA = registerKey("fir_taiga");
@@ -21,7 +23,7 @@ public class NWBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> LUSH_CAVE_MUD_PATCH = registerKey("lush_cave_mud_patch");
     public static final ResourceKey<BiomeModifier> LUSH_CAVE_LOAM_ORE = registerKey("lush_cave_loam_ore");
-    public static void bootstrap(BootstrapContext<BiomeModifier> context) {
+    public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
         HolderSet<Biome> taiga = context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_TAIGA);
@@ -58,6 +60,6 @@ public class NWBiomeModifiers {
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {
-        return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS,  NewWorld.id(name));
+        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS,  NewWorld.id(name));
     }
 }
