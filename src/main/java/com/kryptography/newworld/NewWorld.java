@@ -1,6 +1,5 @@
 package com.kryptography.newworld;
 
-import com.kryptography.newworld.client.NWClientSetup;
 import com.kryptography.newworld.common.worldgen.NWFeature;
 import com.kryptography.newworld.init.NWBlockEntityTypes;
 import com.kryptography.newworld.init.NWBlocks;
@@ -16,9 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod(NewWorld.MOD_ID)
@@ -49,10 +46,4 @@ public class NewWorld {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NWBlocks.FIR_SAPLING.getId(), NWBlocks.POTTED_FIR_SAPLING);
         });
     }
-
-    @SubscribeEvent
-    public static void clientSetup(FMLClientSetupEvent evt) {
-        evt.enqueueWork(NWClientSetup::ClientSetup);
-    }
-
 }
