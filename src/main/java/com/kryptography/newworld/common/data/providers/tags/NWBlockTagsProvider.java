@@ -1,7 +1,9 @@
-package com.kryptography.newworld.common.datagenproviders.tags;
+package com.kryptography.newworld.common.data.providers.tags;
 
 import com.kryptography.newworld.NewWorld;
+import com.kryptography.newworld.init.data.tags.CommonTags;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
+import com.kryptography.newworld.integration.Mods;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -35,16 +37,10 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
                 NWBlocks.FIR_WALL_SIGN.get(),
                 NWBlocks.FIR_HANGING_SIGN.get(),
                 NWBlocks.FIR_WALL_HANGING_SIGN.get()
-        ).addOptional(
-                NWBlocks.FIR_CABINET.get().getId()
-        ).addOptional(
-                NWBlocks.FIR_BOOKSHELF.get().getId()
-        ).addOptional(
-                NWBlocks.TRIMMED_FIR_PLANKS.get().getId()
         ).addTag(
                 NWBlockTags.FIR_LOGS
         );
-        this.tag(BlockTags.LOGS_THAT_BURN).addTags(NWBlockTags.FIR_LOGS);
+        this.tag(BlockTags.LOGS_THAT_BURN).addTag(NWBlockTags.FIR_LOGS);
         this.tag(BlockTags.SAPLINGS).add(NWBlocks.FIR_SAPLING.get());
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(NWBlocks.FIR_LOG.get());
         this.tag(BlockTags.LEAVES).add(NWBlocks.FIR_LEAVES.get());
@@ -138,5 +134,21 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
                         Blocks.WARPED_ROOTS,
                         Blocks.HANGING_ROOTS
                 );
+
+        this.tag(CommonTags.BOOKSHELVES).addOptional(NWBlocks.FIR_BOOKSHELF.getId());
+
+        if (Mods.FARMERSDELIGHT.isLoaded()) {
+            this.tag(BlockTags.MINEABLE_WITH_AXE).addOptional(
+                    NWBlocks.FIR_CABINET.getId());
+        }
+        if (Mods.NOMANSLAND.isLoaded()) {
+            this.tag(BlockTags.MINEABLE_WITH_AXE).addOptional(
+                    NWBlocks.FIR_BOOKSHELF.getId()
+            ).addOptional(
+                    NWBlocks.TRIMMED_FIR_PLANKS.getId()
+            );
+            this.tag(CommonTags.CONIFEROUS_LOGS).addOptionalTag(NWBlockTags.FIR_LOGS);
+            this.tag(CommonTags.TRIMMED_PLANKS).addOptional(NWBlocks.TRIMMED_FIR_PLANKS.getId());
+        }
     }
 }

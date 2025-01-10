@@ -1,4 +1,4 @@
-package com.kryptography.newworld.common.datagenproviders;
+package com.kryptography.newworld.common.data.providers;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.blocks.FirCabinetBlock;

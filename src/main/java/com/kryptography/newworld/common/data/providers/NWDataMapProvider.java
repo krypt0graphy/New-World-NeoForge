@@ -1,4 +1,4 @@
-package com.kryptography.newworld.common.datagenproviders;
+package com.kryptography.newworld.common.data.providers;
 
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.integration.Mods;
@@ -41,8 +41,8 @@ public class NWDataMapProvider extends DataMapProvider {
 
         //NML
         if(Mods.NOMANSLAND.isLoaded()) {
-            registerFlammable(NWBlocks.FIR_BOOKSHELF.get().value(), 30, 20);
-            registerFlammable(NWBlocks.TRIMMED_FIR_PLANKS.get().value(), 5, 20);
+            registerFlammable(NWBlocks.FIR_BOOKSHELF.get(), 30, 20);
+            registerFlammable(NWBlocks.TRIMMED_FIR_PLANKS.get(), 5, 20);
         }
     }
 

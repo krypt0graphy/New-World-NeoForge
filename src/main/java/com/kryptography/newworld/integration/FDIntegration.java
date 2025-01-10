@@ -18,7 +18,7 @@ public class FDIntegration {
 
     public static Supplier<? extends BlockEntityType<?>> cabinetBlockEntity() {
         return () -> BlockEntityType.Builder.of(FirCabinetBlockEntity::new,
-                NWBlocks.FIR_CABINET.get().value()
+                NWBlocks.FIR_CABINET.get()
         ).build(null);
     }
 }

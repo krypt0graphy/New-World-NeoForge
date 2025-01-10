@@ -1,4 +1,4 @@
-package com.kryptography.newworld.common.datagenproviders.tags;
+package com.kryptography.newworld.common.data.providers.tags;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.data.tags.NWBiomeTags;

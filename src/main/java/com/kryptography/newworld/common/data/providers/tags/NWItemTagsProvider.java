@@ -1,10 +1,12 @@
-package com.kryptography.newworld.common.datagenproviders.tags;
+package com.kryptography.newworld.common.data.providers.tags;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
+import com.kryptography.newworld.init.data.tags.CommonTags;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import com.kryptography.newworld.init.data.tags.NWItemTags;
+import com.kryptography.newworld.integration.Mods;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -53,5 +55,9 @@ public class NWItemTagsProvider extends ItemTagsProvider {
         this.tag(ItemTags.HANGING_SIGNS).add(NWBlocks.FIR_HANGING_SIGN.get().asItem());
         this.tag(NWItemTags.MATTOCK_PIECES).add(NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD.get(), NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get());
         this.tag(NWItemTags.TOMBSTONE_MATERIALS).add(NWItems.ILLAGER_TOME.get(), NWBlocks.TOMBSTONE.get().asItem());
+
+        if(Mods.FARMERSDELIGHT.isLoaded()) {
+            this.tag(CommonTags.WOODEN_CABINET).addOptional(NWBlocks.FIR_CABINET.getId());
+        }
     }
 }

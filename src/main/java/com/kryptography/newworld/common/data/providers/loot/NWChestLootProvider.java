@@ -1,4 +1,4 @@
-package com.kryptography.newworld.common.datagenproviders.loot;
+package com.kryptography.newworld.common.data.providers.loot;
 
 import com.kryptography.newworld.init.data.loot.NWLootTables;
 import net.minecraft.core.HolderLookup;

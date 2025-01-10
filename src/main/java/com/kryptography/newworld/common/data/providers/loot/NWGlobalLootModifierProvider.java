@@ -1,4 +1,4 @@
-package com.kryptography.newworld.common.datagenproviders.loot;
+package com.kryptography.newworld.common.data.providers.loot;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.NWBlocks;

@@ -1,15 +1,15 @@
 package com.kryptography.newworld.init.data;
 
 import com.kryptography.newworld.NewWorld;
-import com.kryptography.newworld.common.datagenproviders.NWBlockStateProvider;
-import com.kryptography.newworld.common.datagenproviders.NWDataMapProvider;
-import com.kryptography.newworld.common.datagenproviders.NWItemModelProvider;
-import com.kryptography.newworld.common.datagenproviders.NWRecipeProvider;
-import com.kryptography.newworld.common.datagenproviders.loot.NWChestLootProvider;
-import com.kryptography.newworld.common.datagenproviders.loot.NWGlobalLootModifierProvider;
-import com.kryptography.newworld.common.datagenproviders.tags.NWBiomeTagsProvider;
-import com.kryptography.newworld.common.datagenproviders.tags.NWBlockTagsProvider;
-import com.kryptography.newworld.common.datagenproviders.tags.NWItemTagsProvider;
+import com.kryptography.newworld.common.data.providers.NWBlockStateProvider;
+import com.kryptography.newworld.common.data.providers.NWDataMapProvider;
+import com.kryptography.newworld.common.data.providers.NWItemModelProvider;
+import com.kryptography.newworld.common.data.providers.NWRecipeProvider;
+import com.kryptography.newworld.common.data.providers.loot.NWChestLootProvider;
+import com.kryptography.newworld.common.data.providers.loot.NWGlobalLootModifierProvider;
+import com.kryptography.newworld.common.data.providers.tags.NWBiomeTagsProvider;
+import com.kryptography.newworld.common.data.providers.tags.NWBlockTagsProvider;
+import com.kryptography.newworld.common.data.providers.tags.NWItemTagsProvider;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.worldgen.NWWorldgenData;
@@ -114,7 +114,7 @@ public class NWData {
             addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM);
 
             if (Mods.FARMERSDELIGHT.isLoaded()) {
-                NWBlocks.FIR_CABINET.ifPresent(event::accept);
+                event.accept(NWBlocks.FIR_CABINET);
             }
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {

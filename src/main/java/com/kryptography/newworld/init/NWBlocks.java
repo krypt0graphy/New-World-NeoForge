@@ -20,7 +20,6 @@ import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.Optional;
 import java.util.function.Supplier;
 
 public class NWBlocks {
@@ -81,11 +80,11 @@ public class NWBlocks {
     public static final DeferredBlock<FlowerPotBlock> POTTED_POINTED_DRIPSTONE = BLOCKS.register("potted_pointed_dripstone", () -> new FlowerPotBlock(Blocks.POINTED_DRIPSTONE, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).noOcclusion()));
 
     //Farmer's Delight
-    public static final Optional<DeferredBlock<Block>> FIR_CABINET = Mods.FARMERSDELIGHT.runIfInstalled(() -> (DeferredBlock<Block>) register("fir_cabinet", FDIntegration.cabinetBlock()));
+    public static final DeferredBlock<Block> FIR_CABINET = Mods.FARMERSDELIGHT.isLoaded() ? (DeferredBlock<Block>) register("fir_cabinet", FDIntegration.cabinetBlock()) : register("fir_cabinet", () -> new Block(BlockBehaviour.Properties.of()));
 
     //No Man's Land
-    public static final Optional<DeferredBlock<Block>> FIR_BOOKSHELF = Mods.NOMANSLAND.runIfInstalled(() -> register("fir_bookshelf", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF))));
-    public static final Optional<DeferredBlock<Block>> TRIMMED_FIR_PLANKS = Mods.NOMANSLAND.runIfInstalled(() -> (DeferredBlock < Block >) register("trimmed_fir_planks", NMLIntegration.trimmedPlanks()));
+    public static final DeferredBlock<Block> FIR_BOOKSHELF = register("fir_bookshelf", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)));
+    public static final DeferredBlock<Block> TRIMMED_FIR_PLANKS =  Mods.NOMANSLAND.isLoaded() ? (DeferredBlock<Block>) register("trimmed_fir_planks", NMLIntegration.trimmedPlanks()) : register("trimmed_fir_planks", () -> new Block(BlockBehaviour.Properties.of()));
 
     public static <T extends Block> DeferredBlock<T> register(String name, Supplier<T> block) {
         DeferredBlock<T> ret = BLOCKS.register(name, block);

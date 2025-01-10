@@ -1,4 +1,5 @@
-// 1.21.1	2024-12-21T23:53:56.349602	Tags for minecraft:item mod id newworld
+// 1.21.1	2025-01-10T20:53:50.7869889	Tags for minecraft:item mod id newworld
+75f14250f553f51e8fe5a702dbb7e438d6a23e3e data/farmersdelight/tags/item/cabinets/wooden.json
 252b718ef38f950caa76826167ee6cbcfd13f46f data/minecraft/tags/item/boats.json
 5c67cddfa694ae8c88954da173bca77aa59da04f data/minecraft/tags/item/bookshelf_books.json
 8144d336a9c77bcc2d41704410d5d1f3a2f6bd06 data/minecraft/tags/item/chest_boats.json
