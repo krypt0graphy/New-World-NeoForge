@@ -2,6 +2,7 @@ package com.kryptography.newworld.init;
 
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.common.blocks.*;
+import com.kryptography.newworld.common.items.FuelBlockItem;
 import com.kryptography.newworld.common.items.TombstoneBlockItem;
 import com.kryptography.newworld.common.worldgen.tree.FirTreeGrower;
 import com.kryptography.newworld.init.data.woodset.FirBlockSet;
@@ -81,11 +82,17 @@ public class NWBlocks {
     public static final RegistryObject<FlowerPotBlock> POTTED_POINTED_DRIPSTONE = BLOCKS.register("potted_pointed_dripstone", () -> new FlowerPotBlock(Blocks.POINTED_DRIPSTONE, BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).noOcclusion()));
 
     //Farmer's Delight
-    public static final RegistryObject<Block> FIR_CABINET = (RegistryObject<Block>) register("fir_cabinet", Mods.FARMERSDELIGHT.isLoaded() ? () -> FDIntegration.cabinetBlock() : () -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistryObject<Block> FIR_CABINET = (RegistryObject<Block>) registerCabinet("fir_cabinet", Mods.FARMERSDELIGHT.isLoaded() ? () -> FDIntegration.cabinetBlock() : () -> new Block(BlockBehaviour.Properties.of()));
 
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> ret = BLOCKS.register(name, block);
         NWItems.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties()));
+        return ret;
+    }
+
+    public static <T extends Block> RegistryObject<T> registerCabinet(String name, Supplier<T> block) {
+        RegistryObject<T> ret = BLOCKS.register(name, block);
+        NWItems.ITEMS.register(name, () -> new FuelBlockItem(ret.get(), new Item.Properties(), 300));
         return ret;
     }
 
