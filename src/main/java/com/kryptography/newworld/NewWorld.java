@@ -1,6 +1,6 @@
 package com.kryptography.newworld;
 
-import com.kryptography.newworld.client.NWBoatRenderer;
+import com.kryptography.newworld.client.NWClientSetup;
 import com.kryptography.newworld.common.worldgen.NWFeature;
 import com.kryptography.newworld.init.NWBlockEntityTypes;
 import com.kryptography.newworld.init.NWBlocks;
@@ -10,12 +10,8 @@ import com.kryptography.newworld.common.datagenproviders.NWDataMapProvider;
 import com.kryptography.newworld.init.data.NWData;
 import com.kryptography.newworld.init.data.NWStats;
 import com.kryptography.newworld.init.data.loot.NWLootModifiers;
-import com.kryptography.newworld.init.data.woodset.FirBlockSet;
 import com.kryptography.newworld.init.worldgen.NWBiomePlacement;
-import com.kryptography.newworld.init.worldgen.NWBiomes;
 import com.kryptography.newworld.init.worldgen.structure.NWStructureTypes;
-import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -56,11 +52,7 @@ public class NewWorld {
 
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent evt) {
-        evt.enqueueWork(() -> {
-            Sheets.addWoodType(FirBlockSet.FIR_WOOD_TYPE);
-            EntityRenderers.register(NWEntityTypes.FIR_BOAT.get(), pContext -> new NWBoatRenderer(pContext, false));
-            EntityRenderers.register(NWEntityTypes.FIR_CHEST_BOAT.get(), pContext -> new NWBoatRenderer(pContext, true));
-        });
+        evt.enqueueWork(NWClientSetup::ClientSetup);
     }
 
 }

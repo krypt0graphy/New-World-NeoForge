@@ -93,7 +93,7 @@ dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "com.terraformersmc:biolith-neoforge:${bio_version}"
     implementation "maven.modrinth:farmers-delight:1.21.1-${fd_version}"
-    implementation "com.farcr:nomansland:0.0.5:alpha"
+    compileOnly "com.farcr:nomansland:0.0.5:alpha"
     runtimeOnly "mezz.jei:jei-$minecraft_version-neoforge:19.21.0.247"
 }
 
