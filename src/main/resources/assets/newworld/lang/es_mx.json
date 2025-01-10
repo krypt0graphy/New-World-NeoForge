@@ -37,11 +37,11 @@
   "block.newworld.tombstone": "Lápida",
   "block.newworld.fir_cabinet": "Gabinete de abeto rojo",
   "block.newworld.fir_bookshelf":  "Librería de abeto rojo",
+  "block.newworld.trimmed_fir_planks":  "Tablones de abeto rojo recortados",
   "item.newworld.ancient_mattock": "Azadón ancestral",
   "item.newworld.fir_boat": "Bote de abeto rojo",
   "item.newworld.fir_chest_boat": "Bote de abeto rojo con cofre",
   "item.newworld.illager_tome": "Tomo de saqueador",
-  "item.newworld.jeb_book": "Libro de Jeb",
   "item.newworld.mattock_crafting_template": "Ornamento de azadón",
   "item.newworld.mattock_crafting_template_head": "Cabeza de azadón",
   "item.newworld.mattock_crafting_template_head.desc": "Fragmento de ornamento",
@@ -51,8 +51,8 @@
   "item.newworld.smithing_template.mattock_crafting.applies_to": "Palo",
   "item.newworld.smithing_template.mattock_crafting.base_slot_description": "Coloca un palo",
   "item.newworld.smithing_template.mattock_crafting.ingredients": "Pedernal",
-  "newworld.tombstone_activation": "Lápida activada",
   "painting.newworld.providence.author": "AvocadoSpud",
   "painting.newworld.providence.title": "Providencia",
+  "stat.newworld.tombstone_activation": "Lápida activada",
   "upgrade.newworld.mattock_crafting": "Ornamento de azadón"
 }
