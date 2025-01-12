@@ -86,12 +86,12 @@
       "newworld:glow_lichen_wooded_meadow",
       "newworld:patch_berry_wooded_meadow",
       "newworld:patch_fern_wooded_meadow",
-      "minecraft:patch_large_fern",
-      "minecraft:forest_flowers",
       "minecraft:patch_tall_grass_2",
+      "minecraft:forest_flowers",
       "minecraft:patch_grass_plain",
       "minecraft:flower_meadow",
-      "minecraft:trees_meadow"
+      "minecraft:trees_meadow",
+      "minecraft:patch_large_fern"
     ],
     [
       "minecraft:freeze_top_layer"

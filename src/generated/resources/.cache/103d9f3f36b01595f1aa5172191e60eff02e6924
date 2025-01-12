@@ -1,10 +1,10 @@
-// 1.20.1	2025-01-08T22:17:08.2671388	Registries
+// 1.20.1	2025-01-12T10:45:51.4545477	Registries
 80c2ad487c5e60be6ab99c31c09bd18097a58f35 data/newworld/forge/biome_modifier/birch_cherry_grove.json
 edf011acbcdb9dd4144e7cfc959057b025b8ef76 data/newworld/forge/biome_modifier/fir_meadow.json
 297336620cf18d1c47f855455b49a77fd0047ca4 data/newworld/forge/biome_modifier/fir_taiga.json
 8170d8c1f27a18ee398c02704c1ca20955b8f792 data/newworld/forge/biome_modifier/lush_cave_loam_ore.json
 b4ff4c1f564dc0e57707718121f701b31f6ea589 data/newworld/forge/biome_modifier/lush_cave_mud_patch.json
-e239472b70c8e5110aff1b9a7102044e2740ad6c data/newworld/worldgen/biome/wooded_meadow.json
+3fd0397bbeacf67f37f3067851bc8e81991c6274 data/newworld/worldgen/biome/wooded_meadow.json
 e102352e66ffa986b2e5d1758cff57f678534d32 data/newworld/worldgen/configured_feature/burial_site.json
 5f5032bdb571b1b00f61f75b2a48f61d9540de37 data/newworld/worldgen/configured_feature/calcite_patch.json
 4cd30fb358027956eff985e76cd28d23caea98d7 data/newworld/worldgen/configured_feature/calcite_vegetation.json

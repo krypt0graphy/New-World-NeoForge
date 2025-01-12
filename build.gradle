@@ -14,7 +14,7 @@ version = mod_version
 group = mod_group_id
 
 base {
-    archivesName = mod_id + "-forge"
+    archivesName = mod_id + "-forge-" + minecraft_version
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -81,6 +81,8 @@ dependencies {
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    runtimeOnly fg.deobf("curse.maven:cyanide-541676:5778405")
     }
 
 tasks.named('processResources', ProcessResources).configure {

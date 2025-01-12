@@ -52,20 +52,18 @@ public class NWOverworldBiomeCreator {
         BiomeGenerationSettings.Builder featureBuilder = new BiomeGenerationSettings.Builder(placedFeatureGetter, carverGetter);
 
         globalOverworldGeneration(featureBuilder);
-
         addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWPlacedFeatures.TREES_FIR);
         addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWPlacedFeatures.GLOW_LICHEN_WOODED_MEADOW);
         addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWPlacedFeatures.PATCH_BERRY_WOODED_MEADOW);
         addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWPlacedFeatures.PATCH_FERN_WOODED_MEADOW );
         addFeature(featureBuilder, GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
         addFeature(featureBuilder, GenerationStep.Decoration.LOCAL_MODIFICATIONS, NWPlacedFeatures.FALLEN_FIR_LOG);
-
-        BiomeDefaultFeatures.addFerns(featureBuilder);
-        BiomeDefaultFeatures.addForestFlowers(featureBuilder);
         BiomeDefaultFeatures.addPlainGrass(featureBuilder);
+        BiomeDefaultFeatures.addForestFlowers(featureBuilder);
+        BiomeDefaultFeatures.addMeadowVegetation(featureBuilder);
+        BiomeDefaultFeatures.addFerns(featureBuilder);
         BiomeDefaultFeatures.addDefaultOres(featureBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(featureBuilder);
-        BiomeDefaultFeatures.addMeadowVegetation(featureBuilder);
         BiomeDefaultFeatures.addExtraEmeralds(featureBuilder);
         BiomeDefaultFeatures.addInfestedStone(featureBuilder);
 

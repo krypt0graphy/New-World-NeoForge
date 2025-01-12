@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"id": "newworld:ancient_mattock"
+			"item": "newworld:ancient_mattock"
 		},
 		"title": {
 			"translate": "advancements.adventure.collect_ancient_mattock.title"
