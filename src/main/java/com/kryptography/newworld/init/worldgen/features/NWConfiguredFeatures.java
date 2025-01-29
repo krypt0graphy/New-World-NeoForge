@@ -113,7 +113,7 @@ public class NWConfiguredFeatures {
     private static TreeConfigurationBuilder grownFir() {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(NWBlocks.FIR_LOG.get()),
-                new StraightTrunkPlacer(6, 1, 2),
+                new StraightTrunkPlacer(7, 1, 2),
                 BlockStateProvider.simple(NWBlocks.FIR_LEAVES.get()),
                 new SpruceFoliagePlacer(
                         UniformInt.of(1, 3),

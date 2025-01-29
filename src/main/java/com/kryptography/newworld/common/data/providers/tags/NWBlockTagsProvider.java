@@ -7,6 +7,7 @@ import com.kryptography.newworld.integration.Mods;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -44,6 +45,7 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
         this.tag(BlockTags.SAPLINGS).add(NWBlocks.FIR_SAPLING.get());
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(NWBlocks.FIR_LOG.get());
         this.tag(BlockTags.LEAVES).add(NWBlocks.FIR_LEAVES.get());
+        this.tag(BlockTags.PLANKS).add(NWBlocks.FIR_PLANKS.get());
         this.tag(BlockTags.WOODEN_BUTTONS).add(NWBlocks.FIR_BUTTON.get());
         this.tag(BlockTags.WOODEN_DOORS).add(NWBlocks.FIR_DOOR.get());
         this.tag(BlockTags.WOODEN_TRAPDOORS).add(NWBlocks.FIR_TRAPDOOR.get());
@@ -58,7 +60,6 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
         this.tag(BlockTags.CEILING_HANGING_SIGNS).add(NWBlocks.FIR_HANGING_SIGN.get());
         this.tag(BlockTags.WALL_HANGING_SIGNS).add(NWBlocks.FIR_WALL_HANGING_SIGN.get());
 
-        this.tag(BlockTags.LEAVES).add(NWBlocks.FIR_LEAVES.get());
 
         this.tag(NWBlockTags.FIR_LOGS).add(
                 NWBlocks.FIR_LOG.get(),
@@ -101,6 +102,8 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
           NWBlocks.LOAM_BRICK_WALL.get(),
           NWBlocks.LOAM_TILE_WALL.get()
         );
+
+        this.tag(BlockTags.REPLACEABLE).add(NWBlocks.MOSS_SPROUTS.get());
 
         this.tag(NWBlockTags.MATTOCK_MINEABLE).addTags(
                 BlockTags.MINEABLE_WITH_AXE,
