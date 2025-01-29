@@ -104,15 +104,13 @@ public class NWConfiguredFeatures {
         register(bootstrap, CALCITE_PATCH, Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.CALCITE), PlacementUtils.inlinePlaced(features.getOrThrow(CALCITE_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.08F, UniformInt.of(4, 7), 0.3F));
 
         register(bootstrap, LUSH_CAVE_MUD_PATCH, Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.MUD.defaultBlockState(), 64) );
-
-
     }
 
 
     private static TreeConfigurationBuilder grownFir() {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(NWBlocks.FIR_LOG.get()),
-                new StraightTrunkPlacer(6, 1, 2),
+                new StraightTrunkPlacer(7, 1, 2),
                 BlockStateProvider.simple(NWBlocks.FIR_LEAVES.get()),
                 new SpruceFoliagePlacer(
                         UniformInt.of(1, 3),

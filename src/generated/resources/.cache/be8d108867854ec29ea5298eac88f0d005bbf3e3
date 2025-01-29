@@ -1,15 +1,17 @@
-// 1.20.1	2025-01-08T22:17:08.2626364	Tags for minecraft:block mod id newworld
+// 1.20.1	2025-01-29T16:41:02.8031012	Tags for minecraft:block mod id newworld
 763757eba8d924693eb1c6c5b603eefad2b5629a data/minecraft/tags/blocks/base_stone_overworld.json
 94a1a924b9e4dafdd0919819e6dc2e9dc15d356f data/minecraft/tags/blocks/ceiling_hanging_signs.json
 531531a2cbe2b2b6b19b4a23489c73b358063609 data/minecraft/tags/blocks/fence_gates.json
 e19bea980b997c27eb770cf9f26a759d3923315a data/minecraft/tags/blocks/flower_pots.json
-432b95dbae3cd8699f1a817c9864c5050594e508 data/minecraft/tags/blocks/leaves.json
+88fb931decfd59ed03ba8759417c2ecbef040a3e data/minecraft/tags/blocks/leaves.json
 a05ffb0112a755a264958d236d52fe9de224beeb data/minecraft/tags/blocks/logs_that_burn.json
 e26a0d866fc50a514735095e41dcaacd37d71ea0 data/minecraft/tags/blocks/mineable/axe.json
 88fb931decfd59ed03ba8759417c2ecbef040a3e data/minecraft/tags/blocks/mineable/hoe.json
 f76641b84da949ddb4b941e4e6b1fd34ed624b13 data/minecraft/tags/blocks/mineable/pickaxe.json
 a8dc762510e50180e682b13fe1e43957fa03ae87 data/minecraft/tags/blocks/mineable/shovel.json
 d087000b7764f6129dcc8a61a296068803b3f31c data/minecraft/tags/blocks/overworld_natural_logs.json
+9b9b5396efb07a36ba46c309acd3bf809ce4896d data/minecraft/tags/blocks/planks.json
+d58c582ce36cd25adabb7a53c44b51bf74536d5c data/minecraft/tags/blocks/replaceable.json
 9432c56432b8be4a4e24441479371d1cdcd5501d data/minecraft/tags/blocks/saplings.json
 48e61236114a36252ce96fd047fbb91071d3b543 data/minecraft/tags/blocks/slabs.json
 615ea889f0871604cf96fe2a3fffab5e014e971c data/minecraft/tags/blocks/stairs.json
