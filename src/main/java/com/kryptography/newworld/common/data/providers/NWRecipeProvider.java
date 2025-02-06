@@ -114,6 +114,15 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlocks("has_mattock_crafting_template", has(NWItems.MATTOCK_CRAFTING_TEMPLATE.get()))
                 .save(pRecipeOutput, NewWorld.id("ancient_mattock_smithing"));
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, NWItems.MATTOCK_CRAFTING_TEMPLATE.get(), 2)
+                .pattern("#T#")
+                .pattern("#C#")
+                .pattern("###")
+                .define('#', Items.DIAMOND)
+                .define('C', Items.COBBLED_DEEPSLATE)
+                .define('T', NWItems.MATTOCK_CRAFTING_TEMPLATE.get())
+                .unlockedBy("has_mattock_crafting_template", has(NWItems.MATTOCK_CRAFTING_TEMPLATE.get()))
+                .save(pRecipeOutput);
 
         ConditionalRecipe.builder().addCondition(new ModLoadedCondition("farmersdelight")).addRecipe(c ->
                 ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, NWBlocks.FIR_CABINET.get())

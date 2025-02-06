@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-08T23:34:45.0026887	Recipes
+// 1.20.1	2025-02-02T18:30:30.4961337	Recipes
 31d9e8a3085ba935bf77c24acf5b9700e4b60101 data/newworld/advancements/recipes/building_blocks/fir_planks.json
 866b095496f15aee80cca8c8c3e1ba22d60d12d1 data/newworld/advancements/recipes/building_blocks/fir_slab.json
 03f69ba0f7f877eef2a37e02f0e073a2e2151d43 data/newworld/advancements/recipes/building_blocks/fir_stairs.json
@@ -42,6 +42,7 @@ ca5af6537eb7117d69df03b68442130580154d01 data/newworld/advancements/recipes/buil
 4a28913db378c993f4027c07227c5badb6b5f077 data/newworld/advancements/recipes/decorations/fir_hanging_sign.json
 18e76ba1d00d49b27d9d3bb4a3c716dc716f9ddc data/newworld/advancements/recipes/decorations/fir_sign.json
 c83e59b64ca7c55666a89d7c4ffe58d64db5d43a data/newworld/advancements/recipes/fir_cabinet.json
+318457c7611a5b7a03f41ed6c95416097419172c data/newworld/advancements/recipes/misc/mattock_crafting_template.json
 74a910aff2ea615f332941dc7fca738921530704 data/newworld/advancements/recipes/redstone/fir_button.json
 b04d7b67718623af9d3b462115ac051dfdfc29d0 data/newworld/advancements/recipes/redstone/fir_door.json
 1102d4a41f31a7bda6a3f743171486e28c69dc48 data/newworld/advancements/recipes/redstone/fir_fence_gate.json
@@ -100,6 +101,7 @@ d957b7dc2fbcde98b4f1d32508e99843f8d8ceae data/newworld/recipes/loam_tile_wall_fr
 8b17a0ee227f475d59c42cde0c2a18292483a648 data/newworld/recipes/loam_tile_wall_from_loam_tiles_stonecutting.json
 4fc5e7a3d2324e07c983b78907f9a45fad64cfb0 data/newworld/recipes/loam_wall.json
 c7e865f814f3b490d29d4e349f8deaa57b8703cd data/newworld/recipes/loam_wall_from_loam_stonecutting.json
+d41002b6e88e12a17bfe1a9afaee360ea4d8b0d9 data/newworld/recipes/mattock_crafting_template.json
 c667306700c6a3716ecf457ac4647590e2e6f0fb data/newworld/recipes/mattock_crafting_template_from_piece_combination.json
 f90ac0246954d50c57821df1d67cf213f27ab8e0 data/newworld/recipes/stripped_fir_wood.json
 58fad06880f32794a96f883ecadb33dc34d17fce data/newworld/recipes/tombstone.json

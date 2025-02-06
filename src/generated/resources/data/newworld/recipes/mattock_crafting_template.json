@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "T": {
+      "item": "newworld:mattock_crafting_template"
+    }
+  },
+  "pattern": [
+    "#T#",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "item": "newworld:mattock_crafting_template"
+  },
+  "show_notification": true
+}
