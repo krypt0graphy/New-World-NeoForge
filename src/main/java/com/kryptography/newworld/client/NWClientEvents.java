@@ -1,14 +1,11 @@
 package com.kryptography.newworld.client;
 
 
-import com.kryptography.newworld.init.NWBlockEntityTypes;
 import com.kryptography.newworld.init.NWEntityTypes;
 import com.kryptography.newworld.init.data.woodset.FirBlockSet;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
