@@ -17,23 +17,23 @@ import java.util.Map;
 
 public class NWStructures {
 
-    public static final ResourceKey<Structure> BURIED_BUNKER = registerKey("buried_bunker");
+	public static final ResourceKey<Structure> BURIED_BUNKER = registerKey("buried_bunker");
 
-    public static void bootstrap(BootstrapContext<Structure> context) {
-        HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
-        HolderGetter<StructureTemplatePool> templatePools = context.lookup(Registries.TEMPLATE_POOL);
+	public static void bootstrap(BootstrapContext<Structure> context) {
+		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
+		HolderGetter<StructureTemplatePool> templatePools = context.lookup(Registries.TEMPLATE_POOL);
 
 
-        context.register(BURIED_BUNKER, new BuriedBunkerFeature(new Structure.StructureSettings(
-                biomes.getOrThrow(NWBiomeTags.HAS_BURIED_BUNKER),
-                Map.of(),
-                GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
-                TerrainAdjustment.NONE
-        )));
+		context.register(BURIED_BUNKER, new BuriedBunkerFeature(new Structure.StructureSettings(
+				biomes.getOrThrow(NWBiomeTags.HAS_BURIED_BUNKER),
+				Map.of(),
+				GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
+				TerrainAdjustment.NONE
+		)));
 
-    }
+	}
 
-    public static ResourceKey<Structure> registerKey(String name) {
-        return ResourceKey.create(Registries.STRUCTURE,  NewWorld.id(name));
-    }
+	public static ResourceKey<Structure> registerKey(String name) {
+		return ResourceKey.create(Registries.STRUCTURE,  NewWorld.id(name));
+	}
 }

@@ -15,28 +15,28 @@ import java.util.List;
 
 public class NWProcessorsList {
 
-    public static final ResourceKey<StructureProcessorList> BURIED_BUNKER = registerKey("buried_bunker");
+	public static final ResourceKey<StructureProcessorList> BURIED_BUNKER = registerKey("buried_bunker");
 
 
-    public static void bootstrap(BootstrapContext<StructureProcessorList> context) {
-        HolderGetter<Block> holdergetter = context.lookup(Registries.BLOCK);
+	public static void bootstrap(BootstrapContext<StructureProcessorList> context) {
+		HolderGetter<Block> holdergetter = context.lookup(Registries.BLOCK);
 
-        register(context, BURIED_BUNKER,
-                ImmutableList.of(new RuleProcessor(List.of(
-                        new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE, 0.1F), AlwaysTrueTest.INSTANCE, Blocks.INFESTED_STONE.defaultBlockState()),
-                        new ProcessorRule(new RandomBlockMatchTest(Blocks.DIRT, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.ROOTED_DIRT.defaultBlockState()),
-                        new ProcessorRule(new RandomBlockMatchTest(Blocks.DIRT, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.COARSE_DIRT.defaultBlockState()),
-                        new ProcessorRule(new RandomBlockMatchTest(Blocks.DIRT, 0.05f), AlwaysTrueTest.INSTANCE, Blocks.AIR.defaultBlockState()),
-                        new ProcessorRule(new RandomBlockMatchTest(Blocks.CHAIN, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.LANTERN.defaultBlockState().setValue(LanternBlock.HANGING, true)),
-                        new ProcessorRule(new RandomBlockMatchTest(Blocks.MOSSY_STONE_BRICK_STAIRS, 0.8f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_SLAB.defaultBlockState())
-                        ))));
-    }
+		register(context, BURIED_BUNKER,
+				ImmutableList.of(new RuleProcessor(List.of(
+						new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE, 0.1F), AlwaysTrueTest.INSTANCE, Blocks.INFESTED_STONE.defaultBlockState()),
+						new ProcessorRule(new RandomBlockMatchTest(Blocks.DIRT, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.ROOTED_DIRT.defaultBlockState()),
+						new ProcessorRule(new RandomBlockMatchTest(Blocks.DIRT, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.COARSE_DIRT.defaultBlockState()),
+						new ProcessorRule(new RandomBlockMatchTest(Blocks.DIRT, 0.05f), AlwaysTrueTest.INSTANCE, Blocks.AIR.defaultBlockState()),
+						new ProcessorRule(new RandomBlockMatchTest(Blocks.CHAIN, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.LANTERN.defaultBlockState().setValue(LanternBlock.HANGING, true)),
+						new ProcessorRule(new RandomBlockMatchTest(Blocks.MOSSY_STONE_BRICK_STAIRS, 0.8f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_SLAB.defaultBlockState())
+						))));
+	}
 
-    private static void register(BootstrapContext<StructureProcessorList> pContext, ResourceKey<StructureProcessorList> pKey, List<StructureProcessor> pProcessors) {
-        pContext.register(pKey, new StructureProcessorList(pProcessors));
-    }
+	private static void register(BootstrapContext<StructureProcessorList> pContext, ResourceKey<StructureProcessorList> pKey, List<StructureProcessor> pProcessors) {
+		pContext.register(pKey, new StructureProcessorList(pProcessors));
+	}
 
-    public static ResourceKey<StructureProcessorList> registerKey(String name) {
-        return ResourceKey.create(Registries.PROCESSOR_LIST,  NewWorld.id(name));
-    }
+	public static ResourceKey<StructureProcessorList> registerKey(String name) {
+		return ResourceKey.create(Registries.PROCESSOR_LIST,  NewWorld.id(name));
+	}
 }

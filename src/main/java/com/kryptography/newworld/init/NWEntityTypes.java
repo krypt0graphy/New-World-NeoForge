@@ -11,8 +11,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 
 public class NWEntityTypes {
-    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, NewWorld.MOD_ID);
+	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, NewWorld.MOD_ID);
 
-    public static final DeferredHolder<EntityType<?>, EntityType<FirBoatEntity>> FIR_BOAT = ENTITIES.register("fir_boat",  () -> EntityType.Builder.<FirBoatEntity>of(FirBoatEntity::new, MobCategory.MISC).sized(1.375f, 0.5625f).build("fir_boat"));
-    public static final DeferredHolder<EntityType<?>, EntityType<FirChestBoatEntity>> FIR_CHEST_BOAT = ENTITIES.register("fir_chest_boat",  () -> EntityType.Builder.<FirChestBoatEntity>of(FirChestBoatEntity::new, MobCategory.MISC).sized(1.375f, 0.5625f).build("fir_chest_boat"));
+	public static final DeferredHolder<EntityType<?>, EntityType<FirBoatEntity>> FIR_BOAT = ENTITIES.register("fir_boat",  () -> EntityType.Builder.<FirBoatEntity>of(FirBoatEntity::new, MobCategory.MISC).sized(1.375f, 0.5625f).build("fir_boat"));
+	public static final DeferredHolder<EntityType<?>, EntityType<FirChestBoatEntity>> FIR_CHEST_BOAT = ENTITIES.register("fir_chest_boat",  () -> EntityType.Builder.<FirChestBoatEntity>of(FirChestBoatEntity::new, MobCategory.MISC).sized(1.375f, 0.5625f).build("fir_chest_boat"));
 }

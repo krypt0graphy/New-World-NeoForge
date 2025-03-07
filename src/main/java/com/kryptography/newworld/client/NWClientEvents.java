@@ -27,11 +27,6 @@ public class NWClientEvents {
         EntityRenderers.register(NWEntityTypes.FIR_CHEST_BOAT.get(), pContext -> new NWBoatRenderer(pContext, true));
     }
     @SubscribeEvent
-    public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(NWBlockEntityTypes.FIR_HANGING_SIGN_BLOCK_ENTITY.get(), HangingSignRenderer::new);
-        event.registerBlockEntityRenderer(NWBlockEntityTypes.FIR_SIGN_BLOCK_ENTITY.get(), SignRenderer::new);
-    }
-    @SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(NWModelLayers.FIR_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(NWModelLayers.FIR_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);

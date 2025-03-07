@@ -17,44 +17,44 @@ import java.util.function.Supplier;
 
 public class AddToPoolModifier extends LootModifier {
 
-    private Item itemAdded;
-    private float chance;
-    private boolean replace;
+	private Item itemAdded;
+	private float chance;
+	private boolean replace;
 
-    public static final Supplier<MapCodec<AddToPoolModifier>> CODEC = Suppliers.memoize(() ->
-            RecordCodecBuilder.mapCodec(instance -> codecStart(instance)
-                    .and(BuiltInRegistries.ITEM.byNameCodec().fieldOf("item").forGetter(lm -> lm.itemAdded))
-                    .and(Codec.FLOAT.fieldOf("chance_to_replace").forGetter(modifier -> modifier.chance))
-                    .and(Codec.BOOL.fieldOf("replace").forGetter(modifier -> modifier.replace))
-                    .apply(instance, AddToPoolModifier::new)));
+	public static final Supplier<MapCodec<AddToPoolModifier>> CODEC = Suppliers.memoize(() ->
+			RecordCodecBuilder.mapCodec(instance -> codecStart(instance)
+					.and(BuiltInRegistries.ITEM.byNameCodec().fieldOf("item").forGetter(lm -> lm.itemAdded))
+					.and(Codec.FLOAT.fieldOf("chance_to_replace").forGetter(modifier -> modifier.chance))
+					.and(Codec.BOOL.fieldOf("replace").forGetter(modifier -> modifier.replace))
+					.apply(instance, AddToPoolModifier::new)));
 
-    public AddToPoolModifier(LootItemCondition[] conditionsIn, Item itemAdded, float chance, boolean replace) {
-        super(conditionsIn);
-        this.itemAdded = itemAdded;
-        this.chance = chance;
-        this.replace = replace;
-    }
+	public AddToPoolModifier(LootItemCondition[] conditionsIn, Item itemAdded, float chance, boolean replace) {
+		super(conditionsIn);
+		this.itemAdded = itemAdded;
+		this.chance = chance;
+		this.replace = replace;
+	}
 
-    @Override
-    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        for(LootItemCondition condition : this.conditions) {
-            if(!condition.test(context)) {
-                return generatedLoot;
-            }
-        }
+	@Override
+	protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
+		for(LootItemCondition condition : this.conditions) {
+			if(!condition.test(context)) {
+				return generatedLoot;
+			}
+		}
 
-        if(context.getRandom().nextFloat() < chance) {
-            if (replace) {
-                generatedLoot.clear();
-            }
-            generatedLoot.add(new ItemStack(this.itemAdded));
-        }
+		if(context.getRandom().nextFloat() < chance) {
+			if (replace) {
+				generatedLoot.clear();
+			}
+			generatedLoot.add(new ItemStack(this.itemAdded));
+		}
 
-        return generatedLoot;
-    }
+		return generatedLoot;
+	}
 
-    @Override
-    public MapCodec<? extends IGlobalLootModifier> codec() {
-        return CODEC.get();
-    }
+	@Override
+	public MapCodec<? extends IGlobalLootModifier> codec() {
+		return CODEC.get();
+	}
 }

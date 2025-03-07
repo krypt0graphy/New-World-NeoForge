@@ -1,5 +1,7 @@
-// 1.21.1	2025-01-29T16:48:27.5767624	Tags for minecraft:block mod id newworld
+// 1.21.1	2025-03-07T12:14:51.6247181	Tags for minecraft:block mod id newworld
 68010ec2569a3ec8636cfe318fd6c7b59722e75d data/c/tags/block/bookshelves.json
+797df6fa8c55a9504bf61d393f92ebd9df900769 data/c/tags/block/stripped_logs.json
+2ea1f39ef0997a6f3e11ad3259b394ac28cdc695 data/c/tags/block/stripped_woods.json
 763757eba8d924693eb1c6c5b603eefad2b5629a data/minecraft/tags/block/base_stone_overworld.json
 94a1a924b9e4dafdd0919819e6dc2e9dc15d356f data/minecraft/tags/block/ceiling_hanging_signs.json
 531531a2cbe2b2b6b19b4a23489c73b358063609 data/minecraft/tags/block/fence_gates.json

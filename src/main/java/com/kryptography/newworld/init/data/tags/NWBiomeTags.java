@@ -7,9 +7,9 @@ import net.minecraft.world.level.biome.Biome;
 
 public class NWBiomeTags {
 
-    public static final TagKey<Biome> HAS_BURIED_BUNKER= biomeTag("has_structure/buried_bunker");
+	public static final TagKey<Biome> HAS_BURIED_BUNKER= biomeTag("has_structure/buried_bunker");
 
-    public static TagKey<Biome> biomeTag(String name) {
-        return TagKey.create(Registries.BIOME, NewWorld.id( name));
-    }
+	public static TagKey<Biome> biomeTag(String name) {
+		return TagKey.create(Registries.BIOME, NewWorld.id( name));
+	}
 }

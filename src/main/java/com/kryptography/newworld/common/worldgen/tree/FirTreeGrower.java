@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public class FirTreeGrower {
 
-    public static final TreeGrower FIR = new TreeGrower(
-            "fir",
-            Optional.empty(),
-            Optional.of(NWConfiguredFeatures.FIR),
-            Optional.of(NWConfiguredFeatures.FIR_BEES_002));
+	public static final TreeGrower FIR = new TreeGrower(
+			"fir",
+			Optional.empty(),
+			Optional.of(NWConfiguredFeatures.FIR),
+			Optional.of(NWConfiguredFeatures.FIR_BEES_002));
 }

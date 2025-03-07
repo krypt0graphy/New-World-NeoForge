@@ -12,23 +12,23 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class NWBiomes {
 
-    public static final ResourceKey<Biome> WOODED_MEADOW = registerKey("wooded_meadow");
+	public static final ResourceKey<Biome> WOODED_MEADOW = registerKey("wooded_meadow");
 
-    private static ResourceKey<Biome> registerKey(String name)
-    {
-        return ResourceKey.create(Registries.BIOME, NewWorld.id(name));
-    }
+	private static ResourceKey<Biome> registerKey(String name)
+	{
+		return ResourceKey.create(Registries.BIOME, NewWorld.id(name));
+	}
 
-    public static void bootstrap(BootstrapContext<Biome> context) {
+	public static void bootstrap(BootstrapContext<Biome> context) {
 
-        HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
-        HolderGetter<PlacedFeature> placedFeatureGetter = context.lookup(Registries.PLACED_FEATURE);
-        register(context, WOODED_MEADOW, NWOverworldBiomeCreator.createWoodedMeadow(placedFeatureGetter, carverGetter));
-    }
+		HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
+		HolderGetter<PlacedFeature> placedFeatureGetter = context.lookup(Registries.PLACED_FEATURE);
+		register(context, WOODED_MEADOW, NWOverworldBiomeCreator.createWoodedMeadow(placedFeatureGetter, carverGetter));
+	}
 
-    private static void register(BootstrapContext<Biome> context, ResourceKey<Biome> key, Biome biome)
-    {
-        context.register(key, biome);
-    }
+	private static void register(BootstrapContext<Biome> context, ResourceKey<Biome> key, Biome biome)
+	{
+		context.register(key, biome);
+	}
 
 }

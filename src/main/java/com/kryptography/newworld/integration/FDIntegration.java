@@ -1,24 +1,25 @@
 package com.kryptography.newworld.integration;
 
-import com.kryptography.newworld.common.blocks.FirCabinetBlock;
-import com.kryptography.newworld.common.blocks.entity.FirCabinetBlockEntity;
 import com.kryptography.newworld.init.NWBlocks;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-
-import java.util.function.Supplier;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 public class FDIntegration {
 
-    public static Supplier<? extends Block> cabinetBlock() {
-        return () -> new FirCabinetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL));
-    }
+	public static final DeferredBlock<Block> FIR_CABINET = NWBlocks.register("fir_cabinet", () -> new CabinetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
 
-    public static Supplier<? extends BlockEntityType<?>> cabinetBlockEntity() {
-        return () -> BlockEntityType.Builder.of(FirCabinetBlockEntity::new,
-                NWBlocks.FIR_CABINET.get()
-        ).build(null);
-    }
+	public static void addBlockEntities(BlockEntityTypeAddBlocksEvent event) {
+		event.modify(
+				ModBlockEntityTypes.CABINET.get(),
+				FIR_CABINET.get()
+		);
+	}
+
+	public static void register() {
+	}
 }

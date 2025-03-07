@@ -16,32 +16,32 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 
 public class NWStructurePools {
 
-    public static final ResourceKey<StructureTemplatePool> BURIED_BUNKER = registerKey("buried_bunker");
+	public static final ResourceKey<StructureTemplatePool> BURIED_BUNKER = registerKey("buried_bunker");
 
-    private static final ResourceKey<StructureTemplatePool> EMPTY = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.withDefaultNamespace("empty"));
+	private static final ResourceKey<StructureTemplatePool> EMPTY = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.withDefaultNamespace("empty"));
 
-    public static void bootstrap(BootstrapContext<StructureTemplatePool> bootstrap) {
+	public static void bootstrap(BootstrapContext<StructureTemplatePool> bootstrap) {
 
-        HolderGetter<StructureTemplatePool> templateLookup = bootstrap.lookup(Registries.TEMPLATE_POOL);
-        Holder<StructureTemplatePool> empty = templateLookup.getOrThrow(EMPTY);
-        HolderGetter<StructureProcessorList> listLookup = bootstrap.lookup(Registries.PROCESSOR_LIST);
-        Holder<StructureProcessorList> bunkerList = listLookup.getOrThrow(NWProcessorsList.BURIED_BUNKER);
+		HolderGetter<StructureTemplatePool> templateLookup = bootstrap.lookup(Registries.TEMPLATE_POOL);
+		Holder<StructureTemplatePool> empty = templateLookup.getOrThrow(EMPTY);
+		HolderGetter<StructureProcessorList> listLookup = bootstrap.lookup(Registries.PROCESSOR_LIST);
+		Holder<StructureProcessorList> bunkerList = listLookup.getOrThrow(NWProcessorsList.BURIED_BUNKER);
 
-        bootstrap.register(
-                BURIED_BUNKER,
-                new StructureTemplatePool(
-                        empty,
-                        ImmutableList.of(
-                                Pair.of(StructurePoolElement.single(NewWorld.id("buried_bunker").toString(), bunkerList), 1),
-                                Pair.of(StructurePoolElement.single(NewWorld.id("buried_bunker_empty").toString(), bunkerList), 10)
-                        ),
-                StructureTemplatePool.Projection.RIGID
-                )
-        );
-    }
+		bootstrap.register(
+				BURIED_BUNKER,
+				new StructureTemplatePool(
+						empty,
+						ImmutableList.of(
+								Pair.of(StructurePoolElement.single(NewWorld.id("buried_bunker").toString(), bunkerList), 1),
+								Pair.of(StructurePoolElement.single(NewWorld.id("buried_bunker_empty").toString(), bunkerList), 10)
+						),
+				StructureTemplatePool.Projection.RIGID
+				)
+		);
+	}
 
-    public static ResourceKey<StructureTemplatePool> registerKey(String name) {
-        return ResourceKey.create(Registries.TEMPLATE_POOL,  NewWorld.id(name));
-    }
+	public static ResourceKey<StructureTemplatePool> registerKey(String name) {
+		return ResourceKey.create(Registries.TEMPLATE_POOL,  NewWorld.id(name));
+	}
 
 }

@@ -13,9 +13,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 
 public class NWFeature {
-    public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(Registries.FEATURE, NewWorld.MOD_ID);
+	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(Registries.FEATURE, NewWorld.MOD_ID);
 
-    public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> FALLEN_FIR_LOG = FEATURES.register("fallen_fir_log", () -> new FallenLogFeature(NoneFeatureConfiguration.CODEC));
-    public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> LOAM_SNOW = FEATURES.register("loam_snow", () -> new LoamSnowFeature(NoneFeatureConfiguration.CODEC));
-    public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> BURIAL_SITE = FEATURES.register("burial_site", () -> new BurialSiteFeature(NoneFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> FALLEN_FIR_LOG = FEATURES.register("fallen_fir_log", () -> new FallenLogFeature(NoneFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> LOAM_SNOW = FEATURES.register("loam_snow", () -> new LoamSnowFeature(NoneFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> BURIAL_SITE = FEATURES.register("burial_site", () -> new BurialSiteFeature(NoneFeatureConfiguration.CODEC));
 }

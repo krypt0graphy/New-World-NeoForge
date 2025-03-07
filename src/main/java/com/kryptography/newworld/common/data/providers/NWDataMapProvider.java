@@ -2,6 +2,7 @@ package com.kryptography.newworld.common.data.providers;
 
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.integration.Mods;
+import com.kryptography.newworld.integration.NMLIntegration;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
@@ -14,40 +15,39 @@ import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import java.util.concurrent.CompletableFuture;
 
 public class NWDataMapProvider extends DataMapProvider {
-    public NWDataMapProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
-        super(packOutput, lookupProvider);
-    }
+	public NWDataMapProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+		super(packOutput, lookupProvider);
+	}
 
-    @Override
-    @SuppressWarnings("deprecation")
-    protected void gather() {
-        var compostables = this.builder(NeoForgeDataMaps.COMPOSTABLES);
+	@Override
+	@SuppressWarnings("deprecation")
+	protected void gather() {
+		var compostables = this.builder(NeoForgeDataMaps.COMPOSTABLES);
 
-        compostables.add(NWBlocks.FIR_LEAVES.get().asItem().builtInRegistryHolder(), new Compostable(0.3f), false);
-        compostables.add(NWBlocks.FIR_SAPLING.get().asItem().builtInRegistryHolder(), new Compostable(0.3f), false);
-    }
+		compostables.add(NWBlocks.FIR_LEAVES.get().asItem().builtInRegistryHolder(), new Compostable(0.3f), false);
+		compostables.add(NWBlocks.FIR_SAPLING.get().asItem().builtInRegistryHolder(), new Compostable(0.3f), false);
+	}
 
-    public static void register() {
-        registerFlammable(NWBlocks.FIR_PLANKS.get(), 5, 20);
-        registerFlammable(NWBlocks.FIR_SLAB.get(), 5, 20);
-        registerFlammable(NWBlocks.FIR_STAIRS.get(), 5, 20);
-        registerFlammable(NWBlocks.FIR_FENCE.get(), 5, 20);
-        registerFlammable(NWBlocks.FIR_FENCE_GATE.get(), 5, 20);
-        registerFlammable(NWBlocks.FIR_LEAVES.get(), 30, 60);
-        registerFlammable(NWBlocks.FIR_LOG.get(), 5, 5);
-        registerFlammable(NWBlocks.FIR_WOOD.get(), 5, 5);
-        registerFlammable(NWBlocks.STRIPPED_FIR_LOG.get(), 5, 5);
-        registerFlammable(NWBlocks.STRIPPED_FIR_WOOD.get(), 5, 5);
+	public static void register() {
+		registerFlammable(NWBlocks.FIR_PLANKS.get(), 5, 20);
+		registerFlammable(NWBlocks.FIR_SLAB.get(), 5, 20);
+		registerFlammable(NWBlocks.FIR_STAIRS.get(), 5, 20);
+		registerFlammable(NWBlocks.FIR_FENCE.get(), 5, 20);
+		registerFlammable(NWBlocks.FIR_FENCE_GATE.get(), 5, 20);
+		registerFlammable(NWBlocks.FIR_LEAVES.get(), 30, 60);
+		registerFlammable(NWBlocks.FIR_LOG.get(), 5, 5);
+		registerFlammable(NWBlocks.FIR_WOOD.get(), 5, 5);
+		registerFlammable(NWBlocks.STRIPPED_FIR_LOG.get(), 5, 5);
+		registerFlammable(NWBlocks.STRIPPED_FIR_WOOD.get(), 5, 5);
 
-        //NML
-        if(Mods.NOMANSLAND.isLoaded()) {
-            registerFlammable(NWBlocks.FIR_BOOKSHELF.get(), 30, 20);
-            registerFlammable(NWBlocks.TRIMMED_FIR_PLANKS.get(), 5, 20);
-        }
-    }
+		if(Mods.NOMANSLAND.isLoaded()) {
+			registerFlammable(NMLIntegration.FIR_BOOKSHELF.get(), 30, 20);
+			registerFlammable(NMLIntegration.TRIMMED_FIR_PLANKS.get(), 5, 20);
+		}
+	}
 
-    public static void registerFlammable(Block block, int encouragement, int flammability) {
-    FireBlock fire = (FireBlock) Blocks.FIRE;
-    fire.setFlammable(block, encouragement, flammability);
-    }
+	public static void registerFlammable(Block block, int encouragement, int flammability) {
+	FireBlock fire = (FireBlock) Blocks.FIRE;
+	fire.setFlammable(block, encouragement, flammability);
+	}
 }

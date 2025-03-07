@@ -13,7 +13,9 @@ import com.kryptography.newworld.common.data.providers.tags.NWItemTagsProvider;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.worldgen.NWWorldgenData;
+import com.kryptography.newworld.integration.FDIntegration;
 import com.kryptography.newworld.integration.Mods;
+import com.kryptography.newworld.integration.NMLIntegration;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -41,97 +43,97 @@ public class NWData {
 
 
 
-    @SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
-        DataGenerator gen = event.getGenerator();
-        PackOutput packOutput = gen.getPackOutput();
-        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        CompletableFuture<HolderLookup.Provider> lookup = event.getLookupProvider();
+	@SubscribeEvent
+	public static void gatherData(GatherDataEvent event) {
+		DataGenerator gen = event.getGenerator();
+		PackOutput packOutput = gen.getPackOutput();
+		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		CompletableFuture<HolderLookup.Provider> lookup = event.getLookupProvider();
 
 
-        DatapackBuiltinEntriesProvider datapackProvider = new NWWorldgenData(packOutput, lookup);
-        event.getGenerator().addProvider(event.includeServer(), datapackProvider);
+		DatapackBuiltinEntriesProvider datapackProvider = new NWWorldgenData(packOutput, lookup);
+		event.getGenerator().addProvider(event.includeServer(), datapackProvider);
 
-        BlockTagsProvider blockTagsProvider = new NWBlockTagsProvider(packOutput, lookup,existingFileHelper);
-        gen.addProvider(event.includeServer(), blockTagsProvider);
-        gen.addProvider(event.includeClient(), new NWItemTagsProvider(packOutput, lookup, blockTagsProvider.contentsGetter(), existingFileHelper));
-        gen.addProvider(event.includeClient(), new NWItemModelProvider(packOutput, existingFileHelper));
-        gen.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(NWChestLootProvider::new, LootContextParamSets.CHEST)), lookup));
-        gen.addProvider(event.includeClient(), new NWBlockStateProvider(packOutput, existingFileHelper));
-        gen.addProvider(event.includeServer(), new NWDataMapProvider(packOutput, lookup));
-        gen.addProvider(event.includeServer(), new NWRecipeProvider(packOutput, lookup));
-        gen.addProvider(event.includeServer(), new NWGlobalLootModifierProvider(packOutput, lookup));
-        gen.addProvider(event.includeServer(), new NWBiomeTagsProvider(packOutput, datapackProvider.getRegistryProvider(),existingFileHelper));
-    }
+		BlockTagsProvider blockTagsProvider = new NWBlockTagsProvider(packOutput, lookup,existingFileHelper);
+		gen.addProvider(event.includeServer(), blockTagsProvider);
+		gen.addProvider(event.includeClient(), new NWItemTagsProvider(packOutput, lookup, blockTagsProvider.contentsGetter(), existingFileHelper));
+		gen.addProvider(event.includeClient(), new NWItemModelProvider(packOutput, existingFileHelper));
+		gen.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(NWChestLootProvider::new, LootContextParamSets.CHEST)), lookup));
+		gen.addProvider(event.includeClient(), new NWBlockStateProvider(packOutput, existingFileHelper));
+		gen.addProvider(event.includeServer(), new NWDataMapProvider(packOutput, lookup));
+		gen.addProvider(event.includeServer(), new NWRecipeProvider(packOutput, lookup));
+		gen.addProvider(event.includeServer(), new NWGlobalLootModifierProvider(packOutput, lookup));
+		gen.addProvider(event.includeServer(), new NWBiomeTagsProvider(packOutput, datapackProvider.getRegistryProvider(),existingFileHelper));
+	}
 
-    public static void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            addAfter(event, Items.SPRUCE_LOG, NWBlocks.FIR_LOG.get());
-            addAfter(event, Items.SPRUCE_LEAVES, NWBlocks.FIR_LEAVES.get());
-            addAfter(event, Items.SPRUCE_SAPLING, NWBlocks.FIR_SAPLING.get());
-            addAfter(event, Items.SHORT_GRASS, NWBlocks.MOSS_SPROUTS.get());
-            addAfter(event, Items.MUD, NWBlocks.LOAM.get());
+	public static void addCreative(BuildCreativeModeTabContentsEvent event) {
+		if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+			addAfter(event, Items.SPRUCE_LOG, NWBlocks.FIR_LOG.get());
+			addAfter(event, Items.SPRUCE_LEAVES, NWBlocks.FIR_LEAVES.get());
+			addAfter(event, Items.SPRUCE_SAPLING, NWBlocks.FIR_SAPLING.get());
+			addAfter(event, Items.SHORT_GRASS, NWBlocks.MOSS_SPROUTS.get());
+			addAfter(event, Items.MUD, NWBlocks.LOAM.get());
 
-        }
+		}
 
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            addAfter(event, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, NWItems.MATTOCK_CRAFTING_TEMPLATE);
-            addAfter(event, NWItems.MATTOCK_CRAFTING_TEMPLATE, NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD);
-            addAfter(event, NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD, NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT);
-            event.accept(NWItems.ILLAGER_TOME);
-        }
+		if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+			addAfter(event, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, NWItems.MATTOCK_CRAFTING_TEMPLATE);
+			addAfter(event, NWItems.MATTOCK_CRAFTING_TEMPLATE, NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD);
+			addAfter(event, NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD, NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT);
+			event.accept(NWItems.ILLAGER_TOME);
+		}
 
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_BUTTON);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_PRESSURE_PLATE);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_TRAPDOOR);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_DOOR);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_FENCE_GATE);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_FENCE);
-            if(Mods.NOMANSLAND.isLoaded()) {
-                addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.TRIMMED_FIR_PLANKS.get());
-                addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_BOOKSHELF.get());
-            }
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_SLAB);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_STAIRS);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_PLANKS);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.STRIPPED_FIR_WOOD);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.STRIPPED_FIR_LOG);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_WOOD);
-            addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_LOG);
+		if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_BUTTON);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_PRESSURE_PLATE);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_TRAPDOOR);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_DOOR);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_FENCE_GATE);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_FENCE);
+			if(Mods.NOMANSLAND.isLoaded()) {
+				addAfter(event, Items.SPRUCE_BUTTON, NMLIntegration.TRIMMED_FIR_PLANKS.get());
+				addAfter(event, Items.SPRUCE_BUTTON, NMLIntegration.FIR_BOOKSHELF.get());
+			}
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_SLAB);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_STAIRS);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_PLANKS);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.STRIPPED_FIR_WOOD);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.STRIPPED_FIR_LOG);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_WOOD);
+			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_LOG);
 
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILE_WALL);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILE_SLAB);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILE_STAIRS);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILES);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICK_WALL);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICK_SLAB);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICK_STAIRS);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICKS);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_WALL);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_SLAB);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_STAIRS);
-            addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILE_WALL);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILE_SLAB);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILE_STAIRS);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_TILES);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICK_WALL);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICK_SLAB);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICK_STAIRS);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_BRICKS);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_WALL);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_SLAB);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM_STAIRS);
+			addAfter(event, Items.MUD_BRICK_WALL, NWBlocks.LOAM);
 
-            if (Mods.FARMERSDELIGHT.isLoaded()) {
-                event.accept(NWBlocks.FIR_CABINET);
-            }
-        }
-        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_HANGING_SIGN);
-            addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_SIGN);
-            event.accept(NWBlocks.TOMBSTONE);
-        }
+			if (Mods.FARMERSDELIGHT.isLoaded()) {
+				event.accept(FDIntegration.FIR_CABINET);
+			}
+		}
+		if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+			addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_HANGING_SIGN);
+			addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_SIGN);
+			event.accept(NWBlocks.TOMBSTONE);
+		}
 
-        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            addAfter(event, Items.SPRUCE_CHEST_BOAT, NWItems.FIR_CHEST_BOAT);
-            addAfter(event, Items.SPRUCE_CHEST_BOAT, NWItems.FIR_BOAT);
-            addAfter(event, Items.NETHERITE_HOE, NWItems.ANCIENT_MATTOCK);
-        }
+		if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+			addAfter(event, Items.SPRUCE_CHEST_BOAT, NWItems.FIR_CHEST_BOAT);
+			addAfter(event, Items.SPRUCE_CHEST_BOAT, NWItems.FIR_BOAT);
+			addAfter(event, Items.NETHERITE_HOE, NWItems.ANCIENT_MATTOCK);
+		}
 
-    }
+	}
 
-    public static void addAfter(BuildCreativeModeTabContentsEvent event, ItemLike first, ItemLike second) {
-        event.insertAfter(new ItemStack(first), new ItemStack(second), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-    }
+	public static void addAfter(BuildCreativeModeTabContentsEvent event, ItemLike first, ItemLike second) {
+		event.insertAfter(new ItemStack(first), new ItemStack(second), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+	}
 }

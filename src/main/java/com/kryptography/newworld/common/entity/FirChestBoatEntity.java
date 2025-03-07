@@ -13,50 +13,50 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 
 public class FirChestBoatEntity extends ChestBoat {
-    public static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(FirChestBoatEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(FirChestBoatEntity.class, EntityDataSerializers.INT);
 
-    public FirChestBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
-        this.entityData.set(DATA_ID_TYPE, FirBoatEntity.Type.FIR.ordinal());
-    }
+	public FirChestBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
+		super(pEntityType, pLevel);
+		this.entityData.set(DATA_ID_TYPE, FirBoatEntity.Type.FIR.ordinal());
+	}
 
-    public FirChestBoatEntity(Level level, double pX, double pY, double pZ) {
-        this(NWEntityTypes.FIR_CHEST_BOAT.get(), level);
-        this.setPos(pX, pY, pZ);
-        this.xo = pX;
-        this.yo = pY;
-        this.zo = pZ;
-    }
+	public FirChestBoatEntity(Level level, double pX, double pY, double pZ) {
+		this(NWEntityTypes.FIR_CHEST_BOAT.get(), level);
+		this.setPos(pX, pY, pZ);
+		this.xo = pX;
+		this.yo = pY;
+		this.zo = pZ;
+	}
 
-    @Override
-    public Item getDropItem() {
-        return switch (getModVariant()) {
-            case FIR -> NWItems.FIR_CHEST_BOAT.get();
-        };
-    }
+	@Override
+	public Item getDropItem() {
+		return switch (getModVariant()) {
+			case FIR -> NWItems.FIR_CHEST_BOAT.get();
+		};
+	}
 
-    public void setVariant(FirBoatEntity.Type pVariant) {
-        this.entityData.set(DATA_ID_TYPE, pVariant.ordinal());
-    }
+	public void setVariant(FirBoatEntity.Type pVariant) {
+		this.entityData.set(DATA_ID_TYPE, pVariant.ordinal());
+	}
 
-    public FirBoatEntity.Type getModVariant() {
-        return FirBoatEntity.Type.byId(this.entityData.get(DATA_ID_TYPE));
-    }
+	public FirBoatEntity.Type getModVariant() {
+		return FirBoatEntity.Type.byId(this.entityData.get(DATA_ID_TYPE));
+	}
 
-    @Override
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        super.defineSynchedData(builder);
-        builder.define(DATA_ID_TYPE, 0);
-    }
+	@Override
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(DATA_ID_TYPE, 0);
+	}
 
-    protected void addAdditionalSaveData(CompoundTag pCompound) {
-        pCompound.putString("Type", this.getModVariant().getSerializedName());
-    }
+	protected void addAdditionalSaveData(CompoundTag pCompound) {
+		pCompound.putString("Type", this.getModVariant().getSerializedName());
+	}
 
-    protected void readAdditionalSaveData(CompoundTag pCompound) {
-        if (pCompound.contains("Type", 8)) {
-            this.setVariant(FirBoatEntity.Type.byName(pCompound.getString("Type")));
-        }
-    }
+	protected void readAdditionalSaveData(CompoundTag pCompound) {
+		if (pCompound.contains("Type", 8)) {
+			this.setVariant(FirBoatEntity.Type.byName(pCompound.getString("Type")));
+		}
+	}
 
 }

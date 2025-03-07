@@ -14,16 +14,16 @@ import java.util.stream.Stream;
 
 
 public class AncientMattockItem extends DiggerItem {
-    public static final Set<ItemAbility> DEFAULT_MATTOCK_ABILITIES = Stream.of(
-            ItemAbilities.AXE_DIG, ItemAbilities.SHOVEL_DIG, ItemAbilities.HOE_DIG, ItemAbilities.PICKAXE_DIG
-    ).collect(Collectors.toCollection(Sets::newIdentityHashSet));
+	public static final Set<ItemAbility> DEFAULT_MATTOCK_ABILITIES = Stream.of(
+			ItemAbilities.AXE_DIG, ItemAbilities.SHOVEL_DIG, ItemAbilities.HOE_DIG, ItemAbilities.PICKAXE_DIG
+	).collect(Collectors.toCollection(Sets::newIdentityHashSet));
 
-    public AncientMattockItem(Tier pTier, Properties pProperties) {
-        super(pTier, NWBlockTags.MATTOCK_MINEABLE, pProperties);
-    }
+	public AncientMattockItem(Tier pTier, Properties pProperties) {
+		super(pTier, NWBlockTags.MATTOCK_MINEABLE, pProperties);
+	}
 
-    @Override
-    public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
-        return DEFAULT_MATTOCK_ABILITIES.contains(itemAbility);
-    }
+	@Override
+	public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
+		return DEFAULT_MATTOCK_ABILITIES.contains(itemAbility);
+	}
 }

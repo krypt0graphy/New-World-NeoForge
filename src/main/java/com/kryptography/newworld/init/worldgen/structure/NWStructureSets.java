@@ -12,17 +12,17 @@ import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
 
 public class NWStructureSets {
 
-    public static final ResourceKey<StructureSet> BURIED_BUNKER = registerKey("buried_bunker");
+	public static final ResourceKey<StructureSet> BURIED_BUNKER = registerKey("buried_bunker");
 
-    public static void bootstrap(BootstrapContext<StructureSet> context) {
-        HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
+	public static void bootstrap(BootstrapContext<StructureSet> context) {
+		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
-        context.register(BURIED_BUNKER, new StructureSet(
-                structures.getOrThrow(NWStructures.BURIED_BUNKER),
-                new RandomSpreadStructurePlacement(24, 4, RandomSpreadType.LINEAR, 1694767080)));
-    }
+		context.register(BURIED_BUNKER, new StructureSet(
+				structures.getOrThrow(NWStructures.BURIED_BUNKER),
+				new RandomSpreadStructurePlacement(24, 4, RandomSpreadType.LINEAR, 1694767080)));
+	}
 
-    public static ResourceKey<StructureSet> registerKey(String name) {
-        return ResourceKey.create(Registries.STRUCTURE_SET, NewWorld.id(name));
-    }
+	public static ResourceKey<StructureSet> registerKey(String name) {
+		return ResourceKey.create(Registries.STRUCTURE_SET, NewWorld.id(name));
+	}
 }

@@ -15,14 +15,13 @@ import java.util.List;
 
 @EventBusSubscriber(modid = NewWorld.MOD_ID)
 public class NWTrades {
-    @SubscribeEvent
-    public static void onWandererTrades(WandererTradesEvent event) {
-        List<VillagerTrades.ItemListing> commonTrades = event.getGenericTrades();
-        commonTrades.add((pTrader, pRandom) -> new MerchantOffer(
-                new ItemCost(Items.EMERALD, 5),
-                new ItemStack(NWBlocks.FIR_SAPLING.asItem(),1),
-                8,1,1));
-
-    }
+	@SubscribeEvent
+	public static void onWandererTrades(WandererTradesEvent event) {
+		List<VillagerTrades.ItemListing> commonTrades = event.getGenericTrades();
+		commonTrades.add((pTrader, pRandom) -> new MerchantOffer(
+				new ItemCost(Items.EMERALD, 5),
+				new ItemStack(NWBlocks.FIR_SAPLING.asItem(),1),
+				8,1,1));
+	}
 
 }

@@ -10,5 +10,5 @@ import net.neoforged.neoforge.common.SimpleTier;
 
 
 public class AncientToolTier {
-    public static final Tier ANCIENT = new SimpleTier(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 3086, 9.0F, 7.0F, 10, () -> Ingredient.of(Items.FLINT));
+	public static final Tier ANCIENT = new SimpleTier(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 3086, 9.0F, 7.0F, 10, () -> Ingredient.of(Items.FLINT));
 }

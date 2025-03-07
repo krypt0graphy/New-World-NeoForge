@@ -15,25 +15,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class NWStats {
-    public static final DeferredRegister<ResourceLocation> STATS = DeferredRegister.create(Registries.CUSTOM_STAT, NewWorld.MOD_ID);
+	public static final DeferredRegister<ResourceLocation> STATS = DeferredRegister.create(Registries.CUSTOM_STAT, NewWorld.MOD_ID);
 
-    private static final Map<ResourceLocation, StatFormatter> FORMATTERS = new HashMap<>();
-    public static final DeferredHolder<ResourceLocation, ResourceLocation> TOMBSTONE_ACTIVATION = register("tombstone_activation");
-    private static DeferredHolder<ResourceLocation, ResourceLocation> register(String name, StatFormatter formatter) {
-        ResourceLocation resourceLocation = NewWorld.id(name);
-        DeferredHolder<ResourceLocation, ResourceLocation> holder = STATS.register(name, () -> resourceLocation);
-        FORMATTERS.put(resourceLocation, formatter);
-        return holder;
-    }
+	private static final Map<ResourceLocation, StatFormatter> FORMATTERS = new HashMap<>();
+	public static final DeferredHolder<ResourceLocation, ResourceLocation> TOMBSTONE_ACTIVATION = register("tombstone_activation");
+	private static DeferredHolder<ResourceLocation, ResourceLocation> register(String name, StatFormatter formatter) {
+		ResourceLocation resourceLocation = NewWorld.id(name);
+		DeferredHolder<ResourceLocation, ResourceLocation> holder = STATS.register(name, () -> resourceLocation);
+		FORMATTERS.put(resourceLocation, formatter);
+		return holder;
+	}
 
-    private static DeferredHolder<ResourceLocation, ResourceLocation> register(String name) {
-        return register(name, StatFormatter.DEFAULT);
-    }
+	private static DeferredHolder<ResourceLocation, ResourceLocation> register(String name) {
+		return register(name, StatFormatter.DEFAULT);
+	}
 
-    public static void init() {}
+	public static void init() {}
 
-    @ApiStatus.Internal
-    public static void registerFormatter() {
-        FORMATTERS.forEach(Stats.CUSTOM::get);
-    }
+	@ApiStatus.Internal
+	public static void registerFormatter() {
+		FORMATTERS.forEach(Stats.CUSTOM::get);
+	}
 }

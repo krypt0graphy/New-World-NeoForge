@@ -10,14 +10,14 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class MossSproutsBlock extends TallGrassBlock implements BonemealableBlock {
-    public MossSproutsBlock(Properties properties) {
-        super(properties);
-    }
+	public MossSproutsBlock(Properties properties) {
+		super(properties);
+	}
 
-    @Override
-    protected VoxelShape getVisualShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
-    }
+	@Override
+	protected VoxelShape getVisualShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+		return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
+	}
 
 
 }
