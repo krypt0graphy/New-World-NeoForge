@@ -36,21 +36,6 @@ config="newworld.mixins.json"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
-    modId ="farmersdelight"
-    type="optional"
-    versionRange="${fd_version_range}"
-    ordering="AFTER"
-    side="BOTH"
-
-
-[[dependencies.${mod_id}]]
-    modId ="nomansland"
-    type="optional"
-    versionRange="${nml_version_range}"
-    ordering="AFTER"
-    side="BOTH"
-
-[[dependencies.${mod_id}]]
     modId="biolith"
     type="required"
     versionRange="${bio_version_range}"

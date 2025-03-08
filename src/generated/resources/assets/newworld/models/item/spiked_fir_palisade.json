@@ -1,0 +1,4 @@
+{
+  "parent": "newworld:block/spiked_fir_palisade_post",
+  "gui_light": "front"
+}

@@ -4,6 +4,9 @@ import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.data.tags.NWItemTags;
+import com.kryptography.newworld.integration.BBIntegration;
+import com.kryptography.newworld.integration.FDIntegration;
+import com.kryptography.newworld.integration.NMLIntegration;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -11,6 +14,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,20 +24,20 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
 	}
 
 	@Override
-	protected void buildRecipes(RecipeOutput pRecipeOutput, HolderLookup.Provider holderLookup) {
+	protected void buildRecipes(RecipeOutput recipeOutput, HolderLookup.Provider holderLookup) {
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICKS, 4)
 				.pattern("XX")
 				.pattern("XX")
 				.define('X', NWBlocks.LOAM)
 				.unlockedBy("has_loam", has(NWBlocks.LOAM))
-				.save(pRecipeOutput);
+				.save(recipeOutput);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILES, 4)
 				.pattern("XX")
 				.pattern("XX")
 				.define('X', NWBlocks.LOAM_BRICKS)
 				.unlockedBy("has_loam_bricks", has(NWBlocks.LOAM_BRICKS))
-				.save(pRecipeOutput);
+				.save(recipeOutput);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM, 4)
 				.pattern("CD")
@@ -41,7 +45,7 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.define('C', Items.CLAY)
 				.define('D', Items.DIRT)
 				.unlockedBy("has:loam", has(NWBlocks.LOAM))
-				.save(pRecipeOutput);
+				.save(recipeOutput);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, NWBlocks.TOMBSTONE)
 				.pattern("SDS")
@@ -53,53 +57,53 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.define('T', NWBlocks.TOMBSTONE)
 				.unlockedBy("has_tombstone_or_illager_tome", has(NWItemTags.TOMBSTONE_MATERIALS))
 				.showNotification(true)
-				.save(pRecipeOutput);
+				.save(recipeOutput);
 
-		planksFromLog(pRecipeOutput, NWBlocks.FIR_PLANKS, NWItemTags.FIR_LOGS, 4);
-		stairBuilder(NWBlocks.FIR_STAIRS, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(pRecipeOutput);
-		slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.FIR_SLAB, NWBlocks.FIR_PLANKS);
-		fenceBuilder(NWBlocks.FIR_FENCE, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(pRecipeOutput);
-		fenceGateBuilder(NWBlocks.FIR_FENCE_GATE, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(pRecipeOutput);
-		woodFromLogs(pRecipeOutput, NWBlocks.FIR_WOOD, NWBlocks.FIR_LOG);
-		woodFromLogs(pRecipeOutput, NWBlocks.STRIPPED_FIR_WOOD, NWBlocks.STRIPPED_FIR_LOG);
-		woodenBoat(pRecipeOutput, NWItems.FIR_BOAT, NWBlocks.FIR_PLANKS);
-		chestBoat(pRecipeOutput, NWItems.FIR_CHEST_BOAT, NWBlocks.FIR_PLANKS);
-		hangingSign(pRecipeOutput, NWBlocks.FIR_HANGING_SIGN, NWBlocks.STRIPPED_FIR_LOG);
-		signBuilder(NWItems.FIR_SIGN, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(pRecipeOutput);
-		doorBuilder(NWBlocks.FIR_DOOR, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(pRecipeOutput);
-		trapdoorBuilder(NWBlocks.FIR_TRAPDOOR, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(pRecipeOutput);
-		buttonBuilder(NWBlocks.FIR_BUTTON, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(pRecipeOutput);
-		pressurePlate(pRecipeOutput, NWBlocks.FIR_PRESSURE_PLATE, NWBlocks.FIR_PLANKS);
+		planksFromLog(recipeOutput, NWBlocks.FIR_PLANKS, NWItemTags.FIR_LOGS, 4);
+		stairBuilder(NWBlocks.FIR_STAIRS, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(recipeOutput);
+		slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.FIR_SLAB, NWBlocks.FIR_PLANKS);
+		fenceBuilder(NWBlocks.FIR_FENCE, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(recipeOutput);
+		fenceGateBuilder(NWBlocks.FIR_FENCE_GATE, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(recipeOutput);
+		woodFromLogs(recipeOutput, NWBlocks.FIR_WOOD, NWBlocks.FIR_LOG);
+		woodFromLogs(recipeOutput, NWBlocks.STRIPPED_FIR_WOOD, NWBlocks.STRIPPED_FIR_LOG);
+		woodenBoat(recipeOutput, NWItems.FIR_BOAT, NWBlocks.FIR_PLANKS);
+		chestBoat(recipeOutput, NWItems.FIR_CHEST_BOAT, NWItems.FIR_BOAT);
+		hangingSign(recipeOutput, NWBlocks.FIR_HANGING_SIGN, NWBlocks.STRIPPED_FIR_LOG);
+		signBuilder(NWItems.FIR_SIGN, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(recipeOutput);
+		doorBuilder(NWBlocks.FIR_DOOR, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(recipeOutput);
+		trapdoorBuilder(NWBlocks.FIR_TRAPDOOR, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(recipeOutput);
+		buttonBuilder(NWBlocks.FIR_BUTTON, Ingredient.of(NWBlocks.FIR_PLANKS)).unlockedBy("has_fir_planks", has(NWBlocks.FIR_PLANKS)).save(recipeOutput);
+		pressurePlate(recipeOutput, NWBlocks.FIR_PRESSURE_PLATE, NWBlocks.FIR_PLANKS);
 
-		stoneSetRecipes(pRecipeOutput, NWBlocks.LOAM, NWBlocks.LOAM_STAIRS, NWBlocks.LOAM_SLAB, NWBlocks.LOAM_WALL);
-		stoneSetRecipes(pRecipeOutput, NWBlocks.LOAM_BRICKS, NWBlocks.LOAM_BRICK_STAIRS, NWBlocks.LOAM_BRICK_SLAB, NWBlocks.LOAM_BRICK_WALL);
-		stoneSetRecipes(pRecipeOutput, NWBlocks.LOAM_TILES, NWBlocks.LOAM_TILE_STAIRS, NWBlocks.LOAM_TILE_SLAB, NWBlocks.LOAM_TILE_WALL);
+		stoneSetRecipes(recipeOutput, NWBlocks.LOAM, NWBlocks.LOAM_STAIRS, NWBlocks.LOAM_SLAB, NWBlocks.LOAM_WALL);
+		stoneSetRecipes(recipeOutput, NWBlocks.LOAM_BRICKS, NWBlocks.LOAM_BRICK_STAIRS, NWBlocks.LOAM_BRICK_SLAB, NWBlocks.LOAM_BRICK_WALL);
+		stoneSetRecipes(recipeOutput, NWBlocks.LOAM_TILES, NWBlocks.LOAM_TILE_STAIRS, NWBlocks.LOAM_TILE_SLAB, NWBlocks.LOAM_TILE_WALL);
 
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_STAIRS, NWBlocks.LOAM);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_SLAB, NWBlocks.LOAM, 2);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_WALL, NWBlocks.LOAM);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICKS, NWBlocks.LOAM);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_STAIRS, NWBlocks.LOAM);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_SLAB, NWBlocks.LOAM, 2);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_WALL, NWBlocks.LOAM);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILES, NWBlocks.LOAM);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_STAIRS, NWBlocks.LOAM);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_SLAB, NWBlocks.LOAM, 2);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_WALL, NWBlocks.LOAM);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_STAIRS, NWBlocks.LOAM);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_SLAB, NWBlocks.LOAM, 2);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_WALL, NWBlocks.LOAM);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICKS, NWBlocks.LOAM);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_STAIRS, NWBlocks.LOAM);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_SLAB, NWBlocks.LOAM, 2);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_WALL, NWBlocks.LOAM);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILES, NWBlocks.LOAM);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_STAIRS, NWBlocks.LOAM);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_SLAB, NWBlocks.LOAM, 2);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_WALL, NWBlocks.LOAM);
 
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_STAIRS, NWBlocks.LOAM_BRICKS);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_SLAB, NWBlocks.LOAM_BRICKS, 2);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_WALL, NWBlocks.LOAM_BRICKS);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILES, NWBlocks.LOAM_BRICKS);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_STAIRS, NWBlocks.LOAM_BRICKS);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_SLAB, NWBlocks.LOAM_BRICKS, 2);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_WALL, NWBlocks.LOAM_BRICKS);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_STAIRS, NWBlocks.LOAM_BRICKS);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_SLAB, NWBlocks.LOAM_BRICKS, 2);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_BRICK_WALL, NWBlocks.LOAM_BRICKS);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILES, NWBlocks.LOAM_BRICKS);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_STAIRS, NWBlocks.LOAM_BRICKS);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_SLAB, NWBlocks.LOAM_BRICKS, 2);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_WALL, NWBlocks.LOAM_BRICKS);
 
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_STAIRS, NWBlocks.LOAM_TILES);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_SLAB, NWBlocks.LOAM_TILES, 2);
-		stonecutterRecipe(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_WALL, NWBlocks.LOAM_TILES);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_STAIRS, NWBlocks.LOAM_TILES);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_SLAB, NWBlocks.LOAM_TILES, 2);
+		stonecutterRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, NWBlocks.LOAM_TILE_WALL, NWBlocks.LOAM_TILES);
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, NWItems.MATTOCK_CRAFTING_TEMPLATE).requires(NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD).requires(NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT).unlockedBy("has_mattock_crafting_template_piece", has(NWItemTags.MATTOCK_PIECES)).save(pRecipeOutput, NWItems.MATTOCK_CRAFTING_TEMPLATE.getRegisteredName() + "_from_piece_combination");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, NWItems.MATTOCK_CRAFTING_TEMPLATE).requires(NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD).requires(NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT).unlockedBy("has_mattock_crafting_template_piece", has(NWItemTags.MATTOCK_PIECES)).save(recipeOutput, NWItems.MATTOCK_CRAFTING_TEMPLATE.getRegisteredName() + "_from_piece_combination");
 
 		SmithingTransformRecipeBuilder
 				.smithing(Ingredient.of(NWItems.MATTOCK_CRAFTING_TEMPLATE),
@@ -108,7 +112,7 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
 						RecipeCategory.TOOLS,
 						NWItems.ANCIENT_MATTOCK.asItem())
 				.unlocks("has_mattock_crafting_template", has(NWItems.MATTOCK_CRAFTING_TEMPLATE))
-				.save(pRecipeOutput, NewWorld.id("ancient_mattock_smithing"));
+				.save(recipeOutput, NewWorld.id("ancient_mattock_smithing"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, NWItems.MATTOCK_CRAFTING_TEMPLATE.get(), 2)
 				.pattern("#T#")
@@ -118,7 +122,10 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.define('C', Items.COBBLED_DEEPSLATE)
 				.define('T', NWItems.MATTOCK_CRAFTING_TEMPLATE.get())
 				.unlockedBy("has_mattock_crafting_template", has(NWItems.MATTOCK_CRAFTING_TEMPLATE.get()))
-				.save(pRecipeOutput);
+				.save(recipeOutput);
+		FDIntegration.fdRecipes(recipeOutput.withConditions(new ModLoadedCondition("farmersdelight")));
+		NMLIntegration.nmlRecipes(recipeOutput.withConditions(new ModLoadedCondition("nomansland")));
+		BBIntegration.bbRecipes(recipeOutput.withConditions(new ModLoadedCondition("blockbox")));
 	}
 
 	public void stoneSetRecipes(RecipeOutput pRecipeOutput, ItemLike base, ItemLike stairs, ItemLike slab, ItemLike wall) {

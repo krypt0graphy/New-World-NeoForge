@@ -7,22 +7,20 @@
   ],
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "bookshelves",
+  "group": "trimmed_planks",
   "key": {
     "#": {
       "item": "newworld:fir_planks"
-    },
-    "X": {
-      "item": "minecraft:book"
     }
   },
   "pattern": [
-    "###",
-    "XXX",
-    "###"
+    " # ",
+    " # ",
+    " # "
   ],
   "result": {
-    "id": "newworld:fir_bookshelf"
+    "count": 3,
+    "id": "newworld:trimmed_fir_planks"
   },
-  "show_notification": true
+  "show_notification": false
 }

@@ -3,8 +3,14 @@ package com.kryptography.newworld.common.data.providers;
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
+import com.kryptography.newworld.integration.BBIntegration;
+import com.kryptography.newworld.integration.FDIntegration;
+import com.kryptography.newworld.integration.NMLIntegration;
+import net.minecraft.client.renderer.block.model.BlockModel;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
@@ -15,6 +21,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.Locale;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class NWItemModelProvider extends ItemModelProvider {
 	public NWItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -45,9 +53,21 @@ public class NWItemModelProvider extends ItemModelProvider {
 		this.basicItem(NWItems.ILLAGER_TOME.get());
 
 		this.handheldItem(NWItems.ANCIENT_MATTOCK);
+
+		this.simpleBlockItem(FDIntegration.FIR_CABINET.get());
+		this.simpleBlockItem(NMLIntegration.FIR_BOOKSHELF.get());
+		this.simpleBlockItem(NMLIntegration.TRIMMED_FIR_PLANKS.get());
+		this.simpleBlockItem(BBIntegration.FIR_SEAT.get());
+
+		//BLOCKBOX
+		Set<Item> items = BuiltInRegistries.ITEM.stream().filter(i -> NewWorld.MOD_ID.equals(BuiltInRegistries.ITEM.getKey(i).getNamespace()))
+				.collect(Collectors.toSet());
+		palisadeModel(BBIntegration.FIR_PALISADE.asItem(), items);
+		palisadeModel(BBIntegration.SPIKED_FIR_PALISADE.asItem(), items);
+		palisadeModel(BBIntegration.STRIPPED_FIR_PALISADE.asItem(), items);
+		palisadeModel(BBIntegration.STRIPPED_SPIKED_FIR_PALISADE.asItem(), items);
 	}
 
-	
 	public void buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
 		this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
 				.texture("texture",  NewWorld.id(
@@ -91,5 +111,24 @@ public class NWItemModelProvider extends ItemModelProvider {
 
 	public static ResourceLocation prefix(String name) {
 		return NewWorld.id(name.toLowerCase(Locale.ROOT));
+	}
+
+	//FROM VECTOR WING, USED FOR BLOCKBOX INTEGRATION
+
+	public void palisadeModel(Item item, Set<Item> items) {
+		blockBasedModelFrontLight(item, "_post");
+		items.remove(item);
+	}
+
+	public void blockBasedModelFrontLight(Item item, String suffix) {
+		withExistingParent(itemName(item), resourceBlock(itemName(item) + suffix)).guiLight(BlockModel.GuiLight.FRONT);
+	}
+
+	private String itemName(Item item) {
+		return BuiltInRegistries.ITEM.getKey(item).getPath();
+	}
+
+	public ResourceLocation resourceBlock(String path) {
+		return ResourceLocation.fromNamespaceAndPath(NewWorld.MOD_ID, "block/" + path);
 	}
 }

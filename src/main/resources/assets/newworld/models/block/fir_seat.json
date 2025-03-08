@@ -1,0 +1,7 @@
+{
+  "parent": "blockbox:block/template_seat",
+  "textures": {
+    "side": "newworld:block/fir_seat_side",
+    "top": "newworld:block/fir_seat_top"
+  }
+}

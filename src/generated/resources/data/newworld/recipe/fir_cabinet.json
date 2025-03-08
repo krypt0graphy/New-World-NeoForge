@@ -6,22 +6,23 @@
     }
   ],
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "___",
-    "S S",
-    "___"
-  ],
+  "category": "misc",
+  "group": "fd_cabinet",
   "key": {
+    "D": {
+      "item": "newworld:fir_trapdoor"
+    },
     "_": {
       "item": "newworld:fir_slab"
-    },
-    "S": {
-      "item": "newworld:fir_trapdoor"
     }
   },
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
   "result": {
-    "id": "newworld:fir_cabinet",
-    "count": 1
-  },
-  "group": "cabinets"
+    "count": 1,
+    "id": "newworld:fir_cabinet"
+  }
 }

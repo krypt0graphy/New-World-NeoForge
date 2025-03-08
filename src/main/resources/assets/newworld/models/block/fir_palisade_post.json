@@ -1,0 +1,7 @@
+{
+  "parent": "blockbox:block/template_palisade_post",
+  "textures": {
+    "side": "newworld:block/fir_palisade_side",
+    "top": "newworld:block/fir_palisade_top"
+  }
+}

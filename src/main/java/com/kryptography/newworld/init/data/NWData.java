@@ -13,6 +13,7 @@ import com.kryptography.newworld.common.data.providers.tags.NWItemTagsProvider;
 import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.init.NWItems;
 import com.kryptography.newworld.init.worldgen.NWWorldgenData;
+import com.kryptography.newworld.integration.BBIntegration;
 import com.kryptography.newworld.integration.FDIntegration;
 import com.kryptography.newworld.integration.Mods;
 import com.kryptography.newworld.integration.NMLIntegration;
@@ -84,6 +85,12 @@ public class NWData {
 		}
 
 		if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+			if (Mods.BLOCKBOX.isLoaded()) {
+				addAfter(event, Items.SPRUCE_BUTTON, BBIntegration.STRIPPED_SPIKED_FIR_PALISADE);
+				addAfter(event, Items.SPRUCE_BUTTON, BBIntegration.STRIPPED_FIR_PALISADE);
+				addAfter(event, Items.SPRUCE_BUTTON, BBIntegration.SPIKED_FIR_PALISADE);
+				addAfter(event, Items.SPRUCE_BUTTON, BBIntegration.FIR_PALISADE);
+			}
 			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_BUTTON);
 			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_PRESSURE_PLATE);
 			addAfter(event, Items.SPRUCE_BUTTON, NWBlocks.FIR_TRAPDOOR);
@@ -122,6 +129,9 @@ public class NWData {
 		if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_HANGING_SIGN);
 			addAfter(event, Items.SPRUCE_HANGING_SIGN, NWBlocks.FIR_SIGN);
+			if (Mods.BLOCKBOX.isLoaded()) {
+				addAfter(event, Items.RESPAWN_ANCHOR, BBIntegration.FIR_SEAT);
+			}
 			event.accept(NWBlocks.TOMBSTONE);
 		}
 

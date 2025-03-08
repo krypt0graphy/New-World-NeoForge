@@ -3,6 +3,7 @@ package com.kryptography.newworld.common.data.providers.tags;
 import com.kryptography.newworld.NewWorld;
 import com.kryptography.newworld.init.data.tags.CommonTags;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
+import com.kryptography.newworld.integration.BBIntegration;
 import com.kryptography.newworld.integration.FDIntegration;
 import com.kryptography.newworld.integration.Mods;
 import com.kryptography.newworld.integration.NMLIntegration;
@@ -38,7 +39,10 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
 				NWBlocks.FIR_SIGN.get(),
 				NWBlocks.FIR_WALL_SIGN.get(),
 				NWBlocks.FIR_HANGING_SIGN.get(),
-				NWBlocks.FIR_WALL_HANGING_SIGN.get()
+				NWBlocks.FIR_WALL_HANGING_SIGN.get(),
+				FDIntegration.FIR_CABINET.get(),
+				NMLIntegration.FIR_BOOKSHELF.get(),
+				NMLIntegration.TRIMMED_FIR_PLANKS.get()
 		).addTag(
 				NWBlockTags.FIR_LOGS
 		);
@@ -106,7 +110,7 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
 
 		this.tag(BlockTags.REPLACEABLE).add(NWBlocks.MOSS_SPROUTS.get());
 
-		this.tag(NWBlockTags.MATTOCK_MINEABLE).addTags(
+		this.tag(NWBlockTags.MINEABLE_ANCIENT_MATTOCK).addTags(
 				BlockTags.MINEABLE_WITH_AXE,
 				BlockTags.MINEABLE_WITH_PICKAXE,
 				BlockTags.MINEABLE_WITH_SHOVEL,
@@ -142,19 +146,10 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
 		this.tag(CommonTags.STRIPPED_LOGS).add(NWBlocks.STRIPPED_FIR_LOG.get());
 		this.tag(CommonTags.STRIPPED_WOODS).add(NWBlocks.STRIPPED_FIR_WOOD.get());
 		this.tag(CommonTags.BOOKSHELVES).addOptional(NMLIntegration.FIR_BOOKSHELF.getId());
-
-		if (Mods.FARMERSDELIGHT.isLoaded()) {
-			this.tag(BlockTags.MINEABLE_WITH_AXE).addOptional(
-					FDIntegration.FIR_CABINET.getId());
-		}
-		if (Mods.NOMANSLAND.isLoaded()) {
-			this.tag(BlockTags.MINEABLE_WITH_AXE).addOptional(
-					NMLIntegration.FIR_BOOKSHELF.getId()
-			).addOptional(
-					NMLIntegration.TRIMMED_FIR_PLANKS.getId()
-			);
-			this.tag(CommonTags.CONIFEROUS_LOGS).addOptionalTag(NWBlockTags.FIR_LOGS);
-			this.tag(CommonTags.TRIMMED_PLANKS).addOptional(NMLIntegration.TRIMMED_FIR_PLANKS.getId());
-		}
+		this.tag(CommonTags.CONIFEROUS_LOGS).addTag(NWBlockTags.FIR_LOGS);
+		this.tag(CommonTags.TRIMMED_PLANKS).add(NMLIntegration.TRIMMED_FIR_PLANKS.get());
+		this.tag(CommonTags.PALISADES).add(BBIntegration.FIR_PALISADE.get(), BBIntegration.STRIPPED_FIR_PALISADE.get());
+		this.tag(CommonTags.SPIKED_PALISADES).add(BBIntegration.SPIKED_FIR_PALISADE.get(), BBIntegration.STRIPPED_SPIKED_FIR_PALISADE.get());
+		this.tag(CommonTags.WOODEN_SEATS).add(BBIntegration.FIR_SEAT.get());
 	}
 }

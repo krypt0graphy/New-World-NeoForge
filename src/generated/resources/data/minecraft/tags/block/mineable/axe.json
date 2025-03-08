@@ -13,18 +13,9 @@
     "newworld:fir_wall_sign",
     "newworld:fir_hanging_sign",
     "newworld:fir_wall_hanging_sign",
-    "#newworld:fir_logs",
-    {
-      "id": "newworld:fir_cabinet",
-      "required": false
-    },
-    {
-      "id": "newworld:fir_bookshelf",
-      "required": false
-    },
-    {
-      "id": "newworld:trimmed_fir_planks",
-      "required": false
-    }
+    "newworld:fir_cabinet",
+    "newworld:fir_bookshelf",
+    "newworld:trimmed_fir_planks",
+    "#newworld:fir_logs"
   ]
 }

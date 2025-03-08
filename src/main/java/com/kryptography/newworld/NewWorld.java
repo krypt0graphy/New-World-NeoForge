@@ -11,6 +11,7 @@ import com.kryptography.newworld.init.data.NWStats;
 import com.kryptography.newworld.init.data.loot.NWLootModifiers;
 import com.kryptography.newworld.init.worldgen.NWBiomePlacement;
 import com.kryptography.newworld.init.worldgen.structure.NWStructureTypes;
+import com.kryptography.newworld.integration.BBIntegration;
 import com.kryptography.newworld.integration.FDIntegration;
 import com.kryptography.newworld.integration.Mods;
 import com.kryptography.newworld.integration.NMLIntegration;
@@ -50,6 +51,9 @@ public class NewWorld {
 		}
 		if (Mods.NOMANSLAND.isLoaded()) {
 			NMLIntegration.register();
+		}
+		if (Mods.BLOCKBOX.isLoaded()) {
+			BBIntegration.register();
 		}
 	}
 	private void commonSetup(final FMLCommonSetupEvent event) {

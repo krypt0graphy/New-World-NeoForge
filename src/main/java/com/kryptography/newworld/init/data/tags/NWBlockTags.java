@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.Block;
 
 public class NWBlockTags {
 	public static final TagKey<Block> FIR_LOGS = blockTag("fir_logs");
-	public static final TagKey<Block> MATTOCK_MINEABLE = blockTag("mattock_mineable");
+	public static final TagKey<Block> MINEABLE_ANCIENT_MATTOCK = blockTag("mineable/ancient_mattock");
 	public static final TagKey<Block> SMALL_BUSH_PLANTABLE = blockTag("small_bush_plantable");
 	public static final TagKey<Block> TOMBSTONE_REPLACEABLE = blockTag("tombstone_replaceable");
 

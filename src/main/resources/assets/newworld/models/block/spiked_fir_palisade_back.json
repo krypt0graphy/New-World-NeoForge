@@ -1,0 +1,9 @@
+{
+  "parent": "blockbox:block/template_spiked_palisade_back",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "core": "newworld:block/fir_palisade_core",
+    "side": "newworld:block/fir_palisade_side",
+    "top": "newworld:block/fir_palisade_top"
+  }
+}

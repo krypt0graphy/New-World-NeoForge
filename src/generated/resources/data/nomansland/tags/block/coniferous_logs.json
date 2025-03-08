@@ -1,8 +1,5 @@
 {
   "values": [
-    {
-      "id": "#newworld:fir_logs",
-      "required": false
-    }
+    "#newworld:fir_logs"
   ]
 }

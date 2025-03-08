@@ -5,6 +5,9 @@
     },
     "newworld:fir_sapling": {
       "chance": 0.3
+    },
+    "newworld:moss_sprouts": {
+      "chance": 0.3
     }
   }
 }

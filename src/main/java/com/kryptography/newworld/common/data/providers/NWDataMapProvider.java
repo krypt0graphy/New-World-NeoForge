@@ -26,6 +26,7 @@ public class NWDataMapProvider extends DataMapProvider {
 
 		compostables.add(NWBlocks.FIR_LEAVES.get().asItem().builtInRegistryHolder(), new Compostable(0.3f), false);
 		compostables.add(NWBlocks.FIR_SAPLING.get().asItem().builtInRegistryHolder(), new Compostable(0.3f), false);
+		compostables.add(NWBlocks.MOSS_SPROUTS.get().asItem().builtInRegistryHolder(), new Compostable(0.3f), false);
 	}
 
 	public static void register() {

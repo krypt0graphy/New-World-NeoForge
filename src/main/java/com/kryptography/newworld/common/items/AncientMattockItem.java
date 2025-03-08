@@ -19,7 +19,7 @@ public class AncientMattockItem extends DiggerItem {
 	).collect(Collectors.toCollection(Sets::newIdentityHashSet));
 
 	public AncientMattockItem(Tier pTier, Properties pProperties) {
-		super(pTier, NWBlockTags.MATTOCK_MINEABLE, pProperties);
+		super(pTier, NWBlockTags.MINEABLE_ANCIENT_MATTOCK, pProperties);
 	}
 
 	@Override
