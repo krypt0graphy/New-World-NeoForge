@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-09T01:41:54.9858362	Recipes
+// 1.21.1	2025-03-14T23:11:54.6838177	Recipes
 4537efb234385fbca3987c5efe9b3e8624d2a1a6 data/blockbox/advancement/recipes/misc/fir_palisade_from_spiked.json
 813bf49f58d80baa49327ade0b358be4366257b3 data/blockbox/advancement/recipes/misc/stripped_fir_palisade_from_spiked.json
 21552320151bffd0afe472ae1888fdd5689b9e71 data/blockbox/recipe/fir_palisade_from_spiked.json
@@ -43,7 +43,7 @@ c4c493d13016cdc159a6aaf48caa7abfd6c91bf8 data/newworld/advancement/recipes/build
 3ad09f013fa2993d3e13b6dc4cf1b7d7b4e40653 data/newworld/advancement/recipes/building_blocks/loam_wall_from_loam_stonecutting.json
 938a6db3defa9b481a4b78d6fcf9dee2bddcaeb0 data/newworld/advancement/recipes/building_blocks/stripped_fir_wood.json
 2aa05d44329b3877831581a673575ee5750ddad0 data/newworld/advancement/recipes/building_blocks/trimmed_fir_planks.json
-988cf214a1a99819d42a086981aadf114bcc17b0 data/newworld/advancement/recipes/combat/tombstone.json
+99f475e2b67f76b898b668a88f90468d3894e7e7 data/newworld/advancement/recipes/combat/tombstone.json
 36959c8f3b0c4b1dd701aa01eaf707170133289e data/newworld/advancement/recipes/decorations/fir_cabinet.json
 f90f4257700e356907f9705cb65131eaac79064e data/newworld/advancement/recipes/decorations/fir_fence.json
 da9ee7aceedc385880a76db9cd18106aa86faa4a data/newworld/advancement/recipes/decorations/fir_hanging_sign.json
@@ -127,5 +127,5 @@ cfe479593cd77ffc85db333954e49c3903cb5bdd data/newworld/recipe/spiked_fir_palisad
 b4d649329c1aae50737dd2145c0b7cb01d90f5ae data/newworld/recipe/stripped_fir_palisade.json
 4dd1cf01bca1ee958321f3de17a1b6d39c75ed1f data/newworld/recipe/stripped_fir_wood.json
 a9f61e79739c36e52912353c6893bdbe58caad57 data/newworld/recipe/stripped_spiked_fir_palisade.json
-614de5d35b35e6609f7e8cfe7b47821e1a73d059 data/newworld/recipe/tombstone.json
+c8110da8c5df499c8a8066d9a7f3e17c5be662fa data/newworld/recipe/tombstone.json
 188afc7b09539ccd76aabc0d52b727d93c3ba839 data/newworld/recipe/trimmed_fir_planks.json

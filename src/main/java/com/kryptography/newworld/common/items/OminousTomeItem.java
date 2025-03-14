@@ -4,8 +4,8 @@ package com.kryptography.newworld.common.items;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-public class IllagerTomeItem extends Item {
-	public IllagerTomeItem(Properties pProperties) {
+public class OminousTomeItem extends Item {
+	public OminousTomeItem(Properties pProperties) {
 		super(pProperties);
 	}
 

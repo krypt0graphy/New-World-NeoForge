@@ -50,7 +50,7 @@ public class NWItemModelProvider extends ItemModelProvider {
 		this.basicItem(NWItems.MATTOCK_CRAFTING_TEMPLATE.get());
 		this.basicItem(NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD.get());
 		this.basicItem(NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get());
-		this.basicItem(NWItems.ILLAGER_TOME.get());
+		this.basicItem(NWItems.OMINOUS_TOME.get());
 
 		this.handheldItem(NWItems.ANCIENT_MATTOCK);
 

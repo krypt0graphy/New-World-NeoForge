@@ -37,7 +37,7 @@ public class NWItemTagsProvider extends ItemTagsProvider {
 		this.tag(ItemTags.BOATS).add(NWItems.FIR_BOAT.get());
 		this.tag(ItemTags.CHEST_BOATS).add(NWItems.FIR_CHEST_BOAT.get());
 
-		this.tag(ItemTags.BOOKSHELF_BOOKS).add(NWItems.ILLAGER_TOME.get());
+		this.tag(ItemTags.BOOKSHELF_BOOKS).add(NWItems.OMINOUS_TOME.get());
 
 		this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(NWItems.ANCIENT_MATTOCK.get());
 		this.tag(ItemTags.VANISHING_ENCHANTABLE).add(NWItems.ANCIENT_MATTOCK.get());
@@ -56,7 +56,7 @@ public class NWItemTagsProvider extends ItemTagsProvider {
 
 		this.tag(ItemTags.HANGING_SIGNS).add(NWBlocks.FIR_HANGING_SIGN.get().asItem());
 		this.tag(NWItemTags.MATTOCK_PIECES).add(NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD.get(), NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get());
-		this.tag(NWItemTags.TOMBSTONE_MATERIALS).add(NWItems.ILLAGER_TOME.get(), NWBlocks.TOMBSTONE.get().asItem());
+		this.tag(NWItemTags.TOMBSTONE_MATERIALS).add(NWItems.OMINOUS_TOME.get(), NWBlocks.TOMBSTONE.get().asItem());
 		
 		this.tag(CommonTags.WOODEN_CABINET).addOptional(FDIntegration.FIR_CABINET.getId());
 

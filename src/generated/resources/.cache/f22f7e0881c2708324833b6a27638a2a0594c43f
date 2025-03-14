@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-09T01:50:59.4449459	Item Models: newworld
+// 1.21.1	2025-03-14T23:09:11.9971654	Item Models: newworld
 2a238dfafc04e01523ecd82f7aa1e3a41e07d373 assets/newworld/models/item/ancient_mattock.json
 e2172ebfe8cff70eeb013ed45ca6c3d1e8919c9a assets/newworld/models/item/fir_boat.json
 d91a8a4276e5ed0e45593a590551c08da9b49763 assets/newworld/models/item/fir_bookshelf.json
@@ -12,7 +12,6 @@ f817bfbcbf5d5733683bd79e21332a233500bc95 assets/newworld/models/item/fir_cabinet
 162dcbcdab2e69d23ec592cf936fa21cfecb7be7 assets/newworld/models/item/fir_sapling.json
 061685feadf13ed25c0e7d6694daa439342c4f40 assets/newworld/models/item/fir_seat.json
 7acdd4aa1ebda8337aac37ef5a6e019b9be6c2bd assets/newworld/models/item/fir_sign.json
-3bd8d039efe189e7fe001a2c1c0bbaf45c8946b1 assets/newworld/models/item/illager_tome.json
 7b0e8b2361999693e4a580e265093138fc2c021b assets/newworld/models/item/loam_brick_wall.json
 3c35bcc1184176901a12747152b776adb53fa6d3 assets/newworld/models/item/loam_tile_wall.json
 a745b030529ad4b33b7fa37bd0266ab365fc0b44 assets/newworld/models/item/loam_wall.json
@@ -20,6 +19,7 @@ a745b030529ad4b33b7fa37bd0266ab365fc0b44 assets/newworld/models/item/loam_wall.j
 b6f8ab35e862070d4bae586a739d5f8e303a47ad assets/newworld/models/item/mattock_crafting_template_head.json
 c7908b97aa7f0b65b195621c56c678b397e992b0 assets/newworld/models/item/mattock_crafting_template_shaft.json
 24d4f7461dda92a8acd9b03548962d65e2139e36 assets/newworld/models/item/moss_sprouts.json
+6ee4bba289d1033762a3e68c94787d3b122dcd91 assets/newworld/models/item/ominous_tome.json
 a18dc5d5aaef941da7e8caafa5f75dab920ca51b assets/newworld/models/item/spiked_fir_palisade.json
 16e980925696af3674970b0881b0e185d92ee4b7 assets/newworld/models/item/stripped_fir_palisade.json
 6f7e5a094c5ffbb6ce6188f95cedf3ea032ad133 assets/newworld/models/item/stripped_spiked_fir_palisade.json

@@ -81,7 +81,7 @@ public class NWData {
 			addAfter(event, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, NWItems.MATTOCK_CRAFTING_TEMPLATE);
 			addAfter(event, NWItems.MATTOCK_CRAFTING_TEMPLATE, NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD);
 			addAfter(event, NWItems.MATTOCK_CRAFTING_TEMPLATE_HEAD, NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT);
-			event.accept(NWItems.ILLAGER_TOME);
+			event.accept(NWItems.OMINOUS_TOME);
 		}
 
 		if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {

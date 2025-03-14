@@ -7,7 +7,7 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_tombstone_or_illager_tome": {
+    "has_tombstone_or_ominous_tome": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_tombstone_or_illager_tome"
+      "has_tombstone_or_ominous_tome"
     ]
   ],
   "rewards": {

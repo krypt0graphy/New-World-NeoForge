@@ -53,9 +53,9 @@ public class NWRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.pattern("STS")
 				.define('S', Items.POLISHED_DEEPSLATE)
 				.define('D', Items.DIAMOND)
-				.define('A', NWItems.ILLAGER_TOME)
+				.define('A', NWItems.OMINOUS_TOME)
 				.define('T', NWBlocks.TOMBSTONE)
-				.unlockedBy("has_tombstone_or_illager_tome", has(NWItemTags.TOMBSTONE_MATERIALS))
+				.unlockedBy("has_tombstone_or_ominous_tome", has(NWItemTags.TOMBSTONE_MATERIALS))
 				.showNotification(true)
 				.save(recipeOutput);
 
