@@ -8,7 +8,6 @@ import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import com.kryptography.newworld.init.data.tags.NWItemTags;
 import com.kryptography.newworld.integration.BBIntegration;
 import com.kryptography.newworld.integration.FDIntegration;
-import com.kryptography.newworld.integration.Mods;
 import com.kryptography.newworld.integration.NMLIntegration;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -63,6 +62,7 @@ public class NWItemTagsProvider extends ItemTagsProvider {
 
 		this.tag(CommonTags.STRIPPED_LOGS_ITEM).add(NWBlocks.STRIPPED_FIR_LOG.get().asItem());
 		this.tag(CommonTags.STRIPPED_WOODS_ITEM).add(NWBlocks.STRIPPED_FIR_WOOD.get().asItem());
+
 		this.tag(CommonTags.BOOKSHELVES_ITEM).add(NMLIntegration.FIR_BOOKSHELF.asItem());
 		this.tag(CommonTags.PALISADES_ITEM).add(BBIntegration.FIR_PALISADE.get().asItem(), BBIntegration.STRIPPED_FIR_PALISADE.get().asItem());
 		this.tag(CommonTags.SPIKED_PALISADES_ITEM).add(BBIntegration.SPIKED_FIR_PALISADE.get().asItem(), BBIntegration.STRIPPED_SPIKED_FIR_PALISADE.get().asItem());

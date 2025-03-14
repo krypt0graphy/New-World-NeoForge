@@ -5,7 +5,6 @@ import com.kryptography.newworld.init.data.tags.CommonTags;
 import com.kryptography.newworld.init.data.tags.NWBlockTags;
 import com.kryptography.newworld.integration.BBIntegration;
 import com.kryptography.newworld.integration.FDIntegration;
-import com.kryptography.newworld.integration.Mods;
 import com.kryptography.newworld.integration.NMLIntegration;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
