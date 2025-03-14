@@ -92,9 +92,9 @@ dependencies {
 
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "com.terraformersmc:biolith-neoforge:${bio_version}"
-    implementation "maven.modrinth:farmers-delight:1.21.1-${fd_version}"
+    implementation "maven.modrinth:farmers-delight:1.21.1-1.2.6"
     implementation "maven.modrinth:the-block-box:0.1.1"
-    implementation "com.farcr:nomansland:0.1.3:beta"
+    implementation "maven.modrinth:no-mans-land:1.0.2"
     runtimeOnly "mezz.jei:jei-$minecraft_version-neoforge:19.21.0.247"
 }
 
@@ -105,10 +105,6 @@ tasks.withType(ProcessResources).configureEach {
             neo_version            : neo_version,
             bio_version            : bio_version,
             bio_version_range      : bio_version_range,
-            fd_version             : fd_version,
-            fd_version_range       : fd_version_range,
-            nml_version            : nml_version,
-            nml_version_range      : nml_version_range,
             neo_version_range      : neo_version_range,
             loader_version_range   : loader_version_range,
             mod_id                 : mod_id,
