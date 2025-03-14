@@ -5,8 +5,8 @@
     "newworld:mattock_crafting_template_shaft_trail_ruins_rare",
     "newworld:mattock_crafting_template_shaft_desert_archaeology",
     "newworld:mattock_crafting_template_shaft_desert_pyramid_chest",
-    "newworld:ominous_tome_woodland_mansion",
-    "newworld:tombstone_ancient_city"
+    "newworld:tombstone_ancient_city",
+    "newworld:illager_tome_woodland_mansion"
   ],
   "replace": false
 }

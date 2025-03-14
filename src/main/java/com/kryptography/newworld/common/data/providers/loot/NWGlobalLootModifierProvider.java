@@ -44,7 +44,7 @@ public class NWGlobalLootModifierProvider extends GlobalLootModifierProvider {
 						LootTableIdCondition.builder(BuiltInLootTables.DESERT_PYRAMID_ARCHAEOLOGY.location()).build()
 				}, NWItems.MATTOCK_CRAFTING_TEMPLATE_SHAFT.get(), 0.11F, true));
 
-		this.add("ominous_tome_woodland_mansion", new AddItemModifier(new LootItemCondition[]{
+		this.add("illager_tome_woodland_mansion", new AddItemModifier(new LootItemCondition[]{
 				LootItemRandomChanceCondition.randomChance(0.85F).build(),
 				LootTableIdCondition.builder(BuiltInLootTables.WOODLAND_MANSION.location()).build()
 		}, NWItems.OMINOUS_TOME.get(), 1));

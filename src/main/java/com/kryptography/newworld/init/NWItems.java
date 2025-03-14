@@ -19,7 +19,7 @@ public class NWItems {
 
 	public static final DeferredItem<AncientMattockItem> ANCIENT_MATTOCK = ITEMS.register("ancient_mattock", () -> new AncientMattockItem(AncientToolTier.ANCIENT, new Item.Properties().attributes(AncientMattockItem.createAttributes(AncientToolTier.ANCIENT, 0.0F, -3.0F))));
 
-	public static final DeferredItem<Item> OMINOUS_TOME = ITEMS.register("ominous_tome", () -> new OminousTomeItem(new Item.Properties().rarity(Rarity.EPIC)));
+	public static final DeferredItem<Item> OMINOUS_TOME = ITEMS.register("illager_tome", () -> new OminousTomeItem(new Item.Properties().rarity(Rarity.EPIC)));
 
 	public static final DeferredItem<Item> MATTOCK_CRAFTING_TEMPLATE = ITEMS.register("mattock_crafting_template", () -> new AncientSmithingTemplateItem("mattock_crafting"));
 	public static final DeferredItem<Item> MATTOCK_CRAFTING_TEMPLATE_HEAD = ITEMS.register("mattock_crafting_template_head", () -> new SmithingTemplatePieceItem(new Item.Properties()));

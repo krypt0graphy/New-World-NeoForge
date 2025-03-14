@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "newworld:item/ominous_tome"
+    "layer0": "newworld:item/illager_tome"
   }
 }
