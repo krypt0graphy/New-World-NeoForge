@@ -67,5 +67,6 @@ public class NWItemTagsProvider extends ItemTagsProvider {
 		this.tag(CommonTags.PALISADES_ITEM).add(BBIntegration.FIR_PALISADE.get().asItem(), BBIntegration.STRIPPED_FIR_PALISADE.get().asItem());
 		this.tag(CommonTags.SPIKED_PALISADES_ITEM).add(BBIntegration.SPIKED_FIR_PALISADE.get().asItem(), BBIntegration.STRIPPED_SPIKED_FIR_PALISADE.get().asItem());
 		this.tag(CommonTags.WOODEN_SEATS_ITEM).add(BBIntegration.FIR_SEAT.get().asItem());
+		this.tag(CommonTags.TRIMMED_PLANKS_ITEM).add(NMLIntegration.TRIMMED_FIR_PLANKS.get().asItem());
 	}
 }

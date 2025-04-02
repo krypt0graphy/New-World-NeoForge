@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-15T00:00:07.4488724	Tags for minecraft:item mod id newworld
+// 1.21.1	2025-04-02T18:11:44.426379392	Tags for minecraft:item mod id newworld
 904753a5c61936187f5f15f8c7053616f3aefbf3 data/blockbox/tags/item/palisades.json
 e30922433e8bb9524a8dff6bbb873b6ce338fae8 data/blockbox/tags/item/spiked_palisades.json
 7a4b302ab8b25ebdc26ca6d23b3003e7801b055d data/blockbox/tags/item/wooden_seats.json
@@ -29,3 +29,4 @@ bc5d3c67cb09c847de8823ce9d94cdcd87e304ab data/newworld/tags/item/fir_logs.json
 21d53da183265dd269ec63bbabca688b5cde7ba9 data/newworld/tags/item/mattock_piece.json
 be083da45c8489ec47b75417ccc4d9bda42471e8 data/newworld/tags/item/tombstone_materials.json
 bccfc49191311e6e51d54e40f0513713c415dd7b data/nomansland/tags/item/bookshelves.json
+e5e84e4a8d89e3619e507c9d6cfd197218a933dc data/nomansland/tags/item/trimmed_planks.json
