@@ -1,16 +1,13 @@
 package com.kryptography.newworld.common.data.providers.loot;
 
 import com.kryptography.newworld.NewWorld;
-import com.kryptography.newworld.init.NWBlocks;
 import com.kryptography.newworld.integration.BBIntegration;
 import com.kryptography.newworld.integration.FDIntegration;
 import com.kryptography.newworld.integration.NMLIntegration;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
