@@ -1,6 +1,12 @@
 {
   "values": [
-    "newworld:fir_palisade",
-    "newworld:stripped_fir_palisade"
+    {
+      "id": "newworld:fir_palisade",
+      "required": false
+    },
+    {
+      "id": "newworld:stripped_fir_palisade",
+      "required": false
+    }
   ]
 }

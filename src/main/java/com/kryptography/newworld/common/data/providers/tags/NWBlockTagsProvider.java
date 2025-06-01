@@ -38,12 +38,15 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
 				NWBlocks.FIR_SIGN.get(),
 				NWBlocks.FIR_WALL_SIGN.get(),
 				NWBlocks.FIR_HANGING_SIGN.get(),
-				NWBlocks.FIR_WALL_HANGING_SIGN.get(),
-				FDIntegration.FIR_CABINET.get(),
-				NMLIntegration.FIR_BOOKSHELF.get(),
-				NMLIntegration.TRIMMED_FIR_PLANKS.get()
+				NWBlocks.FIR_WALL_HANGING_SIGN.get()
 		).addTag(
 				NWBlockTags.FIR_LOGS
+		).addOptional(
+				FDIntegration.FIR_CABINET.getId()
+		).addOptional(
+				NMLIntegration.TRIMMED_FIR_PLANKS.getId()
+		).addOptional(
+				NMLIntegration.FIR_BOOKSHELF.getId()
 		);
 		this.tag(BlockTags.LOGS_THAT_BURN).addTag(NWBlockTags.FIR_LOGS);
 		this.tag(BlockTags.SAPLINGS).add(NWBlocks.FIR_SAPLING.get());
@@ -146,9 +149,9 @@ public class NWBlockTagsProvider extends BlockTagsProvider {
 		this.tag(CommonTags.STRIPPED_WOODS).add(NWBlocks.STRIPPED_FIR_WOOD.get());
 		this.tag(CommonTags.BOOKSHELVES).addOptional(NMLIntegration.FIR_BOOKSHELF.getId());
 		this.tag(CommonTags.CONIFEROUS_LOGS).addTag(NWBlockTags.FIR_LOGS);
-		this.tag(CommonTags.TRIMMED_PLANKS).add(NMLIntegration.TRIMMED_FIR_PLANKS.get());
-		this.tag(CommonTags.PALISADES).add(BBIntegration.FIR_PALISADE.get(), BBIntegration.STRIPPED_FIR_PALISADE.get());
-		this.tag(CommonTags.SPIKED_PALISADES).add(BBIntegration.SPIKED_FIR_PALISADE.get(), BBIntegration.STRIPPED_SPIKED_FIR_PALISADE.get());
-		this.tag(CommonTags.WOODEN_SEATS).add(BBIntegration.FIR_SEAT.get());
+		this.tag(CommonTags.TRIMMED_PLANKS).addOptional(NMLIntegration.TRIMMED_FIR_PLANKS.getId());
+		this.tag(CommonTags.PALISADES).addOptional(BBIntegration.FIR_PALISADE.getId()).addOptional(BBIntegration.STRIPPED_FIR_PALISADE.getId());
+		this.tag(CommonTags.SPIKED_PALISADES).addOptional(BBIntegration.SPIKED_FIR_PALISADE.getId()).addOptional(BBIntegration.STRIPPED_SPIKED_FIR_PALISADE.getId());
+		this.tag(CommonTags.WOODEN_SEATS).addOptional(BBIntegration.FIR_SEAT.getId());
 	}
 }

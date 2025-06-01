@@ -89,12 +89,12 @@ repositories {
 }
 
 dependencies {
-
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "com.terraformersmc:biolith-neoforge:${bio_version}"
-    implementation "maven.modrinth:farmers-delight:1.21.1-1.2.6"
-    implementation "maven.modrinth:the-block-box:0.1.1"
-    implementation "maven.modrinth:no-mans-land:1.0.2"
+    compileOnly "maven.modrinth:farmers-delight:1.21.1-1.2.8"
+    compileOnly "maven.modrinth:the-block-box:0.1.1"
+    implementation "maven.modrinth:no-mans-land:1.2.3"
+    runtimeOnly "maven.modrinth:mixed-litter:0.1.1"
     runtimeOnly "mezz.jei:jei-$minecraft_version-neoforge:19.21.0.247"
 }
 

@@ -1,5 +1,8 @@
 {
   "values": [
-    "newworld:fir_bookshelf"
+    {
+      "id": "newworld:fir_bookshelf",
+      "required": false
+    }
   ]
 }

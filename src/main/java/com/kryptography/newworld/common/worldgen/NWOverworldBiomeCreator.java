@@ -47,7 +47,7 @@ public class NWOverworldBiomeCreator {
 		spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 2));
 		spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 2, 6));
 		spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
-		BiomeDefaultFeatures.caveSpawns(spawnBuilder);
+		BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
 		BiomeGenerationSettings.Builder featureBuilder = new BiomeGenerationSettings.Builder(placedFeatureGetter, carverGetter);
 

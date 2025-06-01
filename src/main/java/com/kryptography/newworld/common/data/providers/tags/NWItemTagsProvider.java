@@ -63,10 +63,10 @@ public class NWItemTagsProvider extends ItemTagsProvider {
 		this.tag(CommonTags.STRIPPED_LOGS_ITEM).add(NWBlocks.STRIPPED_FIR_LOG.get().asItem());
 		this.tag(CommonTags.STRIPPED_WOODS_ITEM).add(NWBlocks.STRIPPED_FIR_WOOD.get().asItem());
 
-		this.tag(CommonTags.BOOKSHELVES_ITEM).add(NMLIntegration.FIR_BOOKSHELF.asItem());
-		this.tag(CommonTags.PALISADES_ITEM).add(BBIntegration.FIR_PALISADE.get().asItem(), BBIntegration.STRIPPED_FIR_PALISADE.get().asItem());
-		this.tag(CommonTags.SPIKED_PALISADES_ITEM).add(BBIntegration.SPIKED_FIR_PALISADE.get().asItem(), BBIntegration.STRIPPED_SPIKED_FIR_PALISADE.get().asItem());
-		this.tag(CommonTags.WOODEN_SEATS_ITEM).add(BBIntegration.FIR_SEAT.get().asItem());
-		this.tag(CommonTags.TRIMMED_PLANKS_ITEM).add(NMLIntegration.TRIMMED_FIR_PLANKS.get().asItem());
+		this.tag(CommonTags.BOOKSHELVES_ITEM).addOptional(NMLIntegration.FIR_BOOKSHELF.getId());
+		this.tag(CommonTags.PALISADES_ITEM).addOptional(BBIntegration.FIR_PALISADE.getId()).addOptional(BBIntegration.STRIPPED_FIR_PALISADE.getId());
+		this.tag(CommonTags.SPIKED_PALISADES_ITEM).addOptional(BBIntegration.SPIKED_FIR_PALISADE.getId()).addOptional(BBIntegration.STRIPPED_SPIKED_FIR_PALISADE.getId());
+		this.tag(CommonTags.WOODEN_SEATS_ITEM).addOptional(BBIntegration.FIR_SEAT.getId());
+		this.tag(CommonTags.TRIMMED_PLANKS_ITEM).addOptional(NMLIntegration.TRIMMED_FIR_PLANKS.getId());
 	}
 }

@@ -1,7 +1,7 @@
-// 1.21.1	2025-04-02T18:11:44.426379392	Tags for minecraft:item mod id newworld
-904753a5c61936187f5f15f8c7053616f3aefbf3 data/blockbox/tags/item/palisades.json
-e30922433e8bb9524a8dff6bbb873b6ce338fae8 data/blockbox/tags/item/spiked_palisades.json
-7a4b302ab8b25ebdc26ca6d23b3003e7801b055d data/blockbox/tags/item/wooden_seats.json
+// 1.21.1	2025-06-01T15:10:57.0375707	Tags for minecraft:item mod id newworld
+38d760396b74cff3b620b18280ce1e8dbfa5a8dc data/blockbox/tags/item/palisades.json
+5ce495d01d0826968439d65908afee56abb7ad54 data/blockbox/tags/item/spiked_palisades.json
+46d90fecb5c9af7daa9f06a13b00b09290120b1d data/blockbox/tags/item/wooden_seats.json
 797df6fa8c55a9504bf61d393f92ebd9df900769 data/c/tags/item/stripped_logs.json
 2ea1f39ef0997a6f3e11ad3259b394ac28cdc695 data/c/tags/item/stripped_woods.json
 75f14250f553f51e8fe5a702dbb7e438d6a23e3e data/farmersdelight/tags/item/cabinets/wooden.json
@@ -28,5 +28,5 @@ dd771db6ce6e3eee74d99c9a66b103ad3280bcdc data/minecraft/tags/item/wooden_pressur
 bc5d3c67cb09c847de8823ce9d94cdcd87e304ab data/newworld/tags/item/fir_logs.json
 21d53da183265dd269ec63bbabca688b5cde7ba9 data/newworld/tags/item/mattock_piece.json
 be083da45c8489ec47b75417ccc4d9bda42471e8 data/newworld/tags/item/tombstone_materials.json
-bccfc49191311e6e51d54e40f0513713c415dd7b data/nomansland/tags/item/bookshelves.json
-e5e84e4a8d89e3619e507c9d6cfd197218a933dc data/nomansland/tags/item/trimmed_planks.json
+68010ec2569a3ec8636cfe318fd6c7b59722e75d data/nomansland/tags/item/bookshelves.json
+64911ca9256f4f642941c0914f4351d7c90d5644 data/nomansland/tags/item/trimmed_planks.json

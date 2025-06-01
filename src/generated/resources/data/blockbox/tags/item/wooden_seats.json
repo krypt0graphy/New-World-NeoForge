@@ -1,5 +1,8 @@
 {
   "values": [
-    "newworld:fir_seat"
+    {
+      "id": "newworld:fir_seat",
+      "required": false
+    }
   ]
 }

@@ -1,5 +1,8 @@
 {
   "values": [
-    "newworld:trimmed_fir_planks"
+    {
+      "id": "newworld:trimmed_fir_planks",
+      "required": false
+    }
   ]
 }
