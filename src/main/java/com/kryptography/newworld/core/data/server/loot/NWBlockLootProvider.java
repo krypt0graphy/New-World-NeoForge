@@ -1,7 +1,6 @@
 package com.kryptography.newworld.core.data.server.loot;
 
 import com.kryptography.newworld.core.NewWorld;
-import com.kryptography.newworld.integration.NMLIntegration;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;

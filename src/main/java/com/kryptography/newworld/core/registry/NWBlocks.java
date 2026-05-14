@@ -1,16 +1,16 @@
 package com.kryptography.newworld.core.registry;
 
-import com.kryptography.newworld.core.NewWorld;
-import com.kryptography.newworld.common.blocks.*;
+import com.kryptography.newworld.common.blocks.ChiseledFirBookshelfBlock;
+import com.kryptography.newworld.common.blocks.MossSproutsBlock;
+import com.kryptography.newworld.common.blocks.TombstoneBlock;
 import com.kryptography.newworld.common.worldgen.tree.FirTreeGrower;
-import com.kryptography.newworld.core.registry.NWItems;
+import com.kryptography.newworld.core.NewWorld;
 import com.kryptography.newworld.integration.BBIntegration;
 import com.kryptography.newworld.integration.FDIntegration;
 import com.kryptography.newworld.integration.Mods;
 import com.kryptography.newworld.integration.NMLIntegration;
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.blueprint.common.block.BlueprintBeehiveBlock;
-import com.teamabnormals.blueprint.common.block.BlueprintChiseledBookShelfBlock;
 import com.teamabnormals.blueprint.common.block.LeafPileBlock;
 import com.teamabnormals.blueprint.common.block.LogBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
@@ -41,11 +41,10 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 
 import java.util.function.Predicate;
 
-import static net.minecraft.world.item.CreativeModeTabs.*;
-import static net.minecraft.world.item.crafting.Ingredient.of;
-
 import static com.kryptography.newworld.core.registry.NWBlocks.NWProperties.FIR_SET;
 import static com.kryptography.newworld.core.registry.NWBlocks.NWProperties.FIR_WOOD_TYPE;
+import static net.minecraft.world.item.CreativeModeTabs.*;
+import static net.minecraft.world.item.crafting.Ingredient.of;
 
 public class NWBlocks {
 
