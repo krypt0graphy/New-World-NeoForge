@@ -123,4 +123,3 @@ public class TombstoneBlock extends BaseEntityBlock {
 	}
 
 }
-

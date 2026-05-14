@@ -1,9 +1,11 @@
-// 1.21.1	2025-06-01T14:58:23.348435	Registries
+// 1.21.1	2026-05-09T01:26:43.812640936	Registries
+1948c39e46fd8c7cb20539a50340873f496c9856 data/newworld/blueprint/modded_biome_slices/wooded_meadow.json
 60bda0285a2295308806de0151fbd403787a6131 data/newworld/neoforge/biome_modifier/birch_cherry_grove.json
 93c4dbd4daa1b56a7fe424562f8cf53c2cc0d7cf data/newworld/neoforge/biome_modifier/fir_meadow.json
 9226cf47feef6406ed0b30117acc299ba2773965 data/newworld/neoforge/biome_modifier/fir_taiga.json
 b040068481a5298ebae665ad470da60906394312 data/newworld/neoforge/biome_modifier/lush_cave_loam_ore.json
 7b0898eaa0230b695805d78d74c783b4d88c8f3a data/newworld/neoforge/biome_modifier/lush_cave_mud_patch.json
+0ef4d19464a97da5da1664af372fb40aa4ae9d1b data/newworld/painting_variant/providence.json
 d8a71abdbd86ac4bb198851a4f301bfba98087df data/newworld/worldgen/biome/wooded_meadow.json
 e102352e66ffa986b2e5d1758cff57f678534d32 data/newworld/worldgen/configured_feature/burial_site.json
 72386b91795cec2260d086f3a2e4c8d7e28dd861 data/newworld/worldgen/configured_feature/calcite_patch.json

@@ -1,7 +1,7 @@
 package com.kryptography.newworld.common.items;
 
 import com.google.common.collect.Sets;
-import com.kryptography.newworld.init.data.tags.NWBlockTags;
+import com.kryptography.newworld.core.other.tags.NWBlockTags;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;

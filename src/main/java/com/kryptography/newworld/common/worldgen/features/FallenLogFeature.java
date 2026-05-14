@@ -1,6 +1,6 @@
 package com.kryptography.newworld.common.worldgen.features;
 
-import com.kryptography.newworld.init.NWBlocks;
+import com.kryptography.newworld.core.registry.NWBlocks;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

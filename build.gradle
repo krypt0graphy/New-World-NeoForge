@@ -83,6 +83,10 @@ repositories {
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
     }
+    maven {
+        name = "Team Abnormals"
+        url = "https://maven.teamabnormals.com/"
+    }
     flatDir {
         dir "libs"
     }
@@ -90,29 +94,33 @@ repositories {
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
-    implementation "com.terraformersmc:biolith-neoforge:${bio_version}"
-    compileOnly "maven.modrinth:farmers-delight:1.21.1-1.2.8"
-    compileOnly "maven.modrinth:the-block-box:0.1.1"
-    compileOnly "maven.modrinth:no-mans-land:1.2.3"
-    runtimeOnly "maven.modrinth:mixed-litter:0.1.1"
-    runtimeOnly "mezz.jei:jei-$minecraft_version-neoforge:19.21.0.247"
+    implementation "com.teamabnormals:blueprint:${minecraft_version}-${blueprint_version}"
+
+    implementation "com.teamabnormals:woodworks:${minecraft_version}-4.0.2"
+    implementation "com.teamabnormals:boatload:${minecraft_version}-6.0.2"
+    implementation "maven.modrinth:farmers-delight:${minecraft_version}-1.3.1"
+    implementation "maven.modrinth:the-block-box:0.1.2"
+    implementation "maven.modrinth:no-mans-land:1.4.6"
+    runtimeOnly "maven.modrinth:mixed-litter:1.0.3"
+    runtimeOnly "com.terraformersmc:biolith-neoforge:3.0.9"
+    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:19.21.0.247"
 }
 
 tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
-            minecraft_version      : minecraft_version,
-            minecraft_version_range: minecraft_version_range,
-            neo_version            : neo_version,
-            bio_version            : bio_version,
-            bio_version_range      : bio_version_range,
-            neo_version_range      : neo_version_range,
-            loader_version_range   : loader_version_range,
-            mod_id                 : mod_id,
-            mod_name               : mod_name,
-            mod_license            : mod_license,
-            mod_version            : mod_version,
-            mod_authors            : mod_authors,
-            mod_description        : mod_description
+            minecraft_version        : minecraft_version,
+            minecraft_version_range  : minecraft_version_range,
+            neo_version              : neo_version,
+            neo_version_range        : neo_version_range,
+            blueprint_version        : blueprint_version,
+            blueprint_version_range  : blueprint_version_range,
+            loader_version_range     : loader_version_range,
+            mod_id                   : mod_id,
+            mod_name                 : mod_name,
+            mod_license              : mod_license,
+            mod_version              : mod_version,
+            mod_authors              : mod_authors,
+            mod_description          : mod_description
     ]
     inputs.properties replaceProperties
     filesMatching(['META-INF/neoforge.mods.toml']) {

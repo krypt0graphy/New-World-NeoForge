@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "wooden_beehives"
+        }
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_beehive",
+  "key": {
+    "#": {
+      "item": "newworld:fir_planks"
+    },
+    "H": {
+      "item": "minecraft:honeycomb"
+    }
+  },
+  "pattern": [
+    "###",
+    "HHH",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "newworld:fir_beehive"
+  }
+}

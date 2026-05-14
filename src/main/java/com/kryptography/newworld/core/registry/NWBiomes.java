@@ -1,0 +1,33 @@
+package com.kryptography.newworld.core.registry;
+
+import com.kryptography.newworld.core.NewWorld;
+import com.kryptography.newworld.common.worldgen.NWOverworldBiomeCreator;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+
+public class NWBiomes {
+
+	public static final ResourceKey<Biome> WOODED_MEADOW = registerKey("wooded_meadow");
+
+	public static ResourceKey<Biome> registerKey(String name)
+	{
+		return ResourceKey.create(Registries.BIOME, NewWorld.id(name));
+	}
+
+	public static void bootstrap(BootstrapContext<Biome> context) {
+		HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
+		HolderGetter<PlacedFeature> placedFeatureGetter = context.lookup(Registries.PLACED_FEATURE);
+		register(context, WOODED_MEADOW, NWOverworldBiomeCreator.createWoodedMeadow(placedFeatureGetter, carverGetter));
+	}
+
+	private static void register(BootstrapContext<Biome> context, ResourceKey<Biome> key, Biome biome)
+	{
+		context.register(key, biome);
+	}
+
+}

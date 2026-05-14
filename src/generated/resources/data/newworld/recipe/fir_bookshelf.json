@@ -2,12 +2,25 @@
   "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
-      "modid": "nomansland"
+      "modid": "woodworks"
+    },
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "wooden_bookshelves"
+        }
+      ]
     }
   ],
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "bookshelves",
+  "group": "wooden_bookshelf",
   "key": {
     "#": {
       "item": "newworld:fir_planks"
@@ -24,6 +37,5 @@
   "result": {
     "count": 1,
     "id": "newworld:fir_bookshelf"
-  },
-  "show_notification": false
+  }
 }

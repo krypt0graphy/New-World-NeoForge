@@ -1,6 +1,6 @@
 package com.kryptography.newworld.common.blocks.entity;
 
-import com.kryptography.newworld.init.NWBlockEntityTypes;
+import com.kryptography.newworld.core.registry.NWBlockEntityTypes;
 import net.minecraft.core.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -27,7 +27,6 @@ public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
 		if (!this.trySaveLootTable(pTag)) {
 			ContainerHelper.saveAllItems(pTag, this.items, pRegistries);
 		}
-		super.saveAdditional(pTag, pRegistries);
 	}
 
 	@Override
@@ -37,7 +36,6 @@ public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
 		if (!this.tryLoadLootTable(pTag)) {
 			ContainerHelper.loadAllItems(pTag, this.items, pRegistries);
 		}
-		super.loadAdditional(pTag, pRegistries);
 	}
 
 	@Override
@@ -80,4 +78,3 @@ public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
 		return -1;
 	}
 }
-

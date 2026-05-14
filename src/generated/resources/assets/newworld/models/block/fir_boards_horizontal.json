@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/template_boards_horizontal",
+  "textures": {
+    "all": "newworld:block/fir_boards"
+  }
+}

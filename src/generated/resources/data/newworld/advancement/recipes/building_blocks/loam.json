@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has:loam": {
+    "has_loam": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has:loam"
+      "has_loam"
     ]
   ],
   "rewards": {

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fir_leaves": {
+      "conditions": {
+        "items": [
+          {
+            "items": "newworld:fir_leaves"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "newworld:fir_leaf_pile"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fir_leaves"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "newworld:fir_leaf_pile"
+    ]
+  }
+}

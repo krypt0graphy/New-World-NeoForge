@@ -1,12 +1,12 @@
 {
   "entries": [
-    "newworld:mattock_crafting_template_head_stronghold_corridor",
     "newworld:mattock_crafting_template_head_ancient_city",
+    "newworld:mattock_crafting_template_head_stronghold_corridor",
+    "newworld:mattock_crafting_template_shaft_desert_pyramid_chest",
     "newworld:mattock_crafting_template_shaft_trail_ruins_rare",
     "newworld:mattock_crafting_template_shaft_desert_archaeology",
-    "newworld:mattock_crafting_template_shaft_desert_pyramid_chest",
-    "newworld:tombstone_ancient_city",
-    "newworld:illager_tome_woodland_mansion"
+    "newworld:illager_tome_woodland_mansion",
+    "newworld:tombstone_ancient_city"
   ],
   "replace": false
 }

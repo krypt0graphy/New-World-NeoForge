@@ -6,7 +6,9 @@ public enum Mods {
 	BIOLITH,
 	FARMERSDELIGHT,
 	NOMANSLAND,
-	BLOCKBOX;
+	BLOCKBOX,
+	WOODWORKS,
+	BOATLOAD;
 	private final String id;
 
 	Mods() {

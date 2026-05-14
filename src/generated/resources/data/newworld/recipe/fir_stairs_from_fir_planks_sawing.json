@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "sawmill"
+        }
+      ]
+    }
+  ],
+  "type": "woodworks:sawmill",
+  "ingredient": {
+    "item": "newworld:fir_planks"
+  },
+  "result": {
+    "count": 1,
+    "id": "newworld:fir_stairs"
+  }
+}

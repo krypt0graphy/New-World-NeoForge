@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/chiseled_bookshelf",
+  "textures": {
+    "side": "newworld:block/chiseled_fir_bookshelf_side",
+    "top": "newworld:block/chiseled_fir_bookshelf_top"
+  }
+}

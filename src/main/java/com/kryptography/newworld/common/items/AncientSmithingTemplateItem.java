@@ -1,6 +1,6 @@
 package com.kryptography.newworld.common.items;
 
-import com.kryptography.newworld.NewWorld;
+import com.kryptography.newworld.core.NewWorld;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.network.chat.Component;

@@ -1,0 +1,51 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "wooden_chests"
+        }
+      ]
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "newworld:trapped_fir_chest"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tripwire_hook": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:tripwire_hook"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tripwire_hook"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "newworld:trapped_fir_chest"
+    ]
+  }
+}

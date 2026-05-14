@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "sawmill"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "wooden_ladders"
+        }
+      ]
+    }
+  ],
+  "type": "woodworks:sawmill",
+  "ingredient": {
+    "tag": "newworld:fir_logs"
+  },
+  "result": {
+    "count": 4,
+    "id": "newworld:fir_ladder"
+  }
+}

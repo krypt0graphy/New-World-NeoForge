@@ -1,7 +1,7 @@
 package com.kryptography.newworld.common.worldgen;
 
 
-import com.kryptography.newworld.NewWorld;
+import com.kryptography.newworld.core.NewWorld;
 import com.kryptography.newworld.common.worldgen.features.BurialSiteFeature;
 import com.kryptography.newworld.common.worldgen.features.FallenLogFeature;
 import com.kryptography.newworld.common.worldgen.features.LoamSnowFeature;

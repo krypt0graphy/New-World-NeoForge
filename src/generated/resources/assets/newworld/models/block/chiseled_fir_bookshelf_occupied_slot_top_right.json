@@ -1,0 +1,6 @@
+{
+  "parent": "newworld:block/chiseled_fir_bookshelf_slot_top_right",
+  "textures": {
+    "texture": "newworld:block/chiseled_fir_bookshelf_occupied"
+  }
+}

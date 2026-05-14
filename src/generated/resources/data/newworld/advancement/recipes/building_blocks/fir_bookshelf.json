@@ -2,7 +2,20 @@
   "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
-      "modid": "nomansland"
+      "modid": "woodworks"
+    },
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "wooden_bookshelves"
+        }
+      ]
     }
   ],
   "parent": "minecraft:recipes/root",

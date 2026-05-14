@@ -1,7 +1,6 @@
 package com.kryptography.newworld.common.worldgen.structures;
 
-import com.kryptography.newworld.init.worldgen.structure.NWStructurePools;
-import com.kryptography.newworld.init.worldgen.structure.NWStructureTypes;
+import com.kryptography.newworld.core.registry.NWStructureTypes;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
@@ -57,7 +56,7 @@ public class BuriedBunkerFeature extends Structure {
 		}
 		Optional<GenerationStub> structurePiecesGenerator = JigsawPlacement.addPieces(
 				pContext,
-				poolGetter.getOrThrow(NWStructurePools.BURIED_BUNKER),
+				poolGetter.getOrThrow(NWStructureTypes.NWTemplatePools.BURIED_BUNKER),
 				Optional.empty(),
 				1,
 				pos.below(6),

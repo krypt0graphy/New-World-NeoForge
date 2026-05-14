@@ -1,0 +1,34 @@
+{
+  "parent": "newworld:adventure/collect_template_fragment",
+  "criteria": {
+    "ancient_mattock": {
+      "conditions": {
+        "items": [
+          {
+            "items": "newworld:ancient_mattock"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.adventure.collect_ancient_mattock.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "newworld:ancient_mattock"
+    },
+    "title": {
+      "translate": "advancements.adventure.collect_ancient_mattock.title"
+    }
+  },
+  "requirements": [
+    [
+      "ancient_mattock"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

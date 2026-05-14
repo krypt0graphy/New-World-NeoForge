@@ -1,8 +1,13 @@
-// 1.21.1	2025-06-01T15:10:57.0342167	Tags for minecraft:block mod id newworld
+// 1.21.1	2026-05-09T01:26:43.810149676	Tags for minecraft:block mod id newworld
 38d760396b74cff3b620b18280ce1e8dbfa5a8dc data/blockbox/tags/block/palisades.json
 5ce495d01d0826968439d65908afee56abb7ad54 data/blockbox/tags/block/spiked_palisades.json
 46d90fecb5c9af7daa9f06a13b00b09290120b1d data/blockbox/tags/block/wooden_seats.json
-68010ec2569a3ec8636cfe318fd6c7b59722e75d data/c/tags/block/bookshelves.json
+efc744fec258790ac141612100073a4808c7bed1 data/blueprint/tags/block/wooden_beehives.json
+bccfc49191311e6e51d54e40f0513713c415dd7b data/blueprint/tags/block/wooden_bookshelves.json
+a6215b0bee5ed5eb8fb34f31a5a0277cde9efb18 data/blueprint/tags/block/wooden_chests.json
+982b7c24a743917cb33bacf99a5cf28d3f64c289 data/blueprint/tags/block/wooden_chiseled_bookshelves.json
+9bafa32fb010349d02b2fe8aa6b3c9b2aedebb9e data/blueprint/tags/block/wooden_ladders.json
+6a18d629f288bcea19f2838ec28625b6609f37da data/blueprint/tags/block/wooden_trapped_chests.json
 797df6fa8c55a9504bf61d393f92ebd9df900769 data/c/tags/block/stripped_logs.json
 2ea1f39ef0997a6f3e11ad3259b394ac28cdc695 data/c/tags/block/stripped_woods.json
 763757eba8d924693eb1c6c5b603eefad2b5629a data/minecraft/tags/block/base_stone_overworld.json
@@ -22,9 +27,9 @@ d58c582ce36cd25adabb7a53c44b51bf74536d5c data/minecraft/tags/block/replaceable.j
 48e61236114a36252ce96fd047fbb91071d3b543 data/minecraft/tags/block/slabs.json
 615ea889f0871604cf96fe2a3fffab5e014e971c data/minecraft/tags/block/stairs.json
 c24bb40fbf45e52f62b1318a9f3562d3c1f87b72 data/minecraft/tags/block/standing_signs.json
-db91eaa6168fef9805d22ff605a38650214403a7 data/minecraft/tags/block/walls.json
 3ceb97bdc18f828ff1916f592160a8d96ce61e57 data/minecraft/tags/block/wall_hanging_signs.json
 a82b6834534ce065ff16e8f8256f1fa26243f1b7 data/minecraft/tags/block/wall_signs.json
+db91eaa6168fef9805d22ff605a38650214403a7 data/minecraft/tags/block/walls.json
 5a9676378ee4dbf492db7c901071ed8cdadd0fba data/minecraft/tags/block/wooden_buttons.json
 fd3b0b387684bb98d2be5e9a51c2b91ef2db8508 data/minecraft/tags/block/wooden_doors.json
 9cbd98ee10efc15e1590434ac4fc66589b754ba1 data/minecraft/tags/block/wooden_fences.json
@@ -38,3 +43,5 @@ bc5d3c67cb09c847de8823ce9d94cdcd87e304ab data/newworld/tags/block/fir_logs.json
 dacf58ba538343779c19cec58ca72963f45bb1b6 data/newworld/tags/block/tombstone_replaceable.json
 a05ffb0112a755a264958d236d52fe9de224beeb data/nomansland/tags/block/coniferous_logs.json
 64911ca9256f4f642941c0914f4351d7c90d5644 data/nomansland/tags/block/trimmed_planks.json
+178bebe2e5e750866c8b2f7f89f7fbdafbbf7f1e data/woodworks/tags/block/leaf_piles.json
+fd2014aaecf15cf5c5dad5227706b7b5ab8fda99 data/woodworks/tags/block/wooden_boards.json

@@ -1,6 +1,6 @@
 package com.kryptography.newworld.common.worldgen;
 
-import com.kryptography.newworld.init.worldgen.features.NWPlacedFeatures;
+import com.kryptography.newworld.core.registry.NWFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
@@ -53,12 +53,12 @@ public class NWOverworldBiomeCreator {
 
 		globalOverworldGeneration(featureBuilder);
 
-		addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWPlacedFeatures.TREES_FIR);
-		addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWPlacedFeatures.GLOW_LICHEN_WOODED_MEADOW);
-		addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWPlacedFeatures.PATCH_BERRY_WOODED_MEADOW);
-		addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWPlacedFeatures.PATCH_FERN_WOODED_MEADOW );
+		addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWFeatures.NWPlacedFeatures.TREES_FIR);
+		addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWFeatures.NWPlacedFeatures.GLOW_LICHEN_WOODED_MEADOW);
+		addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWFeatures.NWPlacedFeatures.PATCH_BERRY_WOODED_MEADOW);
+		addFeature(featureBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, NWFeatures.NWPlacedFeatures.PATCH_FERN_WOODED_MEADOW );
 		addFeature(featureBuilder, GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
-		addFeature(featureBuilder, GenerationStep.Decoration.LOCAL_MODIFICATIONS, NWPlacedFeatures.FALLEN_FIR_LOG);
+		addFeature(featureBuilder, GenerationStep.Decoration.LOCAL_MODIFICATIONS, NWFeatures.NWPlacedFeatures.FALLEN_FIR_LOG);
 
 		BiomeDefaultFeatures.addFerns(featureBuilder);
 		BiomeDefaultFeatures.addForestFlowers(featureBuilder);
