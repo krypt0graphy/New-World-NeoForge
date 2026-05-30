@@ -1,6 +1,6 @@
 package com.kryptography.newworld.common.worldgen.tree;
 
-import com.kryptography.newworld.core.registry.NWFeatures;
+import com.kryptography.newworld.core.registry.datapack.NWFeatures;
 import net.minecraft.world.level.block.grower.TreeGrower;
 
 import java.util.Optional;

@@ -1,6 +1,6 @@
 package com.kryptography.newworld.common.worldgen;
 
-import com.kryptography.newworld.core.registry.NWFeatures;
+import com.kryptography.newworld.core.registry.datapack.NWFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;

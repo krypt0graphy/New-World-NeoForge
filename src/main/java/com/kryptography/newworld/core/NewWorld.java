@@ -1,6 +1,6 @@
 package com.kryptography.newworld.core;
 
-import com.kryptography.newworld.common.worldgen.NWFeature;
+import com.kryptography.newworld.core.registry.NWFeatures;
 import com.kryptography.newworld.core.data.client.NWBlockStateProvider;
 import com.kryptography.newworld.core.data.client.NWItemModelProvider;
 import com.kryptography.newworld.core.data.server.*;
@@ -54,7 +54,7 @@ public class NewWorld {
 		NWItems.ITEMS.register(bus);
 		NWBlockEntityTypes.BLOCK_ENTITIES.register(bus);
 		NWLootModifiers.LOOT_MODIFIERS.register(bus);
-		NWFeature.FEATURES.register(bus);
+		NWFeatures.FEATURES.register(bus);
 		NWStructureTypes.STRUCTURE_TYPES.register(bus);
 		NWStats.STATS.register(bus);
 		NWBlocks.setupTabEditors();
@@ -106,7 +106,7 @@ public class NewWorld {
 		gen.addProvider(client, new NWItemTagsProvider(packOutput, lookup, blockTagsProvider.contentsGetter(), existingFileHelper));
 		gen.addProvider(client, new NWItemModelProvider(packOutput, existingFileHelper));
 		gen.addProvider(client, new NWBlockStateProvider(packOutput, existingFileHelper));
-	}
+}
 
 	private void commonSetup(final FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {

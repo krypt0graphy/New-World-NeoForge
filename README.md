@@ -11,8 +11,7 @@ Features:
 - Tombstone: A block which saves your items upon death if held in the inventory 
 - Ancient Mattock: A multi-tool which can mine all other tool types can efficiently 
 - Moss Sprouts: New decorative plant which can spawn in moss vegetation
-- Farmer's Delight Integration: Fir cabinets
-- No Man's Land Integration: Fir bookshelves and trimmed planks
+- Integration with Farmer's Delight, Block Box, No Man's Land, Woodworks and Boatload
 
   ## Before opening issues:
   - Make sure you're on the right repository for the modloader you are using

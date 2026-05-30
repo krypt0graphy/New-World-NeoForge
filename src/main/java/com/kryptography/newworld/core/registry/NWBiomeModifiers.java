@@ -1,6 +1,7 @@
 package com.kryptography.newworld.core.registry;
 
 import com.kryptography.newworld.core.NewWorld;
+import com.kryptography.newworld.core.registry.datapack.NWFeatures;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
