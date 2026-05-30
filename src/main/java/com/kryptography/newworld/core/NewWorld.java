@@ -15,6 +15,7 @@ import com.kryptography.newworld.core.registry.*;
 import com.kryptography.newworld.integration.FDIntegration;
 import com.kryptography.newworld.integration.Mods;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
+import com.teamabnormals.gallery.core.data.client.GalleryItemModelProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -106,7 +107,9 @@ public class NewWorld {
 		gen.addProvider(client, new NWItemTagsProvider(packOutput, lookup, blockTagsProvider.contentsGetter(), existingFileHelper));
 		gen.addProvider(client, new NWItemModelProvider(packOutput, existingFileHelper));
 		gen.addProvider(client, new NWBlockStateProvider(packOutput, existingFileHelper));
-}
+
+		gen.addProvider(client, new GalleryItemModelProvider(MOD_ID, packOutput, existingFileHelper, lookup));
+	}
 
 	private void commonSetup(final FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
