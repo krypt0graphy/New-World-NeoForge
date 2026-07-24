@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "newworld:fir_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  ],
+  "cauldron": "nomansland:resin_cauldron",
+  "rate": 1,
+  "particle": "nomansland:resin_droplet"
+}
