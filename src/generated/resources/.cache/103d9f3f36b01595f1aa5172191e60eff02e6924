@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-09T01:26:43.812640936	Registries
+// 1.21.1	2026-08-02T22:29:36.203685839	Registries
 1948c39e46fd8c7cb20539a50340873f496c9856 data/newworld/blueprint/modded_biome_slices/wooded_meadow.json
 60bda0285a2295308806de0151fbd403787a6131 data/newworld/neoforge/biome_modifier/birch_cherry_grove.json
 93c4dbd4daa1b56a7fe424562f8cf53c2cc0d7cf data/newworld/neoforge/biome_modifier/fir_meadow.json
@@ -29,7 +29,7 @@ f0f84d593928862c8d4faa1b959ea1ed10556f45 data/newworld/worldgen/configured_featu
 4f982986aed056fe17b8ede88d672543a1ee59fb data/newworld/worldgen/placed_feature/birch_cherry_grove.json
 0f1e9b84b6785e758d29eb6b2c45764fc469b7d9 data/newworld/worldgen/placed_feature/burial_site.json
 3d9b767775af0c6d334f40f1808c91cdda7d8415 data/newworld/worldgen/placed_feature/calcite_patch.json
-e516f10bfc9e1f8adc39132cd825a887b1142dfc data/newworld/worldgen/placed_feature/fallen_fir_log.json
+5e918d44574467b460e0f6da259c7a9f0aabb5b2 data/newworld/worldgen/placed_feature/fallen_fir_log.json
 4c9f1660bdbd315d0dda394e1bd46a47eb4c9bb7 data/newworld/worldgen/placed_feature/fir_bees_checked.json
 cb4b41d24a92de9272b8cd364dcbc80333715723 data/newworld/worldgen/placed_feature/fir_checked.json
 3cc223f28893a9eed479d015a7e2042909fcf06b data/newworld/worldgen/placed_feature/glow_lichen_wooded_meadow.json
