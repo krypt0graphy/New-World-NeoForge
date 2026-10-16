@@ -20,9 +20,6 @@ authors="${mod_authors}"
 
 description='''${mod_description}'''
 
-[[mixins]]
-config="newworld.mixins.json"
-
 [[dependencies.${mod_id}]]
     modId="neoforge"
     type="required"
@@ -78,4 +75,3 @@ config="newworld.mixins.json"
     versionRange="[0.1.2,)"
     ordering="NONE"
     side="BOTH"
-

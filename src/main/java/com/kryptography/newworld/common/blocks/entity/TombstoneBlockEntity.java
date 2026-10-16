@@ -68,13 +68,21 @@ public class TombstoneBlockEntity extends RandomizableContainerBlockEntity {
 		return ChestMenu.threeRows(pId, pPlayer, this);
 	}
 
-	public int getCompatibleSlot(ItemStack stack) {
-		for(int i = 0; i < getContainerSize(); ++i) {
-			ItemStack currentStack = items.get(i);
-			if (currentStack.isEmpty() || (ItemStack.isSameItemSameComponents(currentStack, stack) && currentStack.getCount() < currentStack.getMaxStackSize())) {
-				return i;
+	public ItemStack storeItem(ItemStack stack) {
+		ItemStack remaining = stack.copy();
+		for (int i = 0; i < getContainerSize() && !remaining.isEmpty(); ++i) {
+			ItemStack stored = getItem(i);
+			if (stored.isEmpty()) {
+				setItem(i, remaining.split(Math.min(remaining.getCount(), getMaxStackSize(remaining))));
+			} else if (ItemStack.isSameItemSameComponents(stored, remaining)) {
+				int count = Math.min(remaining.getCount(), getMaxStackSize(stored) - stored.getCount());
+				if (count > 0) {
+					stored.grow(count);
+					remaining.shrink(count);
+					setChanged();
+				}
 			}
 		}
-		return -1;
+		return remaining;
 	}
 }
